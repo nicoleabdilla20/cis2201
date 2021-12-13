@@ -16,7 +16,7 @@ namespace CIS2201_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Navigation());
+            Application.Run(new Login());
         }
     }
 }

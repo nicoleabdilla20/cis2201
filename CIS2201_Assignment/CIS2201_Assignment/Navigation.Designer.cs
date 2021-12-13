@@ -30,9 +30,9 @@ namespace CIS2201_Assignment
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnPatients = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,41 +45,41 @@ namespace CIS2201_Assignment
             this.label1.TabIndex = 0;
             this.label1.Text = "Hospital Management System.";
             // 
-            // button1
+            // btnPatients
             // 
-            this.button1.Location = new System.Drawing.Point(216, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Manage Patients";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPatients.Location = new System.Drawing.Point(216, 180);
+            this.btnPatients.Name = "btnPatients";
+            this.btnPatients.Size = new System.Drawing.Size(126, 23);
+            this.btnPatients.TabIndex = 1;
+            this.btnPatients.Text = "Manage Patients";
+            this.btnPatients.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnStaff
             // 
-            this.button2.Location = new System.Drawing.Point(216, 229);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Manage Staff";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnStaff.Location = new System.Drawing.Point(216, 229);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(126, 23);
+            this.btnStaff.TabIndex = 2;
+            this.btnStaff.Text = "Manage Staff";
+            this.btnStaff.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.Location = new System.Drawing.Point(456, 348);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(456, 348);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 385);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnStaff);
+            this.Controls.Add(this.btnPatients);
             this.Controls.Add(this.label1);
             this.Name = "Navigation";
             this.Text = "Form1";
@@ -91,9 +91,9 @@ namespace CIS2201_Assignment
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPatients;
+        private System.Windows.Forms.Button btnStaff;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

@@ -1,0 +1,11 @@
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csprojAssemblyReference.cache
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Navigation.resources
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Properties.Resources.resources
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.GenerateResource.cache
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Login.resources
