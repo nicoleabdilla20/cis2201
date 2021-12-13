@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CIS2201_Assignment
 {
-    public partial class Form1 : Form
+    public partial class Navigation : Form
     {
-        public Form1()
+        public Navigation()
         {
             InitializeComponent();
         }
