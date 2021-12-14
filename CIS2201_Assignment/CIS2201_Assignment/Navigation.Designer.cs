@@ -66,6 +66,7 @@ namespace CIS2201_Assignment
             this.btnStaff.TabIndex = 2;
             this.btnStaff.Text = "Manage Staff";
             this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnExit
             // 
@@ -76,6 +77,7 @@ namespace CIS2201_Assignment
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Navigation
             // 
