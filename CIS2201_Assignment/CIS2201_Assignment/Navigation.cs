@@ -28,5 +28,10 @@ namespace CIS2201_Assignment
               Form frm = new Staff();
               frm.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+             this.Close();
+        }
     }
 }
