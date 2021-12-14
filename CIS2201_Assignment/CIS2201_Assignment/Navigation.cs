@@ -19,7 +19,14 @@ namespace CIS2201_Assignment
 
         private void btnPatients_Click(object sender, EventArgs e)
         {
+              Form frm = new Patients();
+                frm.Show();
+        }
 
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+              Form frm = new Staff();
+              frm.Show();
         }
     }
 }
