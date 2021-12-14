@@ -53,6 +53,7 @@ namespace CIS2201_Assignment
             this.btnPatients.TabIndex = 1;
             this.btnPatients.Text = "Manage Patients";
             this.btnPatients.UseVisualStyleBackColor = true;
+            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
             // btnStaff
             // 

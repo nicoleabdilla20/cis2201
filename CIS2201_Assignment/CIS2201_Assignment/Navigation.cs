@@ -16,5 +16,10 @@ namespace CIS2201_Assignment
         {
             InitializeComponent();
         }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

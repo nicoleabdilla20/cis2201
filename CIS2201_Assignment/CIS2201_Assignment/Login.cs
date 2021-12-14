@@ -26,11 +26,6 @@ namespace CIS2201_Assignment
             }
             
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private bool passwordValidate(String pass)
         {
             if (txtPassword.Text == "")
@@ -47,6 +42,10 @@ namespace CIS2201_Assignment
             {
                 return true;
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
