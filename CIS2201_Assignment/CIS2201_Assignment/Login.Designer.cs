@@ -44,6 +44,8 @@ namespace CIS2201_Assignment
             // 
             // label1
             // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(520, 302);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -69,6 +71,8 @@ namespace CIS2201_Assignment
             // 
             // btnLogin
             // 
+            this.btnLogin.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnLogin.AutoSize = true;
             this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Default;
@@ -84,6 +88,7 @@ namespace CIS2201_Assignment
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(714, 302);
@@ -124,6 +129,9 @@ namespace CIS2201_Assignment
             // 
             // logo
             // 
+            this.logo.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
             this.logo.Location = new System.Drawing.Point(614, 83);
             this.logo.Name = "logo";
