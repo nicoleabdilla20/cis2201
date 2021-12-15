@@ -22,3 +22,16 @@ C:\Users\abdil\OneDrive\Desktop\New folder\CIS2201_Assignment\CIS2201_Assignment
 C:\Users\abdil\OneDrive\Desktop\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\abdil\OneDrive\Desktop\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
 C:\Users\abdil\OneDrive\Desktop\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csprojAssemblyReference.cache
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Login.resources
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Patients.resources
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Staff.resources
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Navigation.resources
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Properties.Resources.resources
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.GenerateResource.cache
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
+C:\Users\Nicole Bezzina\source\repos\New folder\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb

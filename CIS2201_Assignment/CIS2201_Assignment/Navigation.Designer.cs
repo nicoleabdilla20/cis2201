@@ -39,14 +39,15 @@ namespace CIS2201_Assignment
             // 
             // btnPatients
             // 
+            this.btnPatients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnPatients.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnPatients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPatients.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatients.Location = new System.Drawing.Point(124, 184);
-            this.btnPatients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPatients.Location = new System.Drawing.Point(110, 147);
+            this.btnPatients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPatients.Name = "btnPatients";
-            this.btnPatients.Size = new System.Drawing.Size(210, 210);
+            this.btnPatients.Size = new System.Drawing.Size(187, 168);
             this.btnPatients.TabIndex = 1;
             this.btnPatients.Text = "Manage Patients";
             this.btnPatients.UseVisualStyleBackColor = false;
@@ -54,14 +55,15 @@ namespace CIS2201_Assignment
             // 
             // btnStaff
             // 
+            this.btnStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnStaff.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnStaff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F);
-            this.btnStaff.Location = new System.Drawing.Point(470, 184);
-            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnStaff.Location = new System.Drawing.Point(418, 147);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(210, 210);
+            this.btnStaff.Size = new System.Drawing.Size(187, 168);
             this.btnStaff.TabIndex = 2;
             this.btnStaff.Text = "Manage Staff";
             this.btnStaff.UseVisualStyleBackColor = false;
@@ -73,10 +75,10 @@ namespace CIS2201_Assignment
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Location = new System.Drawing.Point(0, 557);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Location = new System.Drawing.Point(0, 446);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(831, 35);
+            this.btnExit.Size = new System.Drawing.Size(739, 28);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -94,7 +96,7 @@ namespace CIS2201_Assignment
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(831, 43);
+            this.label2.Size = new System.Drawing.Size(739, 34);
             this.label2.TabIndex = 6;
             this.label2.Text = "Hospital Management System";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -105,21 +107,22 @@ namespace CIS2201_Assignment
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(831, 49);
+            this.panel1.Size = new System.Drawing.Size(739, 39);
             this.panel1.TabIndex = 7;
             // 
             // Navigation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(831, 592);
+            this.ClientSize = new System.Drawing.Size(739, 474);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnStaff);
             this.Controls.Add(this.btnPatients);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Navigation";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

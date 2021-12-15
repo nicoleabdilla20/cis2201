@@ -29,6 +29,7 @@ namespace CIS2201_Assignment
               frm.Show();
         }
 
+        //anchor update
         private void btnExit_Click(object sender, EventArgs e)
         {
              this.Close();
