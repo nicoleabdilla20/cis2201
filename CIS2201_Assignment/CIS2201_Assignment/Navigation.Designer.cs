@@ -40,6 +40,7 @@ namespace CIS2201_Assignment
             // btnPatients
             // 
             this.btnPatients.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnPatients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPatients.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPatients.Location = new System.Drawing.Point(124, 184);
@@ -54,6 +55,7 @@ namespace CIS2201_Assignment
             // btnStaff
             // 
             this.btnStaff.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnStaff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F);
             this.btnStaff.Location = new System.Drawing.Point(470, 184);
@@ -68,6 +70,7 @@ namespace CIS2201_Assignment
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Location = new System.Drawing.Point(0, 557);

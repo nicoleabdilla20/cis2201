@@ -38,10 +38,10 @@ namespace CIS2201_Assignment
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hospitallogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +60,7 @@ namespace CIS2201_Assignment
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Location = new System.Drawing.Point(0, 615);
@@ -77,7 +78,7 @@ namespace CIS2201_Assignment
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnLogin.AutoSize = true;
             this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Location = new System.Drawing.Point(524, 369);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -122,7 +123,7 @@ namespace CIS2201_Assignment
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.CausesValidation = false;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.hospitallogo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -143,15 +144,15 @@ namespace CIS2201_Assignment
             this.logo.TabIndex = 7;
             this.logo.TabStop = false;
             // 
-            // pictureBox1
+            // hospitallogo
             // 
-            this.pictureBox1.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.hospitallogo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
+            this.hospitallogo.Location = new System.Drawing.Point(3, 0);
+            this.hospitallogo.Name = "hospitallogo";
+            this.hospitallogo.Size = new System.Drawing.Size(45, 47);
+            this.hospitallogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hospitallogo.TabIndex = 11;
+            this.hospitallogo.TabStop = false;
             // 
             // Login
             // 
@@ -170,7 +171,7 @@ namespace CIS2201_Assignment
             this.Text = " ";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +196,6 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox hospitallogo;
     }
 }
