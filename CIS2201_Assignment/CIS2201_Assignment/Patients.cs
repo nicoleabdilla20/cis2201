@@ -16,7 +16,14 @@ namespace CIS2201_Assignment
         {
             InitializeComponent();
         }
-
+        private void TelephoneValidation_Leave(object sender, EventArgs e)
+        {
+            if ((telephonetxt.Text.Length < 15) && (telephonetxt.Text.Length > 0))
+            {
+                MessageBox.Show("Phone number must be max 15 digits!");
+                telephonetxt.Focus();
+            }
+        }
 
     }
 }
