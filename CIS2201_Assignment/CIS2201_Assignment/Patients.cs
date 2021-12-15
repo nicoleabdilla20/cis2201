@@ -16,6 +16,19 @@ namespace CIS2201_Assignment
         {
             InitializeComponent();
         }
+
+         private bool IsPatientsNameValid()
+        {
+            if (nametxt.Text == "")
+            {
+                MessageBox.Show("Please enter a name.");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void TelephoneValidation_Leave(object sender, EventArgs e)
         {
             if ((telephonetxt.Text.Length < 15) && (telephonetxt.Text.Length > 0))
@@ -23,7 +36,8 @@ namespace CIS2201_Assignment
                 MessageBox.Show("Phone number must be max 15 digits!");
                 telephonetxt.Focus();
             }
-        }
 
     }
-}
+        }
+    }
+ 
