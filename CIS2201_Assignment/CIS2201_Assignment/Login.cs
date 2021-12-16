@@ -19,19 +19,20 @@ namespace CIS2201_Assignment
         }
 
          //Connection String
-        string cs = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\SQLQuery1.mdf;Integrated Security=True;";
+       // string cs = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\SQLQuery1.mdf;Integrated Security=True;";
 
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
+            
             String Test = "Test";
             if(passwordValidate(Test))
             {
                 Form frm = new Navigation();
                 frm.Show();
             }
-            */
+        }
+            /*
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please provide a valid UserName and Password.");
@@ -68,7 +69,7 @@ namespace CIS2201_Assignment
                 MessageBox.Show(ex.Message);
             }
             
-        }
+        }*/
         private bool passwordValidate(String pass)
         {
             if (txtUsername.Text == "")
