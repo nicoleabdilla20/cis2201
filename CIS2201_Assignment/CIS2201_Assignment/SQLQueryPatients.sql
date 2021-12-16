@@ -24,7 +24,5 @@ VALUES('Stephanie', 'Zammit', 'Female', 27, 'Z','5.MAR.2017');
 INSERT INTO [Hospital].[patients](PatientsName, PatientsSurnameName, PatientsGender, PatientsAge, PatientsInsurance, PatientsLastVisit)
 VALUES('Joan', 'Attard', 'Female', 44, 'X','9.MAY.2020');
 
-
-
 SELECT * FROM [Hospital].[patients];
 
