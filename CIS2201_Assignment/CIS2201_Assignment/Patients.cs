@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,7 +19,8 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
-         private bool IsPatientValid()
+        private string patientsID;
+        private bool IsPatientValid()
          {
             if (nametxt.Text == "" || surnametxt.Text == "")
             {
@@ -34,6 +36,32 @@ namespace CIS2201_Assignment
         private bool IsPatientIDValid()
         {
             if (IDtxt.Text == "")
+            {
+                MessageBox.Show("Please make sure that you have entered the patient's ID!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool IsPatientInfoIDValid()
+        {
+            if (psearchID.Text == "")
+            {
+                MessageBox.Show("Please make sure that you have entered the patient's ID!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool IsPatientvisitIDValid()
+        {
+            if (pvisitID.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the patient's ID!");
                 return false;
@@ -175,6 +203,82 @@ namespace CIS2201_Assignment
                     }
                 }
 
+            }
+        }
+
+        /// <summary>
+        /// source for searching a patient: "https://www.codesd.com/item/i-get-this-error-a-sqlparameter-with-parametername-firstname-is-not-contained-by-this-sqlparametercollection.html"
+        /// </summary>
+        private void searchPatient_Click(object sender, EventArgs e)
+        {
+            if(IsPatientInfoIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter("Hospital.searchPatient", connection))
+                    {
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter p = new SqlParameter();
+                        p.ParameterName = "@PatientsID";
+                        p.Value = psearchID.Text;
+
+                        adapter.SelectCommand.Parameters.Add(p);
+                        
+                        try
+                        {
+
+                            DataTable d = new DataTable();
+                            adapter.Fill(d);
+                            patientdgv.DataSource = d;
+                        }
+                        catch (System.Data.SqlClient.SqlException sqlException)
+                        {
+                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void searchVisit_Click(object sender, EventArgs e)
+        {
+            if (IsPatientvisitIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                { 
+                    using (SqlDataAdapter adapter = new SqlDataAdapter("Hospital.searchPatientVisit", connection))
+                    {
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter p = new SqlParameter();
+                        p.ParameterName = "@PatientsID";
+                        p.Value = pvisitID.Text;
+
+                        adapter.SelectCommand.Parameters.Add(p);
+
+                        try
+                        {
+
+                            DataTable d = new DataTable();
+                            adapter.Fill(d);
+                            visitdgv.DataSource = d;
+                        }
+                        catch (System.Data.SqlClient.SqlException sqlException)
+                        {
+                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
             }
         }
     }
