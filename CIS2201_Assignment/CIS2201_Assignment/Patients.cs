@@ -190,7 +190,6 @@ namespace CIS2201_Assignment
                     {
                         connection.Open();
 
-
                         sqlCommand.ExecuteNonQuery();
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
@@ -244,7 +243,7 @@ namespace CIS2201_Assignment
                     }
                 }
             }
-        }
+        } 
 
         private void searchVisit_Click(object sender, EventArgs e)
         {
@@ -280,6 +279,11 @@ namespace CIS2201_Assignment
                     }
                 }
             }
+        }
+
+        private void Patients_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

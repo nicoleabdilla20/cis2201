@@ -83,6 +83,4 @@ INSERT INTO [Hospital].[patientsVisits] (PatientsID, RecentVisitDate, RecentVisi
      VALUES(@PatientsID, @RecentVisitDate, @RecentVisitDoctor, @RecentVisitSummary, @OtherVisitDate, @OtherVisitDoctor, @OtherVisitSummary);
 COMMIT TRANSACTION
 END
-GO
-DROP PROCEDURE [Hospital].[addPatientVisit]  
-GO
+

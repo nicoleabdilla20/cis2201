@@ -24,15 +24,7 @@ namespace CIS2201_Assignment
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-            String Test = "Test";
-            if(passwordValidate(Test))
-            {
-                Form frm = new Navigation();
-                frm.Show();
-            }
-            */
-            
+           
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please provide a valid UserName and Password.");
@@ -70,25 +62,7 @@ namespace CIS2201_Assignment
             }
             
         }
-        /*
-        private bool passwordValidate(String pass)
-        {
-            if (txtUsername.Text == "")
-            {
-                MessageBox.Show("Please enter a Password!");
-                return false;
-            }
-            else if (txtUsername.Text != pass)
-            {
-                MessageBox.Show("Incorrect Password");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        */
+       
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -120,6 +94,31 @@ namespace CIS2201_Assignment
         }
 
         private void logo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
         {
 
         }

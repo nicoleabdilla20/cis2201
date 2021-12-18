@@ -123,6 +123,7 @@ namespace CIS2201_Assignment
             this.Controls.Add(this.btnPatients);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Navigation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Management Form";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
