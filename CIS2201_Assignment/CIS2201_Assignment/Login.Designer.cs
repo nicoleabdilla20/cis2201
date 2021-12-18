@@ -67,7 +67,7 @@ namespace CIS2201_Assignment
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Location = new System.Drawing.Point(0, 492);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(1270, 28);
             this.btnCancel.TabIndex = 2;
@@ -84,7 +84,7 @@ namespace CIS2201_Assignment
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Location = new System.Drawing.Point(467, 368);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(300, 31);
             this.btnLogin.TabIndex = 3;
@@ -98,9 +98,8 @@ namespace CIS2201_Assignment
             this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Location = new System.Drawing.Point(613, 254);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.PasswordChar = '*';
             this.txtUsername.Size = new System.Drawing.Size(132, 22);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
@@ -160,6 +159,7 @@ namespace CIS2201_Assignment
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo.TabIndex = 7;
             this.logo.TabStop = false;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // lblUsername
             // 
@@ -202,7 +202,7 @@ namespace CIS2201_Assignment
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtUsername);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Login_Load);

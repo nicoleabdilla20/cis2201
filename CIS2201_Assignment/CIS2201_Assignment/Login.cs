@@ -18,21 +18,21 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
-         //Connection String
-       // string cs = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\SQLQuery1.mdf;Integrated Security=True;";
-
+       //Connection String
+       string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
+        
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            /*
             String Test = "Test";
             if(passwordValidate(Test))
             {
                 Form frm = new Navigation();
                 frm.Show();
             }
-        }
-            /*
+            */
+            
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please provide a valid UserName and Password.");
@@ -42,7 +42,7 @@ namespace CIS2201_Assignment
             {
                 //Create SqlConnection
                 SqlConnection con = new SqlConnection(cs);
-                SqlCommand cmd = new SqlCommand("Select * from LoginTable where Username=@username and Password=@password", con);
+                SqlCommand cmd = new SqlCommand("Select * from [Hospital].[login] where Username=@Username and Password=@Password", con);
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
                 cmd.Parameters.AddWithValue("@password", txtPassword.Text);
                 con.Open();
@@ -51,7 +51,7 @@ namespace CIS2201_Assignment
                 adapt.Fill(ds);
                 con.Close();
                 int count = ds.Tables[0].Rows.Count;
-                //If count is equal to 1, than show frmMain form
+                //If count is equal to 1, than show navigation form
                 if (count == 1)
                 {
                     MessageBox.Show("Login Successful!");
@@ -69,7 +69,8 @@ namespace CIS2201_Assignment
                 MessageBox.Show(ex.Message);
             }
             
-        }*/
+        }
+        /*
         private bool passwordValidate(String pass)
         {
             if (txtUsername.Text == "")
@@ -87,6 +88,7 @@ namespace CIS2201_Assignment
                 return true;
             }
         }
+        */
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -113,6 +115,11 @@ namespace CIS2201_Assignment
         }
 
         private void txtPassword_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logo_Click(object sender, EventArgs e)
         {
 
         }

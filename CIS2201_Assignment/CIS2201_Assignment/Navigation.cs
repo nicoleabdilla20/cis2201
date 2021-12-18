@@ -29,10 +29,12 @@ namespace CIS2201_Assignment
               frm.Show();
         }
 
-        //anchor update
         private void btnExit_Click(object sender, EventArgs e)
         {
-             this.Close();
+             //this.Close();
+            this.Hide();
+            Login fl = new Login();
+            fl.Show();
         }
     }
 }
