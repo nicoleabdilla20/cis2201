@@ -57,23 +57,25 @@ namespace CIS2201_Assignment
             this.Appointment = new System.Windows.Forms.TabPage();
             this.CalcBill = new System.Windows.Forms.TabPage();
             this.Search = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.psearchID = new System.Windows.Forms.TextBox();
-            this.patientdgv = new System.Windows.Forms.DataGridView();
-            this.searchPatient = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.pvisitID = new System.Windows.Forms.TextBox();
-            this.searchVisit = new System.Windows.Forms.Button();
-            this.visitdgv = new System.Windows.Forms.DataGridView();
-            this.label24 = new System.Windows.Forms.Label();
+            this.pvisitbtn = new System.Windows.Forms.Button();
+            this.patientFiltercbx = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.visitdgv = new System.Windows.Forms.DataGridView();
+            this.pvisitID = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.searchPatient = new System.Windows.Forms.Button();
+            this.patientdgv = new System.Windows.Forms.DataGridView();
+            this.psearchID = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.visitFiltercbx = new System.Windows.Forms.ComboBox();
             this.BlueBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.PatientsTabControl.SuspendLayout();
             this.AddPat.SuspendLayout();
             this.Search.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -616,10 +618,12 @@ namespace CIS2201_Assignment
             // Search
             // 
             this.Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.Search.Controls.Add(this.visitFiltercbx);
+            this.Search.Controls.Add(this.pvisitbtn);
+            this.Search.Controls.Add(this.patientFiltercbx);
             this.Search.Controls.Add(this.label25);
             this.Search.Controls.Add(this.label24);
             this.Search.Controls.Add(this.visitdgv);
-            this.Search.Controls.Add(this.searchVisit);
             this.Search.Controls.Add(this.pvisitID);
             this.Search.Controls.Add(this.label23);
             this.Search.Controls.Add(this.searchPatient);
@@ -635,96 +639,30 @@ namespace CIS2201_Assignment
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // pvisitbtn
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(22, 90);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(273, 16);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Enter the ID of the patient that you want to search:";
+            this.pvisitbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pvisitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pvisitbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pvisitbtn.Location = new System.Drawing.Point(449, 369);
+            this.pvisitbtn.Name = "pvisitbtn";
+            this.pvisitbtn.Size = new System.Drawing.Size(75, 23);
+            this.pvisitbtn.TabIndex = 22;
+            this.pvisitbtn.Text = "Search";
+            this.pvisitbtn.UseVisualStyleBackColor = false;
+            this.pvisitbtn.Click += new System.EventHandler(this.pvisitbtn_Click);
             // 
-            // psearchID
+            // patientFiltercbx
             // 
-            this.psearchID.Location = new System.Drawing.Point(301, 87);
-            this.psearchID.Name = "psearchID";
-            this.psearchID.Size = new System.Drawing.Size(100, 23);
-            this.psearchID.TabIndex = 1;
-            // 
-            // patientdgv
-            // 
-            this.patientdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientdgv.Location = new System.Drawing.Point(25, 133);
-            this.patientdgv.Name = "patientdgv";
-            this.patientdgv.Size = new System.Drawing.Size(1122, 119);
-            this.patientdgv.TabIndex = 2;
-            // 
-            // searchPatient
-            // 
-            this.searchPatient.BackColor = System.Drawing.Color.DodgerBlue;
-            this.searchPatient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchPatient.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPatient.Location = new System.Drawing.Point(417, 87);
-            this.searchPatient.Name = "searchPatient";
-            this.searchPatient.Size = new System.Drawing.Size(59, 24);
-            this.searchPatient.TabIndex = 3;
-            this.searchPatient.Text = "Search";
-            this.searchPatient.UseVisualStyleBackColor = false;
-            this.searchPatient.Click += new System.EventHandler(this.searchPatient_Click);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(22, 372);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(315, 16);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
-            // 
-            // pvisitID
-            // 
-            this.pvisitID.Location = new System.Drawing.Point(343, 369);
-            this.pvisitID.Name = "pvisitID";
-            this.pvisitID.Size = new System.Drawing.Size(100, 23);
-            this.pvisitID.TabIndex = 5;
-            // 
-            // searchVisit
-            // 
-            this.searchVisit.BackColor = System.Drawing.Color.DodgerBlue;
-            this.searchVisit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchVisit.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchVisit.Location = new System.Drawing.Point(470, 369);
-            this.searchVisit.Name = "searchVisit";
-            this.searchVisit.Size = new System.Drawing.Size(61, 23);
-            this.searchVisit.TabIndex = 6;
-            this.searchVisit.Text = "Search";
-            this.searchVisit.UseVisualStyleBackColor = false;
-            this.searchVisit.Click += new System.EventHandler(this.searchVisit_Click);
-            // 
-            // visitdgv
-            // 
-            this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.visitdgv.Location = new System.Drawing.Point(25, 417);
-            this.visitdgv.Name = "visitdgv";
-            this.visitdgv.Size = new System.Drawing.Size(1122, 131);
-            this.visitdgv.TabIndex = 7;
-            // 
-            // label24
-            // 
-            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label24.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label24.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label24.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label24.Location = new System.Drawing.Point(22, 22);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(304, 44);
-            this.label24.TabIndex = 19;
-            this.label24.Text = "Search a patient";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.patientFiltercbx.FormattingEnabled = true;
+            this.patientFiltercbx.Items.AddRange(new object[] {
+            "Date: Newest first",
+            "Date: Oldest first"});
+            this.patientFiltercbx.Location = new System.Drawing.Point(1026, 90);
+            this.patientFiltercbx.Name = "patientFiltercbx";
+            this.patientFiltercbx.Size = new System.Drawing.Size(121, 24);
+            this.patientFiltercbx.TabIndex = 21;
+            this.patientFiltercbx.Text = "Sort by";
             // 
             // label25
             // 
@@ -743,6 +681,97 @@ namespace CIS2201_Assignment
             this.label25.Text = "Search a patient\'s visit";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label24
+            // 
+            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label24.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label24.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label24.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label24.Location = new System.Drawing.Point(22, 22);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(304, 44);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Search a patient";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // visitdgv
+            // 
+            this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitdgv.Location = new System.Drawing.Point(25, 417);
+            this.visitdgv.Name = "visitdgv";
+            this.visitdgv.Size = new System.Drawing.Size(1122, 131);
+            this.visitdgv.TabIndex = 7;
+            // 
+            // pvisitID
+            // 
+            this.pvisitID.Location = new System.Drawing.Point(343, 369);
+            this.pvisitID.Name = "pvisitID";
+            this.pvisitID.Size = new System.Drawing.Size(100, 23);
+            this.pvisitID.TabIndex = 5;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(22, 372);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(315, 16);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
+            // 
+            // searchPatient
+            // 
+            this.searchPatient.BackColor = System.Drawing.Color.DodgerBlue;
+            this.searchPatient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchPatient.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPatient.Location = new System.Drawing.Point(407, 87);
+            this.searchPatient.Name = "searchPatient";
+            this.searchPatient.Size = new System.Drawing.Size(66, 23);
+            this.searchPatient.TabIndex = 3;
+            this.searchPatient.Text = "Search";
+            this.searchPatient.UseVisualStyleBackColor = false;
+            this.searchPatient.Click += new System.EventHandler(this.searchPatient_Click);
+            // 
+            // patientdgv
+            // 
+            this.patientdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patientdgv.Location = new System.Drawing.Point(25, 133);
+            this.patientdgv.Name = "patientdgv";
+            this.patientdgv.Size = new System.Drawing.Size(1122, 119);
+            this.patientdgv.TabIndex = 2;
+            // 
+            // psearchID
+            // 
+            this.psearchID.Location = new System.Drawing.Point(301, 87);
+            this.psearchID.Name = "psearchID";
+            this.psearchID.Size = new System.Drawing.Size(100, 23);
+            this.psearchID.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(22, 90);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(273, 16);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Enter the ID of the patient that you want to search:";
+            // 
+            // visitFiltercbx
+            // 
+            this.visitFiltercbx.FormattingEnabled = true;
+            this.visitFiltercbx.Items.AddRange(new object[] {
+            "Date: Oldest First",
+            "Date: Newest First"});
+            this.visitFiltercbx.Location = new System.Drawing.Point(1026, 372);
+            this.visitFiltercbx.Name = "visitFiltercbx";
+            this.visitFiltercbx.Size = new System.Drawing.Size(121, 24);
+            this.visitFiltercbx.TabIndex = 23;
+            this.visitFiltercbx.Tag = "";
+            this.visitFiltercbx.Text = "Sort By";
+            // 
             // Patients
             // 
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -757,10 +786,15 @@ namespace CIS2201_Assignment
             this.AddPat.PerformLayout();
             this.Search.ResumeLayout(false);
             this.Search.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void pvsitfilter_combobox(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void idtxt_TextChanged(object sender, EventArgs e)
@@ -818,7 +852,6 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button visitsubmit;
         private System.Windows.Forms.DataGridView visitdgv;
-        private System.Windows.Forms.Button searchVisit;
         private System.Windows.Forms.TextBox pvisitID;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button searchPatient;
@@ -827,5 +860,8 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox patientFiltercbx;
+        private System.Windows.Forms.Button pvisitbtn;
+        private System.Windows.Forms.ComboBox visitFiltercbx;
     }
 }
