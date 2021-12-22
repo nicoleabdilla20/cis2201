@@ -45,7 +45,7 @@ namespace CIS2201_Assignment
             this.btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPatients.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPatients.Location = new System.Drawing.Point(110, 147);
-            this.btnPatients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPatients.Margin = new System.Windows.Forms.Padding(4);
             this.btnPatients.Name = "btnPatients";
             this.btnPatients.Size = new System.Drawing.Size(187, 168);
             this.btnPatients.TabIndex = 1;
@@ -61,7 +61,7 @@ namespace CIS2201_Assignment
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F);
             this.btnStaff.Location = new System.Drawing.Point(418, 147);
-            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(187, 168);
             this.btnStaff.TabIndex = 2;
@@ -73,14 +73,13 @@ namespace CIS2201_Assignment
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Location = new System.Drawing.Point(0, 446);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(621, 396);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(739, 28);
+            this.btnExit.Size = new System.Drawing.Size(75, 37);
             this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Logout";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -122,9 +121,10 @@ namespace CIS2201_Assignment
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnStaff);
             this.Controls.Add(this.btnPatients);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Navigation";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Management Form";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

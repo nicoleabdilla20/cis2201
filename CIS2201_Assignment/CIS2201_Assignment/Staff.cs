@@ -17,5 +17,44 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
+        private void visitsubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staff_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hospitallogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchStaffID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchRole_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

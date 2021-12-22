@@ -238,7 +238,6 @@ namespace CIS2201_Assignment
                     {
                         connection.Open();
 
-
                         sqlCommand.ExecuteNonQuery();
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
@@ -334,7 +333,7 @@ namespace CIS2201_Assignment
                     }
                 }
             }
-        }
+        } 
 
 
         /// <summary>
@@ -387,6 +386,11 @@ namespace CIS2201_Assignment
                     }
                 }
             }
+        }
+
+        private void Patients_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
