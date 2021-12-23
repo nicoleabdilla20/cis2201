@@ -68,6 +68,29 @@ namespace CIS2201_Assignment
                 OtherVisitSummary = othervisitsummary;
             }
         }
+
+        public class Appointments
+        {
+            public string AppID { get; set; }
+            public string PatID { get; set; }
+            public string Name { get; set; }
+            public string Surname { get; set; }
+            public string Doctor { get; set; }
+            public string CreationDate { get; set; }
+            public string ScheduledDate { get; set; }
+
+            public Appointments(string appid, string id, string name, string surname, string doctor, string creationdate, string scheduleddate)
+            {
+       
+                AppID = appid;
+                PatID = id;
+                Name = name;
+                Surname = name;
+                Doctor = doctor;
+                CreationDate = creationdate;
+                ScheduledDate = scheduleddate;
+            }
+        }
         private bool IsPatientValid()
         {
             if (nametxt.Text == "" || surnametxt.Text == "")
@@ -286,7 +309,7 @@ namespace CIS2201_Assignment
          {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
-                String selectedItem = (string)visitFiltercbx.SelectedItem;
+                String selectedItem = (string)Filtercbx.SelectedItem;
                 connection.Open();
                 String sql = "SELECT * FROM [Hospital].[patientsVisits] WHERE PatientsID = @PatientsID";
                 using (SqlCommand comm = new SqlCommand(sql, connection))
@@ -307,7 +330,7 @@ namespace CIS2201_Assignment
                         patientsList.Add(p);
                     }
 
-                    if (selectedItem == "Date: Oldest First")
+                    if (selectedItem == "Date: Newest First")
                     {
                         var datenew =
                         from item in patientsList
@@ -364,7 +387,7 @@ namespace CIS2201_Assignment
             }
         }
 
-        private void pvisitbtn_Click(object sender, EventArgs e)
+        private void visitsearch_Click(object sender, EventArgs e)
         {
             if (IsPatientvisitIDValid())
             {
@@ -388,9 +411,122 @@ namespace CIS2201_Assignment
             }
         }
 
-        private void Patients_Load(object sender, EventArgs e)
+        private void crtAppbtn_Click(object sender, EventArgs e)
         {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("Hospital.addAppointment", connection))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
 
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@PatientsID"].Value = ApppatID.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@PatientsName"].Value = ApppatName.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@PatientsSurname"].Value = ApppatSurname.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@Doctor", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@Doctor"].Value = AppDoctor.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@CreationDate", SqlDbType.Date));
+                    sqlCommand.Parameters["@CreationDate"].Value = Appcdate.Value;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@ScheduledDate", SqlDbType.Date));
+                    sqlCommand.Parameters["@ScheduledDate"].Value = Appsdate.Value;
+                    try
+                    {
+                        connection.Open();
+
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+            }
+        }
+
+        private List<Appointments> getAppointment()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                String selectedItem = (string)AppFiltercbx.SelectedItem;
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[Appointments] WHERE PatientsID = @PatientsID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@PatientsID"].Value = AppsearchID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<Appointments> appointmentList = new List<Appointments>();
+
+
+                    while (read.Read())
+                    {
+
+                        Appointments p = new Appointments(read["AppointmentID"].ToString(), read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["Doctor"].ToString(), read["CreationDate"].ToString(), read["ScheduledDate"].ToString());
+                        appointmentList.Add(p);
+                    }
+
+                    if (selectedItem == "Sort by Date: Newest First")
+                    {
+                        var datenew =
+                        from item in appointmentList
+                        let date = item.ScheduledDate
+                        orderby date descending
+                        select item;
+
+                        List<Appointments> lst = datenew.ToList();
+                        return lst;
+                    }
+                    else
+                    {
+                        var datenew =
+                        from item in appointmentList
+                        let date = item.ScheduledDate
+                        orderby date ascending
+                        select item;
+
+                        List<Appointments> lst = datenew.ToList();
+                        return lst;
+                    }
+                }
+            }
+        }
+
+
+
+        private void Appsearchbtn_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+
+                try
+                {
+                    Appsearchdgv.DataSource = getAppointment();
+                }
+                catch (System.Data.SqlClient.SqlException sqlException)
+                {
+                    System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 
