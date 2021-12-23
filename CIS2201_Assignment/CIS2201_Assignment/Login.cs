@@ -19,46 +19,58 @@ namespace CIS2201_Assignment
         }
 
        //Connection String
-       string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
+       //string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
         
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private bool login()
         {
-           
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please provide a valid UserName and Password.");
-                return;
+                return false;
             }
-            try
+            else
             {
-                //Create SqlConnection
-                SqlConnection con = new SqlConnection(cs);
-                SqlCommand cmd = new SqlCommand("Select * from [Hospital].[login] where Username=@Username and Password=@Password", con);
-                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                con.Open();
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapt.Fill(ds);
-                con.Close();
-                int count = ds.Tables[0].Rows.Count;
-                //If count is equal to 1, than show navigation form
-                if (count == 1)
-                {
-                    MessageBox.Show("Login Successful!");
-                    this.Hide();
-                    Navigation fm = new Navigation();
-                    fm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Login Failed!");
-                }
+                return true;
             }
-            catch (Exception ex)
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (login())
             {
-                MessageBox.Show(ex.Message);
+                using (SqlConnection con = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    con.Open();
+                    string sql = "Select * from [Hospital].[login] where Username=@Username and Password=@Password";
+                    try
+                    {
+                        //Create SqlConnection
+                        SqlCommand cmd = new SqlCommand(sql, con);
+                        cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                        SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        adapt.Fill(ds);
+                        con.Close();
+                        int count = ds.Tables[0].Rows.Count;
+                        //If count is equal to 1, than show navigation form
+                        if (count == 1)
+                        {
+                            MessageBox.Show("Login Successful!");
+                            this.Hide();
+                            Navigation fm = new Navigation();
+                            fm.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login Failed!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
             
         }

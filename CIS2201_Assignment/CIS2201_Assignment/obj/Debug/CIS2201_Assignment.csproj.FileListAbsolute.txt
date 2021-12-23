@@ -50,3 +50,6 @@ C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS22
 C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
 C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
