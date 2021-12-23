@@ -18,13 +18,13 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
-       //Connection String
-       string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
-        
+        //Connection String
+        string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please provide a valid UserName and Password.");
@@ -60,9 +60,9 @@ namespace CIS2201_Assignment
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -100,12 +100,12 @@ namespace CIS2201_Assignment
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void txtPassword_KeyUp(object sender, KeyEventArgs e)
@@ -124,5 +124,4 @@ namespace CIS2201_Assignment
         }
     }
 }
-      
 

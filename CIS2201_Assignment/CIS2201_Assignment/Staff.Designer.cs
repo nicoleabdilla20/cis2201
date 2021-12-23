@@ -7,13 +7,29 @@ namespace CIS2201_Assignment
         private void InitializeComponent()
         {
             this.Title = new System.Windows.Forms.Label();
-            this.hospitallogo = new System.Windows.Forms.PictureBox();
             this.StaffTabControl = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
-            this.AddPat = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.issuebtn = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.AddStaff = new System.Windows.Forms.TabPage();
+            this.idwork = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.contracttype = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.checkbox = new System.Windows.Forms.CheckedListBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.eoc = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.soc = new System.Windows.Forms.DateTimePicker();
+            this.hrperwk = new System.Windows.Forms.ComboBox();
+            this.emailtxt = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.visitsubmit = new System.Windows.Forms.Button();
+            this.detailsubmit = new System.Windows.Forms.Button();
             this.insurancetxt = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -23,26 +39,14 @@ namespace CIS2201_Assignment
             this.gendertxt = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.submit = new System.Windows.Forms.Button();
-            this.historysummary = new System.Windows.Forms.RichTextBox();
-            this.historydoctor = new System.Windows.Forms.TextBox();
-            this.historydate = new System.Windows.Forms.DateTimePicker();
-            this.summarytxt = new System.Windows.Forms.RichTextBox();
-            this.doctortxt = new System.Windows.Forms.TextBox();
-            this.visitdate = new System.Windows.Forms.DateTimePicker();
-            this.allergiesopts = new System.Windows.Forms.ComboBox();
+            this.roleopts = new System.Windows.Forms.ComboBox();
             this.addresstxt = new System.Windows.Forms.TextBox();
-            this.telephonetxt = new System.Windows.Forms.TextBox();
+            this.phonenotxt = new System.Windows.Forms.TextBox();
             this.nametxt = new System.Windows.Forms.TextBox();
             this.bloodopts = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,12 +70,16 @@ namespace CIS2201_Assignment
             this.patientdgv = new System.Windows.Forms.DataGridView();
             this.staffID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
+            this.hospitallogo = new System.Windows.Forms.PictureBox();
             this.StaffTabControl.SuspendLayout();
-            this.AddPat.SuspendLayout();
+            this.Home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.AddStaff.SuspendLayout();
             this.Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -79,143 +87,320 @@ namespace CIS2201_Assignment
             this.Title.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.Title.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Title.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.Title.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Title.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Title.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Title.Location = new System.Drawing.Point(-2, -1);
+            this.Title.Location = new System.Drawing.Point(0, 0);
             this.Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(1184, 46);
+            this.Title.Size = new System.Drawing.Size(1211, 46);
             this.Title.TabIndex = 7;
             this.Title.Text = "Manage Staff";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Title.Click += new System.EventHandler(this.Title_Click);
-            // 
-            // hospitallogo
-            // 
-            this.hospitallogo.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.hospitallogo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
-            this.hospitallogo.Location = new System.Drawing.Point(4, -2);
-            this.hospitallogo.Name = "hospitallogo";
-            this.hospitallogo.Size = new System.Drawing.Size(45, 47);
-            this.hospitallogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hospitallogo.TabIndex = 11;
-            this.hospitallogo.TabStop = false;
-            this.hospitallogo.Click += new System.EventHandler(this.hospitallogo_Click);
             // 
             // StaffTabControl
             // 
             this.StaffTabControl.Controls.Add(this.Home);
-            this.StaffTabControl.Controls.Add(this.AddPat);
+            this.StaffTabControl.Controls.Add(this.AddStaff);
             this.StaffTabControl.Controls.Add(this.Appointment);
             this.StaffTabControl.Controls.Add(this.CalcBill);
             this.StaffTabControl.Controls.Add(this.Search);
             this.StaffTabControl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StaffTabControl.Location = new System.Drawing.Point(-8, 48);
+            this.StaffTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StaffTabControl.Location = new System.Drawing.Point(0, 46);
             this.StaffTabControl.Name = "StaffTabControl";
             this.StaffTabControl.Padding = new System.Drawing.Point(15, 5);
             this.StaffTabControl.SelectedIndex = 0;
-            this.StaffTabControl.Size = new System.Drawing.Size(1199, 604);
+            this.StaffTabControl.Size = new System.Drawing.Size(1211, 666);
             this.StaffTabControl.TabIndex = 12;
             // 
             // Home
             // 
             this.Home.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
             this.Home.BackColor = System.Drawing.Color.White;
+            this.Home.Controls.Add(this.pictureBox1);
+            this.Home.Controls.Add(this.panel1);
             this.Home.Cursor = System.Windows.Forms.Cursors.Default;
             this.Home.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Home.Location = new System.Drawing.Point(4, 29);
+            this.Home.Location = new System.Drawing.Point(4, 33);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(1191, 571);
+            this.Home.Size = new System.Drawing.Size(1203, 629);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             // 
-            // AddPat
+            // pictureBox1
             // 
-            this.AddPat.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
-            this.AddPat.BackColor = System.Drawing.Color.White;
-            this.AddPat.Controls.Add(this.textBox1);
-            this.AddPat.Controls.Add(this.label26);
-            this.AddPat.Controls.Add(this.visitsubmit);
-            this.AddPat.Controls.Add(this.insurancetxt);
-            this.AddPat.Controls.Add(this.label21);
-            this.AddPat.Controls.Add(this.label20);
-            this.AddPat.Controls.Add(this.IDtxt);
-            this.AddPat.Controls.Add(this.agetxt);
-            this.AddPat.Controls.Add(this.surnametxt);
-            this.AddPat.Controls.Add(this.gendertxt);
-            this.AddPat.Controls.Add(this.label19);
-            this.AddPat.Controls.Add(this.submit);
-            this.AddPat.Controls.Add(this.historysummary);
-            this.AddPat.Controls.Add(this.historydoctor);
-            this.AddPat.Controls.Add(this.historydate);
-            this.AddPat.Controls.Add(this.summarytxt);
-            this.AddPat.Controls.Add(this.doctortxt);
-            this.AddPat.Controls.Add(this.visitdate);
-            this.AddPat.Controls.Add(this.allergiesopts);
-            this.AddPat.Controls.Add(this.addresstxt);
-            this.AddPat.Controls.Add(this.telephonetxt);
-            this.AddPat.Controls.Add(this.nametxt);
-            this.AddPat.Controls.Add(this.bloodopts);
-            this.AddPat.Controls.Add(this.label16);
-            this.AddPat.Controls.Add(this.label17);
-            this.AddPat.Controls.Add(this.label18);
-            this.AddPat.Controls.Add(this.label15);
-            this.AddPat.Controls.Add(this.label14);
-            this.AddPat.Controls.Add(this.label13);
-            this.AddPat.Controls.Add(this.label12);
-            this.AddPat.Controls.Add(this.label11);
-            this.AddPat.Controls.Add(this.label10);
-            this.AddPat.Controls.Add(this.label9);
-            this.AddPat.Controls.Add(this.label8);
-            this.AddPat.Controls.Add(this.label7);
-            this.AddPat.Controls.Add(this.label6);
-            this.AddPat.Controls.Add(this.label5);
-            this.AddPat.Controls.Add(this.label4);
-            this.AddPat.Controls.Add(this.dob);
-            this.AddPat.Controls.Add(this.label3);
-            this.AddPat.Controls.Add(this.label2);
-            this.AddPat.Controls.Add(this.label1);
-            this.AddPat.Cursor = System.Windows.Forms.Cursors.Default;
-            this.AddPat.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            this.AddPat.Location = new System.Drawing.Point(4, 29);
-            this.AddPat.Name = "AddPat";
-            this.AddPat.Padding = new System.Windows.Forms.Padding(3);
-            this.AddPat.Size = new System.Drawing.Size(1191, 571);
-            this.AddPat.TabIndex = 1;
-            this.AddPat.Text = "Add Staff";
+            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::CIS2201_Assignment.Properties.Resources._2008_i504_005__isometric_hospital_infographics;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 118);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1197, 508);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
             // 
-            // textBox1
+            // panel1
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 352);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 27);
-            this.textBox1.TabIndex = 51;
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.issuebtn);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1197, 115);
+            this.panel1.TabIndex = 1;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.HideSelection = false;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 52);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ShowSelectionMargin = true;
+            this.richTextBox1.Size = new System.Drawing.Size(834, 61);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "Thank you for your service. If you ever encounter any issues with the system. Ple" +
+    "ase inform us on the following number +356 7765733 or send us an issue!";
+            // 
+            // issuebtn
+            // 
+            this.issuebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.issuebtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.issuebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.issuebtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.issuebtn.Location = new System.Drawing.Point(904, 64);
+            this.issuebtn.Name = "issuebtn";
+            this.issuebtn.Size = new System.Drawing.Size(202, 39);
+            this.issuebtn.TabIndex = 4;
+            this.issuebtn.Text = "Report an Issue";
+            this.issuebtn.UseVisualStyleBackColor = false;
+            this.issuebtn.Click += new System.EventHandler(this.issuebtn_Click);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label14.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(5, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(1179, 61);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Welcome to the Hospital Management System";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // AddStaff
+            // 
+            this.AddStaff.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.AddStaff.BackColor = System.Drawing.Color.White;
+            this.AddStaff.Controls.Add(this.idwork);
+            this.AddStaff.Controls.Add(this.label28);
+            this.AddStaff.Controls.Add(this.contracttype);
+            this.AddStaff.Controls.Add(this.label27);
+            this.AddStaff.Controls.Add(this.checkbox);
+            this.AddStaff.Controls.Add(this.label18);
+            this.AddStaff.Controls.Add(this.label17);
+            this.AddStaff.Controls.Add(this.eoc);
+            this.AddStaff.Controls.Add(this.label16);
+            this.AddStaff.Controls.Add(this.label10);
+            this.AddStaff.Controls.Add(this.soc);
+            this.AddStaff.Controls.Add(this.hrperwk);
+            this.AddStaff.Controls.Add(this.emailtxt);
+            this.AddStaff.Controls.Add(this.label26);
+            this.AddStaff.Controls.Add(this.detailsubmit);
+            this.AddStaff.Controls.Add(this.insurancetxt);
+            this.AddStaff.Controls.Add(this.label21);
+            this.AddStaff.Controls.Add(this.label20);
+            this.AddStaff.Controls.Add(this.IDtxt);
+            this.AddStaff.Controls.Add(this.agetxt);
+            this.AddStaff.Controls.Add(this.surnametxt);
+            this.AddStaff.Controls.Add(this.gendertxt);
+            this.AddStaff.Controls.Add(this.label19);
+            this.AddStaff.Controls.Add(this.submit);
+            this.AddStaff.Controls.Add(this.roleopts);
+            this.AddStaff.Controls.Add(this.addresstxt);
+            this.AddStaff.Controls.Add(this.phonenotxt);
+            this.AddStaff.Controls.Add(this.nametxt);
+            this.AddStaff.Controls.Add(this.bloodopts);
+            this.AddStaff.Controls.Add(this.label13);
+            this.AddStaff.Controls.Add(this.label12);
+            this.AddStaff.Controls.Add(this.label11);
+            this.AddStaff.Controls.Add(this.label9);
+            this.AddStaff.Controls.Add(this.label8);
+            this.AddStaff.Controls.Add(this.label7);
+            this.AddStaff.Controls.Add(this.label6);
+            this.AddStaff.Controls.Add(this.label5);
+            this.AddStaff.Controls.Add(this.label4);
+            this.AddStaff.Controls.Add(this.dob);
+            this.AddStaff.Controls.Add(this.label3);
+            this.AddStaff.Controls.Add(this.label2);
+            this.AddStaff.Controls.Add(this.label1);
+            this.AddStaff.Cursor = System.Windows.Forms.Cursors.Default;
+            this.AddStaff.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
+            this.AddStaff.Location = new System.Drawing.Point(4, 33);
+            this.AddStaff.Name = "AddStaff";
+            this.AddStaff.Padding = new System.Windows.Forms.Padding(3);
+            this.AddStaff.Size = new System.Drawing.Size(1203, 629);
+            this.AddStaff.TabIndex = 1;
+            this.AddStaff.Text = "Add Staff";
+            // 
+            // idwork
+            // 
+            this.idwork.Location = new System.Drawing.Point(628, 82);
+            this.idwork.Name = "idwork";
+            this.idwork.Size = new System.Drawing.Size(136, 30);
+            this.idwork.TabIndex = 65;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(583, 85);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(32, 23);
+            this.label28.TabIndex = 64;
+            this.label28.Text = "ID:";
+            // 
+            // contracttype
+            // 
+            this.contracttype.FormattingEnabled = true;
+            this.contracttype.Items.AddRange(new object[] {
+            "Definite",
+            "Indefinite"});
+            this.contracttype.Location = new System.Drawing.Point(966, 240);
+            this.contracttype.Name = "contracttype";
+            this.contracttype.Size = new System.Drawing.Size(121, 31);
+            this.contracttype.TabIndex = 63;
+            this.contracttype.Text = "Select";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(582, 243);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(146, 23);
+            this.label27.TabIndex = 62;
+            this.label27.Text = "Type of Contract:";
+            // 
+            // checkbox
+            // 
+            this.checkbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkbox.FormattingEnabled = true;
+            this.checkbox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.checkbox.Location = new System.Drawing.Point(654, 353);
+            this.checkbox.Name = "checkbox";
+            this.checkbox.Size = new System.Drawing.Size(122, 54);
+            this.checkbox.TabIndex = 61;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Tai Le", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(586, 410);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(252, 18);
+            this.label18.TabIndex = 60;
+            this.label18.Text = "Tick if staff is applicable for yearly bonus";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(582, 353);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 23);
+            this.label17.TabIndex = 58;
+            this.label17.Text = "Bonus:";
+            // 
+            // eoc
+            // 
+            this.eoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.eoc.Location = new System.Drawing.Point(887, 181);
+            this.eoc.Name = "eoc";
+            this.eoc.Size = new System.Drawing.Size(200, 30);
+            this.eoc.TabIndex = 57;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(582, 181);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(138, 23);
+            this.label16.TabIndex = 56;
+            this.label16.Text = "End of Contract:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(582, 145);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(145, 23);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "Start of Contract:";
+            // 
+            // soc
+            // 
+            this.soc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.soc.Location = new System.Drawing.Point(887, 138);
+            this.soc.Name = "soc";
+            this.soc.Size = new System.Drawing.Size(200, 30);
+            this.soc.TabIndex = 54;
+            // 
+            // hrperwk
+            // 
+            this.hrperwk.FormattingEnabled = true;
+            this.hrperwk.Items.AddRange(new object[] {
+            "20",
+            "40",
+            "50",
+            "60"});
+            this.hrperwk.Location = new System.Drawing.Point(966, 296);
+            this.hrperwk.Name = "hrperwk";
+            this.hrperwk.Size = new System.Drawing.Size(121, 31);
+            this.hrperwk.TabIndex = 52;
+            this.hrperwk.Text = "Select";
+            // 
+            // emailtxt
+            // 
+            this.emailtxt.Location = new System.Drawing.Point(142, 353);
+            this.emailtxt.Name = "emailtxt";
+            this.emailtxt.Size = new System.Drawing.Size(121, 30);
+            this.emailtxt.TabIndex = 51;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(35, 360);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 19);
+            this.label26.Size = new System.Drawing.Size(56, 23);
             this.label26.TabIndex = 50;
             this.label26.Text = "Email:";
             // 
-            // visitsubmit
+            // detailsubmit
             // 
-            this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.visitsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.visitsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.visitsubmit.Location = new System.Drawing.Point(931, 512);
-            this.visitsubmit.Name = "visitsubmit";
-            this.visitsubmit.Size = new System.Drawing.Size(156, 40);
-            this.visitsubmit.TabIndex = 49;
-            this.visitsubmit.Text = "Add Visits";
-            this.visitsubmit.UseVisualStyleBackColor = false;
-            this.visitsubmit.Click += new System.EventHandler(this.visitsubmit_Click);
+            this.detailsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.detailsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.detailsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.detailsubmit.Location = new System.Drawing.Point(931, 512);
+            this.detailsubmit.Name = "detailsubmit";
+            this.detailsubmit.Size = new System.Drawing.Size(156, 40);
+            this.detailsubmit.TabIndex = 49;
+            this.detailsubmit.Text = "Add Details";
+            this.detailsubmit.UseVisualStyleBackColor = false;
+            this.detailsubmit.Click += new System.EventHandler(this.detailsubmit_Click);
             // 
             // insurancetxt
             // 
@@ -226,24 +411,24 @@ namespace CIS2201_Assignment
             "Z"});
             this.insurancetxt.Location = new System.Drawing.Point(399, 327);
             this.insurancetxt.Name = "insurancetxt";
-            this.insurancetxt.Size = new System.Drawing.Size(56, 27);
+            this.insurancetxt.Size = new System.Drawing.Size(56, 31);
             this.insurancetxt.TabIndex = 48;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(330, 327);
+            this.label21.Location = new System.Drawing.Point(295, 330);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(74, 19);
+            this.label21.Size = new System.Drawing.Size(89, 23);
             this.label21.TabIndex = 47;
             this.label21.Text = "Insurance:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(330, 237);
+            this.label20.Location = new System.Drawing.Point(322, 237);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 19);
+            this.label20.Size = new System.Drawing.Size(46, 23);
             this.label20.TabIndex = 46;
             this.label20.Text = "Age:";
             // 
@@ -251,36 +436,36 @@ namespace CIS2201_Assignment
             // 
             this.IDtxt.Location = new System.Drawing.Point(98, 195);
             this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(136, 27);
+            this.IDtxt.Size = new System.Drawing.Size(136, 30);
             this.IDtxt.TabIndex = 45;
             // 
             // agetxt
             // 
             this.agetxt.Location = new System.Drawing.Point(368, 234);
             this.agetxt.Name = "agetxt";
-            this.agetxt.Size = new System.Drawing.Size(86, 27);
+            this.agetxt.Size = new System.Drawing.Size(86, 30);
             this.agetxt.TabIndex = 44;
             // 
             // surnametxt
             // 
             this.surnametxt.Location = new System.Drawing.Point(330, 155);
             this.surnametxt.Name = "surnametxt";
-            this.surnametxt.Size = new System.Drawing.Size(125, 27);
+            this.surnametxt.Size = new System.Drawing.Size(125, 30);
             this.surnametxt.TabIndex = 42;
             // 
             // gendertxt
             // 
             this.gendertxt.Location = new System.Drawing.Point(330, 195);
             this.gendertxt.Name = "gendertxt";
-            this.gendertxt.Size = new System.Drawing.Size(125, 27);
+            this.gendertxt.Size = new System.Drawing.Size(125, 30);
             this.gendertxt.TabIndex = 41;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(266, 200);
+            this.label19.Location = new System.Drawing.Point(245, 202);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(60, 19);
+            this.label19.Size = new System.Drawing.Size(71, 23);
             this.label19.TabIndex = 40;
             this.label19.Text = "Gender:";
             // 
@@ -290,66 +475,18 @@ namespace CIS2201_Assignment
             this.submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.submit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Location = new System.Drawing.Point(299, 512);
+            this.submit.Location = new System.Drawing.Point(224, 512);
             this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(201, 40);
+            this.submit.Size = new System.Drawing.Size(231, 40);
             this.submit.TabIndex = 39;
             this.submit.Text = "Add Staff member";
             this.submit.UseVisualStyleBackColor = false;
             this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
-            // historysummary
+            // roleopts
             // 
-            this.historysummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.historysummary.Location = new System.Drawing.Point(743, 408);
-            this.historysummary.Name = "historysummary";
-            this.historysummary.Size = new System.Drawing.Size(344, 74);
-            this.historysummary.TabIndex = 38;
-            this.historysummary.Text = "";
-            // 
-            // historydoctor
-            // 
-            this.historydoctor.Location = new System.Drawing.Point(662, 363);
-            this.historydoctor.Name = "historydoctor";
-            this.historydoctor.Size = new System.Drawing.Size(136, 27);
-            this.historydoctor.TabIndex = 37;
-            // 
-            // historydate
-            // 
-            this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.historydate.Location = new System.Drawing.Point(654, 317);
-            this.historydate.Name = "historydate";
-            this.historydate.Size = new System.Drawing.Size(200, 27);
-            this.historydate.TabIndex = 36;
-            // 
-            // summarytxt
-            // 
-            this.summarytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.summarytxt.Location = new System.Drawing.Point(743, 153);
-            this.summarytxt.Name = "summarytxt";
-            this.summarytxt.Size = new System.Drawing.Size(344, 74);
-            this.summarytxt.TabIndex = 35;
-            this.summarytxt.Text = "";
-            // 
-            // doctortxt
-            // 
-            this.doctortxt.Location = new System.Drawing.Point(662, 117);
-            this.doctortxt.Name = "doctortxt";
-            this.doctortxt.Size = new System.Drawing.Size(136, 27);
-            this.doctortxt.TabIndex = 34;
-            // 
-            // visitdate
-            // 
-            this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.visitdate.Location = new System.Drawing.Point(654, 71);
-            this.visitdate.Name = "visitdate";
-            this.visitdate.Size = new System.Drawing.Size(200, 27);
-            this.visitdate.TabIndex = 33;
-            // 
-            // allergiesopts
-            // 
-            this.allergiesopts.FormattingEnabled = true;
-            this.allergiesopts.Items.AddRange(new object[] {
+            this.roleopts.FormattingEnabled = true;
+            this.roleopts.Items.AddRange(new object[] {
             "doctor",
             "nurse",
             "therapist",
@@ -358,31 +495,31 @@ namespace CIS2201_Assignment
             "pharmacist",
             "social worker",
             "interpreter"});
-            this.allergiesopts.Location = new System.Drawing.Point(121, 424);
-            this.allergiesopts.Name = "allergiesopts";
-            this.allergiesopts.Size = new System.Drawing.Size(121, 27);
-            this.allergiesopts.TabIndex = 32;
-            this.allergiesopts.Text = "Select";
+            this.roleopts.Location = new System.Drawing.Point(142, 425);
+            this.roleopts.Name = "roleopts";
+            this.roleopts.Size = new System.Drawing.Size(121, 31);
+            this.roleopts.TabIndex = 32;
+            this.roleopts.Text = "Select";
             // 
             // addresstxt
             // 
             this.addresstxt.Location = new System.Drawing.Point(121, 273);
             this.addresstxt.Name = "addresstxt";
-            this.addresstxt.Size = new System.Drawing.Size(334, 27);
+            this.addresstxt.Size = new System.Drawing.Size(334, 30);
             this.addresstxt.TabIndex = 31;
             // 
-            // telephonetxt
+            // phonenotxt
             // 
-            this.telephonetxt.Location = new System.Drawing.Point(121, 318);
-            this.telephonetxt.Name = "telephonetxt";
-            this.telephonetxt.Size = new System.Drawing.Size(121, 27);
-            this.telephonetxt.TabIndex = 30;
+            this.phonenotxt.Location = new System.Drawing.Point(142, 319);
+            this.phonenotxt.Name = "phonenotxt";
+            this.phonenotxt.Size = new System.Drawing.Size(121, 30);
+            this.phonenotxt.TabIndex = 30;
             // 
             // nametxt
             // 
             this.nametxt.Location = new System.Drawing.Point(98, 152);
             this.nametxt.Name = "nametxt";
-            this.nametxt.Size = new System.Drawing.Size(136, 27);
+            this.nametxt.Size = new System.Drawing.Size(136, 30);
             this.nametxt.TabIndex = 27;
             // 
             // bloodopts
@@ -393,72 +530,27 @@ namespace CIS2201_Assignment
             "B",
             "AB",
             "O"});
-            this.bloodopts.Location = new System.Drawing.Point(121, 388);
+            this.bloodopts.Location = new System.Drawing.Point(142, 389);
             this.bloodopts.Name = "bloodopts";
-            this.bloodopts.Size = new System.Drawing.Size(121, 27);
+            this.bloodopts.Size = new System.Drawing.Size(121, 31);
             this.bloodopts.TabIndex = 26;
             this.bloodopts.Text = "Select";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(587, 410);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(124, 19);
-            this.label16.TabIndex = 25;
-            this.label16.Text = "Summary of Visit:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(587, 362);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 19);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "Patient:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(587, 316);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 19);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "Date:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(587, 165);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(124, 19);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Summary of Visit:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(587, 117);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 19);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Patient:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(587, 71);
+            this.label13.Location = new System.Drawing.Point(582, 299);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 19);
+            this.label13.Size = new System.Drawing.Size(233, 23);
             this.label13.TabIndex = 20;
-            this.label13.Text = "Date:";
+            this.label13.Text = "Number of Hours Per Week:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(35, 424);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 19);
+            this.label12.Size = new System.Drawing.Size(49, 23);
             this.label12.TabIndex = 19;
             this.label12.Text = "Role:";
             // 
@@ -479,23 +571,6 @@ namespace CIS2201_Assignment
             this.label11.Text = "General Details:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
-            // 
-            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label10.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label10.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(586, 239);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(501, 44);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Other Visits:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label9
             // 
             this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -510,7 +585,7 @@ namespace CIS2201_Assignment
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(506, 44);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Recent Visit:";
+            this.label9.Text = "Work Details";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -518,7 +593,7 @@ namespace CIS2201_Assignment
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(35, 391);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 19);
+            this.label8.Size = new System.Drawing.Size(104, 23);
             this.label8.TabIndex = 15;
             this.label8.Text = "Blood Type:";
             // 
@@ -527,7 +602,7 @@ namespace CIS2201_Assignment
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(31, 323);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 19);
+            this.label7.Size = new System.Drawing.Size(87, 23);
             this.label7.TabIndex = 14;
             this.label7.Text = "Telphone:";
             // 
@@ -536,7 +611,7 @@ namespace CIS2201_Assignment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(31, 277);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.Size = new System.Drawing.Size(84, 23);
             this.label6.TabIndex = 13;
             this.label6.Text = "Address: ";
             // 
@@ -545,33 +620,33 @@ namespace CIS2201_Assignment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(31, 193);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 19);
+            this.label5.Size = new System.Drawing.Size(32, 23);
             this.label5.TabIndex = 12;
             this.label5.Text = "ID:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 239);
+            this.label4.Location = new System.Drawing.Point(35, 241);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 19);
+            this.label4.Size = new System.Drawing.Size(117, 23);
             this.label4.TabIndex = 11;
             this.label4.Text = "Date Of Birth:";
             // 
             // dob
             // 
             this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dob.Location = new System.Drawing.Point(116, 234);
+            this.dob.Location = new System.Drawing.Point(154, 237);
             this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(200, 27);
+            this.dob.Size = new System.Drawing.Size(144, 30);
             this.dob.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 159);
+            this.label3.Location = new System.Drawing.Point(240, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 19);
+            this.label3.Size = new System.Drawing.Size(84, 23);
             this.label3.TabIndex = 9;
             this.label3.Text = "Surname:";
             // 
@@ -580,7 +655,7 @@ namespace CIS2201_Assignment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 19);
+            this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "Name:";
             // 
@@ -600,13 +675,12 @@ namespace CIS2201_Assignment
             this.label1.TabIndex = 7;
             this.label1.Text = "Add a new Staff member";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Appointment
             // 
-            this.Appointment.Location = new System.Drawing.Point(4, 29);
+            this.Appointment.Location = new System.Drawing.Point(4, 33);
             this.Appointment.Name = "Appointment";
-            this.Appointment.Size = new System.Drawing.Size(1191, 571);
+            this.Appointment.Size = new System.Drawing.Size(1203, 629);
             this.Appointment.TabIndex = 4;
             this.Appointment.Text = "Appointment";
             this.Appointment.UseVisualStyleBackColor = true;
@@ -615,10 +689,10 @@ namespace CIS2201_Assignment
             // 
             this.CalcBill.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
             this.CalcBill.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            this.CalcBill.Location = new System.Drawing.Point(4, 29);
+            this.CalcBill.Location = new System.Drawing.Point(4, 33);
             this.CalcBill.Name = "CalcBill";
             this.CalcBill.Padding = new System.Windows.Forms.Padding(3);
-            this.CalcBill.Size = new System.Drawing.Size(1191, 571);
+            this.CalcBill.Size = new System.Drawing.Size(1203, 629);
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Payroll";
             this.CalcBill.UseVisualStyleBackColor = true;
@@ -637,10 +711,10 @@ namespace CIS2201_Assignment
             this.Search.Controls.Add(this.staffID);
             this.Search.Controls.Add(this.label22);
             this.Search.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            this.Search.Location = new System.Drawing.Point(4, 29);
+            this.Search.Location = new System.Drawing.Point(4, 33);
             this.Search.Name = "Search";
             this.Search.Padding = new System.Windows.Forms.Padding(3);
-            this.Search.Size = new System.Drawing.Size(1191, 571);
+            this.Search.Size = new System.Drawing.Size(1203, 629);
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
@@ -699,13 +773,12 @@ namespace CIS2201_Assignment
             this.searchRole.TabIndex = 6;
             this.searchRole.Text = "Search";
             this.searchRole.UseVisualStyleBackColor = false;
-            this.searchRole.Click += new System.EventHandler(this.searchRole_Click);
             // 
             // staffRole
             // 
             this.staffRole.Location = new System.Drawing.Point(393, 369);
             this.staffRole.Name = "staffRole";
-            this.staffRole.Size = new System.Drawing.Size(100, 27);
+            this.staffRole.Size = new System.Drawing.Size(100, 30);
             this.staffRole.TabIndex = 5;
             // 
             // label23
@@ -713,7 +786,7 @@ namespace CIS2201_Assignment
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(22, 372);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(365, 19);
+            this.label23.Size = new System.Drawing.Size(438, 23);
             this.label23.TabIndex = 4;
             this.label23.Text = "Enter the role of the staff member you want to search:";
             // 
@@ -728,7 +801,6 @@ namespace CIS2201_Assignment
             this.searchStaffID.TabIndex = 3;
             this.searchStaffID.Text = "Search";
             this.searchStaffID.UseVisualStyleBackColor = false;
-            this.searchStaffID.Click += new System.EventHandler(this.searchStaffID_Click);
             // 
             // patientdgv
             // 
@@ -743,7 +815,7 @@ namespace CIS2201_Assignment
             // 
             this.staffID.Location = new System.Drawing.Point(412, 87);
             this.staffID.Name = "staffID";
-            this.staffID.Size = new System.Drawing.Size(100, 27);
+            this.staffID.Size = new System.Drawing.Size(100, 30);
             this.staffID.TabIndex = 1;
             // 
             // label22
@@ -751,26 +823,39 @@ namespace CIS2201_Assignment
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(22, 90);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(384, 19);
+            this.label22.Size = new System.Drawing.Size(462, 23);
             this.label22.TabIndex = 0;
             this.label22.Text = "Enter the ID of the staff member that you want to search:";
             // 
+            // hospitallogo
+            // 
+            this.hospitallogo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.hospitallogo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
+            this.hospitallogo.Location = new System.Drawing.Point(4, -2);
+            this.hospitallogo.Name = "hospitallogo";
+            this.hospitallogo.Size = new System.Drawing.Size(45, 47);
+            this.hospitallogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hospitallogo.TabIndex = 11;
+            this.hospitallogo.TabStop = false;
+            // 
             // Staff
             // 
-            this.ClientSize = new System.Drawing.Size(1182, 644);
+            this.ClientSize = new System.Drawing.Size(1211, 712);
             this.Controls.Add(this.StaffTabControl);
             this.Controls.Add(this.hospitallogo);
             this.Controls.Add(this.Title);
             this.Name = "Staff";
-            this.Load += new System.EventHandler(this.Staff_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             this.StaffTabControl.ResumeLayout(false);
-            this.AddPat.ResumeLayout(false);
-            this.AddPat.PerformLayout();
+            this.Home.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.AddStaff.ResumeLayout(false);
+            this.AddStaff.PerformLayout();
             this.Search.ResumeLayout(false);
             this.Search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -779,8 +864,8 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.PictureBox hospitallogo;
         private System.Windows.Forms.TabControl StaffTabControl;
         private System.Windows.Forms.TabPage Home;
-        private System.Windows.Forms.TabPage AddPat;
-        private System.Windows.Forms.Button visitsubmit;
+        private System.Windows.Forms.TabPage AddStaff;
+        private System.Windows.Forms.Button detailsubmit;
         private System.Windows.Forms.ComboBox insurancetxt;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -790,26 +875,14 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.TextBox gendertxt;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button submit;
-        private System.Windows.Forms.RichTextBox historysummary;
-        private System.Windows.Forms.TextBox historydoctor;
-        private System.Windows.Forms.DateTimePicker historydate;
-        private System.Windows.Forms.RichTextBox summarytxt;
-        private System.Windows.Forms.TextBox doctortxt;
-        private System.Windows.Forms.DateTimePicker visitdate;
-        private System.Windows.Forms.ComboBox allergiesopts;
+        private System.Windows.Forms.ComboBox roleopts;
         private System.Windows.Forms.TextBox addresstxt;
-        private System.Windows.Forms.TextBox telephonetxt;
+        private System.Windows.Forms.TextBox phonenotxt;
         private System.Windows.Forms.TextBox nametxt;
         private System.Windows.Forms.ComboBox bloodopts;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -833,7 +906,24 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.DataGridView patientdgv;
         private System.Windows.Forms.TextBox staffID;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox emailtxt;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker soc;
+        private System.Windows.Forms.ComboBox hrperwk;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker eoc;
+        private System.Windows.Forms.ComboBox contracttype;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.CheckedListBox checkbox;
+        private System.Windows.Forms.TextBox idwork;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button issuebtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label14;
     }
 }
