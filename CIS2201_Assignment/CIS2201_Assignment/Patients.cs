@@ -85,7 +85,7 @@ namespace CIS2201_Assignment
                 AppID = appid;
                 PatID = id;
                 Name = name;
-                Surname = name;
+                Surname = surname;
                 Doctor = doctor;
                 CreationDate = creationdate;
                 ScheduledDate = scheduleddate;

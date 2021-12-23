@@ -1009,7 +1009,7 @@ namespace CIS2201_Assignment
             this.Controls.Add(this.PatientsTabControl);
             this.Controls.Add(this.BlueBack);
             this.Name = "Patients";
-            this.Load += new System.EventHandler(this.Patients_Load);
+            //this.Load += new System.EventHandler(this.Patients_Load);
             this.BlueBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             this.PatientsTabControl.ResumeLayout(false);
@@ -1026,6 +1026,7 @@ namespace CIS2201_Assignment
 
         }
 
+        /*
         private void Patients_Load(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -1040,6 +1041,7 @@ namespace CIS2201_Assignment
         {
             throw new NotImplementedException();
         }
+        */
 
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel BlueBack;
