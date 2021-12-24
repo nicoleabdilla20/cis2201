@@ -28,7 +28,7 @@ namespace CIS2201_Assignment
             else
             {
                 return true;
-            }1
+            }
         }
 
         //Connection String
