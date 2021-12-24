@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\CIS2201_Assignment",
-    "\\CIS2201_Assignment\\CIS2201_Assignment"
+    "\\CIS2201_Assignment\\CIS2201_Assignment",
+    "\\CIS2201_Assignment\\CIS2201_Assignment\\Properties"
   ],
-  "SelectedNode": "\\CIS2201_Assignment\\CIS2201_Assignment.sln",
+  "SelectedNode": "\\CIS2201_Assignment\\CIS2201_Assignment\\Staff.cs",
   "PreviewInSolutionExplorer": false
 }
