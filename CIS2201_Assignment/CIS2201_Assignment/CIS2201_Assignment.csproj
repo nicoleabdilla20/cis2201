@@ -133,4 +133,8 @@
     <None Include="Resources\hospital.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug.locked" del "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug.locked"
+if exist "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug" if not exist "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug.locked" move "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug" "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug.locked"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
