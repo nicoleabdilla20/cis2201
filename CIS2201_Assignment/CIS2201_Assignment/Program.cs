@@ -18,5 +18,7 @@ namespace CIS2201_Assignment
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
         }
+
     }
+   
 }

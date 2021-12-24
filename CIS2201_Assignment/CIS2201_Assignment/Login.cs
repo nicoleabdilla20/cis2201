@@ -18,51 +18,66 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
-       //Connection String
-       string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
-        
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private bool checkLogin()
         {
-           
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please provide a valid UserName and Password.");
-                return;
+                return false;
             }
-            try
+            else
             {
-                //Create SqlConnection
-                SqlConnection con = new SqlConnection(cs);
-                SqlCommand cmd = new SqlCommand("Select * from [Hospital].[login] where Username=@Username and Password=@Password", con);
-                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                con.Open();
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapt.Fill(ds);
-                con.Close();
-                int count = ds.Tables[0].Rows.Count;
-                //If count is equal to 1, than show navigation form
-                if (count == 1)
-                {
-                    MessageBox.Show("Login Successful!");
-                    this.Hide();
-                    Navigation fm = new Navigation();
-                    fm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Login Failed!");
-                }
+                return true;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
         }
-       
+
+        //Connection String
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (checkLogin())
+            {
+                string sql = "Select * from [Hospital].[login] where Username=@Username and Password=@Password";
+                using (SqlConnection con = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        con.Open();
+                        try
+                        {
+                            cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+                            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                            DataSet ds = new DataSet();
+                            adapt.Fill(ds);
+                            con.Close();
+                            int count = ds.Tables[0].Rows.Count;
+                            //If count is equal to 1, than show navigation form
+                            if (count == 1)
+                            {
+                                MessageBox.Show("Login Successful!");
+                                this.Hide();
+                                Navigation fm = new Navigation();
+                                fm.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Login Failed!");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+
+                    }
+                }
+            }
+        }
+           
+
+        
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -100,12 +115,12 @@ namespace CIS2201_Assignment
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void txtPassword_KeyUp(object sender, KeyEventArgs e)
@@ -124,5 +139,4 @@ namespace CIS2201_Assignment
         }
     }
 }
-      
 

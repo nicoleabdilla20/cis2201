@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 
 namespace CIS2201_Assignment
 {
@@ -18,10 +19,9 @@ namespace CIS2201_Assignment
         {
             InitializeComponent();
         }
-
-        private string patientsID;
+        
         private bool IsPatientValid()
-         {
+        {
             if (nametxt.Text == "" || surnametxt.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered both name and surname!");
@@ -31,7 +31,7 @@ namespace CIS2201_Assignment
             {
                 return true;
             }
-         }
+        }
 
         private bool IsPatientIDValid()
         {
@@ -82,7 +82,7 @@ namespace CIS2201_Assignment
         }
         private bool isAddressValid()
         {
-            if(addresstxt.Text == "")
+            if (addresstxt.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered an Address!");
                 return false;
@@ -95,67 +95,67 @@ namespace CIS2201_Assignment
 
         private void submit_Click(object sender, EventArgs e)
         {
-           if (IsPatientValid() && IsPatientIDValid() && isAddressValid())
-           {
-            // Create the connection.
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            if (IsPatientValid() && IsPatientIDValid() && isAddressValid())
             {
-                // Create a SqlCommand, and identify it as a stored procedure.
-                using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatient", connection))
+                // Create the connection.
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 40));
-                    sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurnameName", SqlDbType.NVarChar, 40));
-                    sqlCommand.Parameters["@PatientsSurnameName"].Value = surnametxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsGender", SqlDbType.NVarChar, 40));
-                    sqlCommand.Parameters["@PatientsGender"].Value = gendertxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsAge", SqlDbType.Int));
-                    sqlCommand.Parameters["@PatientsAge"].Value = Int32.Parse(agetxt.Text);
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsDateOfBirth", SqlDbType.Date));
-                    sqlCommand.Parameters["@PatientsDateOfBirth"].Value = dob.Value;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsAddress", SqlDbType.VarChar, 100));
-                    sqlCommand.Parameters["@PatientsAddress"].Value = addresstxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsTelephone", SqlDbType.Int));
-                    sqlCommand.Parameters["@PatientsTelephone"].Value = Int32.Parse(telephonetxt.Text);
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsBloodType", SqlDbType.VarChar, 10));
-                    sqlCommand.Parameters["@PatientsBloodType"].Value = bloodopts.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsAllergies", SqlDbType.VarChar, 10));
-                    sqlCommand.Parameters["@PatientsAllergies"].Value = allergiesopts.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsInsurance", SqlDbType.Char, 1));
-                    sqlCommand.Parameters["@PatientsInsurance"].Value = insurancetxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
-                    sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
-
-                    try
+                    // Create a SqlCommand, and identify it as a stored procedure.
+                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatient", connection))
                     {
-                        connection.Open();
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                        sqlCommand.ExecuteNonQuery();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Patient record was not added, something went wrong!");
-                    }
-                    finally
-                    {
-                        connection.Close();
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 40));
+                        sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurnameName", SqlDbType.NVarChar, 40));
+                        sqlCommand.Parameters["@PatientsSurnameName"].Value = surnametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsGender", SqlDbType.NVarChar, 40));
+                        sqlCommand.Parameters["@PatientsGender"].Value = gendertxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsAge", SqlDbType.Int));
+                        sqlCommand.Parameters["@PatientsAge"].Value = Int32.Parse(agetxt.Text);
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsDateOfBirth", SqlDbType.Date));
+                        sqlCommand.Parameters["@PatientsDateOfBirth"].Value = dob.Value;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsAddress", SqlDbType.VarChar, 100));
+                        sqlCommand.Parameters["@PatientsAddress"].Value = addresstxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsTelephone", SqlDbType.Int));
+                        sqlCommand.Parameters["@PatientsTelephone"].Value = Int32.Parse(telephonetxt.Text);
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsBloodType", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@PatientsBloodType"].Value = bloodopts.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsAllergies", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@PatientsAllergies"].Value = allergiesopts.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsInsurance", SqlDbType.Char, 1));
+                        sqlCommand.Parameters["@PatientsInsurance"].Value = insurancetxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
+
+                        try
+                        {
+                            connection.Open();
+
+                            sqlCommand.ExecuteNonQuery();
+                        }
+                        catch (System.Data.SqlClient.SqlException sqlException)
+                        {
+                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
                     }
                 }
+
             }
-            
-           }
         }
 
         private void visitsubmit_Click(object sender, EventArgs e)
@@ -168,6 +168,12 @@ namespace CIS2201_Assignment
 
                     sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
                     sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 10));
+                    sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
+                    sqlCommand.Parameters["@PatientsSurnameName"].Value = surnametxt.Text;
 
                     sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
                     sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
@@ -205,86 +211,265 @@ namespace CIS2201_Assignment
             }
         }
 
-        /// <summary>
-        /// source for searching a patient: "https://www.codesd.com/item/i-get-this-error-a-sqlparameter-with-parametername-firstname-is-not-contained-by-this-sqlparametercollection.html"
-        /// </summary>
-        private void searchPatient_Click(object sender, EventArgs e)
+        private List<patientInformation> getPatientsList()
         {
-            if(IsPatientInfoIDValid())
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
-                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[patients] WHERE PatientsID = @PatientsID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter("Hospital.searchPatient", connection))
+                    comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@PatientsID"].Value = psearchID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<patientInformation> patientsList = new List<patientInformation>();
+
+                    while (read.Read())
                     {
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        patientInformation pa = new patientInformation(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurnameName"].ToString(), read["PatientsGender"].ToString(), read["PatientsDateOfBirth"].ToString(), read["PatientsAge"].ToString(), read["PatientsAddress"].ToString(), read["PatientsTelephone"].ToString(), read["PatientsBloodType"].ToString(), read["PatientsAllergies"].ToString(), read["PatientsInsurance"].ToString());
+                        patientsList.Add(pa);
+                    }
+                    return patientsList;
+                }
+            }
+        }
 
-                        SqlParameter p = new SqlParameter();
-                        p.ParameterName = "@PatientsID";
-                        p.Value = psearchID.Text;
 
-                        adapter.SelectCommand.Parameters.Add(p);
-                        
-                        try
-                        {
+        
 
-                            DataTable d = new DataTable();
-                            adapter.Fill(d);
-                            patientdgv.DataSource = d;
-                        }
-                        catch (System.Data.SqlClient.SqlException sqlException)
-                        {
-                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                        }
-                        finally
-                        {
-                            connection.Close();
-                        }
+         private List<patientVisits> getPatientsVisitList()
+         {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                String selectedItem = (string)Filtercbx.SelectedItem;
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[patientsVisits] WHERE PatientsID = @PatientsID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@PatientsID"].Value = pvisitID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<patientVisits> patientsList = new List<patientVisits>();
+
+
+                    while (read.Read())
+                    {
+
+                        patientVisits p = new patientVisits(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["RecentVisitDate"].ToString(), read["RecentVisitDoctor"].ToString(), read["RecentVisitSummary"].ToString(), read["OtherVisitDate"].ToString(), read["OtherVisitDoctor"].ToString(), read["OtherVisitSummary"].ToString());
+                        patientsList.Add(p);
+                    }
+
+                    if (selectedItem == "Date: Newest First")
+                    {
+                        var datenew =
+                        from item in patientsList
+                        let date = item.RecentVisitDate
+                        let id = item.ID
+                        orderby date descending
+                        select item;
+
+                        List<patientVisits> lst = datenew.ToList();
+                        return lst;
+                    }
+                    else
+                    {
+                        var datenew =
+                        from item in patientsList
+                        let date = item.RecentVisitDate
+                        let id = item.ID
+                        orderby date ascending
+                        select item;
+
+                        List<patientVisits> lst = datenew.ToList();
+                        return lst;
                     }
                 }
             }
         } 
 
-        private void searchVisit_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// source for searching a patient: "https://www.codesd.com/item/i-get-this-error-a-sqlparameter-with-parametername-firstname-is-not-contained-by-this-sqlparametercollection.html"
+        /// </summary>
+        private void searchPatient_Click(object sender, EventArgs e)
+        {
+            if (IsPatientInfoIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        patientdgv.DataSource = getPatientsList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+        }
+
+        private void visitsearch_Click(object sender, EventArgs e)
         {
             if (IsPatientvisitIDValid())
             {
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
-                { 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter("Hospital.searchPatientVisit", connection))
+                {
+                    connection.Open();
+
+                    try
                     {
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-                        SqlParameter p = new SqlParameter();
-                        p.ParameterName = "@PatientsID";
-                        p.Value = pvisitID.Text;
-
-                        adapter.SelectCommand.Parameters.Add(p);
-
-                        try
-                        {
-
-                            DataTable d = new DataTable();
-                            adapter.Fill(d);
-                            visitdgv.DataSource = d;
-                        }
-                        catch (System.Data.SqlClient.SqlException sqlException)
-                        {
-                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                        }
-                        finally
-                        {
-                            connection.Close();
-                        }
+                        visitdgv.DataSource = getPatientsVisitList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
                     }
                 }
             }
         }
 
-        private void Patients_Load(object sender, EventArgs e)
+        private void crtAppbtn_Click(object sender, EventArgs e)
         {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("Hospital.addAppointment", connection))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
 
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@PatientsID"].Value = ApppatID.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@PatientsName"].Value = ApppatName.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@PatientsSurname"].Value = ApppatSurname.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@Doctor", SqlDbType.VarChar, 40));
+                    sqlCommand.Parameters["@Doctor"].Value = AppDoctor.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@CreationDate", SqlDbType.Date));
+                    sqlCommand.Parameters["@CreationDate"].Value = Appcdate.Value;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@ScheduledDate", SqlDbType.Date));
+                    sqlCommand.Parameters["@ScheduledDate"].Value = Appsdate.Value;
+                    try
+                    {
+                        connection.Open();
+
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+            }
+        }
+
+        private List<patientAppointmet> getAppointment()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                String selectedItem = (string)AppFiltercbx.SelectedItem;
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[Appointments] WHERE PatientsID = @PatientsID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@PatientsID"].Value = AppsearchID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<patientAppointmet> appointmentList = new List<patientAppointmet>();
+
+
+                    while (read.Read())
+                    {
+
+                        patientAppointmet p = new patientAppointmet(read["AppointmentID"].ToString(), read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["Doctor"].ToString(), read["CreationDate"].ToString(), read["ScheduledDate"].ToString());
+                        appointmentList.Add(p);
+                    }
+
+                    if (selectedItem == "Sort by Date: Newest First")
+                    {
+                        var datenew =
+                        from item in appointmentList
+                        let date = item.ScheduledDate
+                        orderby date descending
+                        select item;
+
+                        List<patientAppointmet> lst = datenew.ToList();
+                        return lst;
+                    }
+                    else
+                    {
+                        var datenew =
+                        from item in appointmentList
+                        let date = item.ScheduledDate
+                        orderby date ascending
+                        select item;
+
+                        List<patientAppointmet> lst = datenew.ToList();
+                        return lst;
+                    }
+                }
+            }
+        }
+
+
+
+        private void Appsearchbtn_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+
+                try
+                {
+                    Appsearchdgv.DataSource = getAppointment();
+                }
+                catch (System.Data.SqlClient.SqlException sqlException)
+                {
+                    System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
     }
+
 }
+
+
+    
+
+
+
  
