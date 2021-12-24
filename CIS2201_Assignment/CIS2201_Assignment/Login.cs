@@ -28,13 +28,10 @@ namespace CIS2201_Assignment
             else
             {
                 return true;
-            }1
+            }
         }
 
         //Connection String
-        string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False";
-
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (checkLogin())

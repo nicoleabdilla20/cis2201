@@ -19,78 +19,7 @@ namespace CIS2201_Assignment
         {
             InitializeComponent();
         }
-        public class Patient
-        {
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public string Surname { get; set; }
-            public string Gender { get; set; }
-            public string DateofBirth { get; set; }
-            public string Age { get; set; }
-            public string Address { get; set; }
-            public string Telephone { get; set; }
-            public string BloodType { get; set; }
-            public string Allergies { get; set; }
-            public string Insurance { get; set; }
-            public Patient(string id, string name, string surname, string gender, string dateofbirth, string age, string address, string telephone, string bloddtype, string allergies, string insurance)
-            {
-                ID = id;
-                Name = name;
-                Surname = surname;
-                Gender = gender;
-                DateofBirth = dateofbirth;
-                Age = age;
-                Address = address;
-                Telephone = telephone;
-                BloodType = bloddtype;
-                Allergies = allergies;
-                Insurance = insurance;
-            }
-        }
-
-        public class PatientVisit
-        {
-            public string ID { get; set; }
-            public string RecentVisitDate { get; set; }
-            public string RecentVisitDoctor { get; set; }
-            public string RecentVisitSummary { get; set; }
-            public string OtherVisitDate { get; set; }
-            public string OtherVisitDoctor { get; set; }
-            public string OtherVisitSummary { get; set; }
-            public PatientVisit(string id, string recentvisitdate, string recentvisitdoctor, string recentvisitsummary, string othervisitdate, string othervisitdoctor, string othervisitsummary)
-            {
-                ID = id;
-                RecentVisitDate = recentvisitdate;
-                RecentVisitDoctor = recentvisitdoctor;
-                RecentVisitSummary = recentvisitsummary;
-                OtherVisitDate = othervisitdate;
-                OtherVisitDoctor = othervisitdoctor;
-                OtherVisitSummary = othervisitsummary;
-            }
-        }
-
-        public class Appointments
-        {
-            public string AppID { get; set; }
-            public string PatID { get; set; }
-            public string Name { get; set; }
-            public string Surname { get; set; }
-            public string Doctor { get; set; }
-            public string CreationDate { get; set; }
-            public string ScheduledDate { get; set; }
-
-            public Appointments(string appid, string id, string name, string surname, string doctor, string creationdate, string scheduleddate)
-            {
-       
-                AppID = appid;
-                PatID = id;
-                Name = name;
-                Surname = surname;
-                Doctor = doctor;
-                CreationDate = creationdate;
-                ScheduledDate = scheduleddate;
-            }
-        }
+        
         private bool IsPatientValid()
         {
             if (nametxt.Text == "" || surnametxt.Text == "")
@@ -240,6 +169,12 @@ namespace CIS2201_Assignment
                     sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
                     sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
 
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 10));
+                    sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
+
+                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
+                    sqlCommand.Parameters["@PatientsSurnameName"].Value = surnametxt.Text;
+
                     sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
                     sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
 
@@ -276,7 +211,7 @@ namespace CIS2201_Assignment
             }
         }
 
-        private List<Patient> getPatientsList()
+        private List<patientInformation> getPatientsList()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
@@ -290,11 +225,11 @@ namespace CIS2201_Assignment
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
-                    List<Patient> patientsList = new List<Patient>();
+                    List<patientInformation> patientsList = new List<patientInformation>();
 
                     while (read.Read())
                     {
-                        Patient pa = new Patient(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurnameName"].ToString(), read["PatientsGender"].ToString(), read["PatientsDateOfBirth"].ToString(), read["PatientsAge"].ToString(), read["PatientsAddress"].ToString(), read["PatientsTelephone"].ToString(), read["PatientsBloodType"].ToString(), read["PatientsAllergies"].ToString(), read["PatientsInsurance"].ToString());
+                        patientInformation pa = new patientInformation(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurnameName"].ToString(), read["PatientsGender"].ToString(), read["PatientsDateOfBirth"].ToString(), read["PatientsAge"].ToString(), read["PatientsAddress"].ToString(), read["PatientsTelephone"].ToString(), read["PatientsBloodType"].ToString(), read["PatientsAllergies"].ToString(), read["PatientsInsurance"].ToString());
                         patientsList.Add(pa);
                     }
                     return patientsList;
@@ -305,7 +240,7 @@ namespace CIS2201_Assignment
 
         
 
-         private List<PatientVisit> getPatientsVisitList()
+         private List<patientVisits> getPatientsVisitList()
          {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
@@ -320,13 +255,13 @@ namespace CIS2201_Assignment
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
-                    List<PatientVisit> patientsList = new List<PatientVisit>();
+                    List<patientVisits> patientsList = new List<patientVisits>();
 
 
                     while (read.Read())
                     {
-                        
-                        PatientVisit p = new PatientVisit(read["PatientsID"].ToString(), read["RecentVisitDate"].ToString(), read["RecentVisitDoctor"].ToString(), read["RecentVisitSummary"].ToString(), read["OtherVisitDate"].ToString(), read["OtherVisitDoctor"].ToString(), read["OtherVisitSummary"].ToString());
+
+                        patientVisits p = new patientVisits(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["RecentVisitDate"].ToString(), read["RecentVisitDoctor"].ToString(), read["RecentVisitSummary"].ToString(), read["OtherVisitDate"].ToString(), read["OtherVisitDoctor"].ToString(), read["OtherVisitSummary"].ToString());
                         patientsList.Add(p);
                     }
 
@@ -339,7 +274,7 @@ namespace CIS2201_Assignment
                         orderby date descending
                         select item;
 
-                        List<PatientVisit> lst = datenew.ToList();
+                        List<patientVisits> lst = datenew.ToList();
                         return lst;
                     }
                     else
@@ -351,7 +286,7 @@ namespace CIS2201_Assignment
                         orderby date ascending
                         select item;
 
-                        List<PatientVisit> lst = datenew.ToList();
+                        List<patientVisits> lst = datenew.ToList();
                         return lst;
                     }
                 }
@@ -455,7 +390,7 @@ namespace CIS2201_Assignment
             }
         }
 
-        private List<Appointments> getAppointment()
+        private List<patientAppointmet> getAppointment()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
@@ -470,13 +405,13 @@ namespace CIS2201_Assignment
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
-                    List<Appointments> appointmentList = new List<Appointments>();
+                    List<patientAppointmet> appointmentList = new List<patientAppointmet>();
 
 
                     while (read.Read())
                     {
 
-                        Appointments p = new Appointments(read["AppointmentID"].ToString(), read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["Doctor"].ToString(), read["CreationDate"].ToString(), read["ScheduledDate"].ToString());
+                        patientAppointmet p = new patientAppointmet(read["AppointmentID"].ToString(), read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["Doctor"].ToString(), read["CreationDate"].ToString(), read["ScheduledDate"].ToString());
                         appointmentList.Add(p);
                     }
 
@@ -488,7 +423,7 @@ namespace CIS2201_Assignment
                         orderby date descending
                         select item;
 
-                        List<Appointments> lst = datenew.ToList();
+                        List<patientAppointmet> lst = datenew.ToList();
                         return lst;
                     }
                     else
@@ -499,7 +434,7 @@ namespace CIS2201_Assignment
                         orderby date ascending
                         select item;
 
-                        List<Appointments> lst = datenew.ToList();
+                        List<patientAppointmet> lst = datenew.ToList();
                         return lst;
                     }
                 }

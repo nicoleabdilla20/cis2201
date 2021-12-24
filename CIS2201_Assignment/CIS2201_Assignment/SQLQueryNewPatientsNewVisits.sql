@@ -38,6 +38,8 @@ SELECT * FROM [Hospital].[patients];
 GO
 CREATE TABLE [Hospital].[patientsVisits] (  
     [PatientsID]            VARCHAR(10) NOT NULL,  
+    [PatientsName]          VARCHAR(10) NOT NULL,
+    [PatientsSurname]       VARCHAR(10) NOT NULL,
     [RecentVisitDate]       DATE NOT NULL,
     [RecentVisitDoctor]     VARCHAR (40) NOT NULL,
     [RecentVisitSummary]    VARCHAR (100),  
@@ -49,19 +51,20 @@ GO
 ALTER TABLE [Hospital].[patientsVisits]
 ALTER COLUMN [PatientsID] VARCHAR(10) NOT NULL;
 GO
-INSERT INTO [Hospital].[patientsVisits](PatientsID, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
-VALUES('11467G', '27.OCT.2020', 'Dr.Camilleri', 'Broken Arm.','5.SEP.2010', 'Dr.Grech', 'Food poisoning.');
-INSERT INTO [Hospital].[patientsVisits](PatientsID, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
-VALUES('12487H', '11.JUN.2021', 'Dr.Grech', 'Fractured Leg.','11.AUG.2009', 'Dr.Zammit', 'Broken Leg.');
-INSERT INTO [Hospital].[patientsVisits](PatientsID, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
-VALUES('22431G', '5.DEC.2021', 'Dr.Camillerri', 'Allergic reaction to nuts.', '11.JAN.2019', 'Dr.Grech', 'Head wound from fall.');
-INSERT INTO [Hospital].[patientsVisits](PatientsID, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
-VALUES('11301M', '14.APR.2020', 'Dr.Zammit', 'Severe burns.','14.SEP.2015', 'Dr.Camilleri', 'Broken thumb.');
-INSERT INTO [Hospital].[patientsVisits](PatientsID, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
-VALUES('13445G', '2.JUL.2021', 'Dr.Camillerri', 'Food poisoning', '9.OCT.2017', 'Dr.Grech', 'Dislocated shoulder from fall');
+INSERT INTO [Hospital].[patientsVisits](PatientsID,PatientsName, PatientsSurname, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
+VALUES('11467G', 'Jhon', 'Brown', '27.OCT.2020', 'Dr.Camilleri', 'Broken Arm.','5.SEP.2010', 'Dr.Grech', 'Food poisoning.');
+INSERT INTO [Hospital].[patientsVisits](PatientsID,PatientsName, PatientsSurname, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
+VALUES('12487H', 'Emma', 'Cutajar', '11.JUN.2021', 'Dr.Grech', 'Fractured Leg.','11.AUG.2009', 'Dr.Zammit', 'Broken Leg.');
+INSERT INTO [Hospital].[patientsVisits](PatientsID,PatientsName, PatientsSurname, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
+VALUES('22431G', 'Colin', 'Debrincat', '5.DEC.2021', 'Dr.Camillerri', 'Allergic reaction to nuts.', '11.JAN.2019', 'Dr.Grech', 'Head wound from fall.');
+INSERT INTO [Hospital].[patientsVisits](PatientsID,PatientsName, PatientsSurname, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
+VALUES('11301M', 'Stephanie', 'Zammit', '14.APR.2020', 'Dr.Zammit', 'Severe burns.','14.SEP.2015', 'Dr.Camilleri', 'Broken thumb.');
+INSERT INTO [Hospital].[patientsVisits](PatientsID,PatientsName, PatientsSurname, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)
+VALUES('13445G', 'Joan', 'Attard', '2.JUL.2021', 'Dr.Camillerri', 'Food poisoning', '9.OCT.2017', 'Dr.Grech', 'Dislocated shoulder from fall');
 
 SELECT * FROM [Hospital].[patientsVisits];
 
+DROP TABLE [Hospital].[patientsVisits];
 
 GO
 CREATE PROCEDURE [Hospital].[addPatient]  
@@ -75,12 +78,14 @@ COMMIT TRANSACTION
 END
 GO
 CREATE PROCEDURE [Hospital].[addPatientVisit]  
-@PatientsID VARCHAR(10), @RecentVisitDate DATE, @RecentVisitDoctor VARCHAR(40), @RecentVisitSummary VARCHAR(100), @OtherVisitDate DATE, @OtherVisitDoctor VARCHAR(40), @OtherVisitSummary VARCHAR(100)
+@PatientsID VARCHAR(10), @PatientsName VARCHAR(10), @PatientsSurname VARCHAR(10), @RecentVisitDate DATE, @RecentVisitDoctor VARCHAR(40), @RecentVisitSummary VARCHAR(100), @OtherVisitDate DATE, @OtherVisitDoctor VARCHAR(40), @OtherVisitSummary VARCHAR(100)
 AS
 BEGIN
 BEGIN TRANSACTION  
-INSERT INTO [Hospital].[patientsVisits] (PatientsID, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)   
-     VALUES(@PatientsID, @RecentVisitDate, @RecentVisitDoctor, @RecentVisitSummary, @OtherVisitDate, @OtherVisitDoctor, @OtherVisitSummary);
+INSERT INTO [Hospital].[patientsVisits] (PatientsID, PatientsName, PatientsSurname, RecentVisitDate, RecentVisitDoctor, RecentVisitSummary, OtherVisitDate, OtherVisitDoctor, OtherVisitSummary)   
+     VALUES(@PatientsID, @PatientsName, @PatientsSurname, @RecentVisitDate, @RecentVisitDoctor, @RecentVisitSummary, @OtherVisitDate, @OtherVisitDoctor, @OtherVisitSummary);
 COMMIT TRANSACTION
 END
 
+
+DROP PROCEDURE [Hospital].[addPatientVisit];

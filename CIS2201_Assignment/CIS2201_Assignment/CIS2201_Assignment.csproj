@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="patient.cs" />
+    <Compile Include="patientAppointmet.cs" />
+    <Compile Include="patientInformation.cs" />
+    <Compile Include="patientVisits.cs" />
     <Compile Include="ReportIssue.cs">
       <SubType>Form</SubType>
     </Compile>
