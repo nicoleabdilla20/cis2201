@@ -573,6 +573,11 @@ namespace CIS2201_Assignment
             Navigation fm = new Navigation();
             fm.Show();
         }
+
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

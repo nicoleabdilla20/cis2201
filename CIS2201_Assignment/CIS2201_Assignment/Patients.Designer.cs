@@ -14,6 +14,7 @@ namespace CIS2201_Assignment
             this.hospitallogo = new System.Windows.Forms.PictureBox();
             this.PatientsTabControl = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
+            this.patHomebackbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -21,6 +22,7 @@ namespace CIS2201_Assignment
             this.label36 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.AddPat = new System.Windows.Forms.TabPage();
+            this.addPatbackbtn = new System.Windows.Forms.Button();
             this.visitsubmit = new System.Windows.Forms.Button();
             this.insurancetxt = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -62,6 +64,7 @@ namespace CIS2201_Assignment
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Appointment = new System.Windows.Forms.TabPage();
+            this.Appbackbtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.AppFiltercbx = new System.Windows.Forms.ComboBox();
             this.Appsearchdgv = new System.Windows.Forms.DataGridView();
@@ -85,7 +88,9 @@ namespace CIS2201_Assignment
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.CalcBill = new System.Windows.Forms.TabPage();
+            this.billBackbtn = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TabPage();
+            this.searchPatbackbtn = new System.Windows.Forms.Button();
             this.Filtercbx = new System.Windows.Forms.ComboBox();
             this.visitsearch = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
@@ -98,11 +103,17 @@ namespace CIS2201_Assignment
             this.psearchID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.searchVisit = new System.Windows.Forms.Button();
-            this.addPatbackbtn = new System.Windows.Forms.Button();
-            this.Appbackbtn = new System.Windows.Forms.Button();
-            this.billBackbtn = new System.Windows.Forms.Button();
-            this.searchPatbackbtn = new System.Windows.Forms.Button();
-            this.patHomebackbtn = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.textBoxNights = new System.Windows.Forms.TextBox();
+            this.textBoxExpenseTotal = new System.Windows.Forms.TextBox();
+            this.textBoxInsuranceExpense = new System.Windows.Forms.TextBox();
+            this.textBoxPay = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.BlueBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.PatientsTabControl.SuspendLayout();
@@ -191,6 +202,19 @@ namespace CIS2201_Assignment
             this.Home.Size = new System.Drawing.Size(1204, 636);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
+            // 
+            // patHomebackbtn
+            // 
+            this.patHomebackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.patHomebackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.patHomebackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patHomebackbtn.Location = new System.Drawing.Point(6, 607);
+            this.patHomebackbtn.Name = "patHomebackbtn";
+            this.patHomebackbtn.Size = new System.Drawing.Size(75, 23);
+            this.patHomebackbtn.TabIndex = 52;
+            this.patHomebackbtn.Text = "Back";
+            this.patHomebackbtn.UseVisualStyleBackColor = false;
+            this.patHomebackbtn.Click += new System.EventHandler(this.patHomebackbtn_Click);
             // 
             // pictureBox1
             // 
@@ -334,6 +358,19 @@ namespace CIS2201_Assignment
             this.AddPat.TabIndex = 1;
             this.AddPat.Text = "Add Patient";
             // 
+            // addPatbackbtn
+            // 
+            this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPatbackbtn.Location = new System.Drawing.Point(8, 605);
+            this.addPatbackbtn.Name = "addPatbackbtn";
+            this.addPatbackbtn.Size = new System.Drawing.Size(75, 23);
+            this.addPatbackbtn.TabIndex = 50;
+            this.addPatbackbtn.Text = "Back";
+            this.addPatbackbtn.UseVisualStyleBackColor = false;
+            this.addPatbackbtn.Click += new System.EventHandler(this.addPatbackbtn_Click);
+            // 
             // visitsubmit
             // 
             this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -364,7 +401,7 @@ namespace CIS2201_Assignment
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(330, 327);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(62, 16);
+            this.label21.Size = new System.Drawing.Size(61, 16);
             this.label21.TabIndex = 47;
             this.label21.Text = "Insurance:";
             // 
@@ -373,7 +410,7 @@ namespace CIS2201_Assignment
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(330, 237);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(32, 16);
+            this.label20.Size = new System.Drawing.Size(31, 16);
             this.label20.TabIndex = 46;
             this.label20.Text = "Age:";
             // 
@@ -410,7 +447,7 @@ namespace CIS2201_Assignment
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(266, 200);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 16);
+            this.label19.Size = new System.Drawing.Size(48, 16);
             this.label19.TabIndex = 40;
             this.label19.Text = "Gender:";
             // 
@@ -532,7 +569,7 @@ namespace CIS2201_Assignment
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(587, 410);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 16);
+            this.label16.Size = new System.Drawing.Size(100, 16);
             this.label16.TabIndex = 25;
             this.label16.Text = "Summary of Visit:";
             // 
@@ -541,7 +578,7 @@ namespace CIS2201_Assignment
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(587, 362);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(47, 16);
+            this.label17.Size = new System.Drawing.Size(46, 16);
             this.label17.TabIndex = 24;
             this.label17.Text = "Doctor:";
             // 
@@ -550,7 +587,7 @@ namespace CIS2201_Assignment
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(587, 323);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(35, 16);
+            this.label18.Size = new System.Drawing.Size(34, 16);
             this.label18.TabIndex = 23;
             this.label18.Text = "Date:";
             // 
@@ -559,7 +596,7 @@ namespace CIS2201_Assignment
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(587, 165);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(101, 16);
+            this.label15.Size = new System.Drawing.Size(100, 16);
             this.label15.TabIndex = 22;
             this.label15.Text = "Summary of Visit:";
             // 
@@ -568,7 +605,7 @@ namespace CIS2201_Assignment
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(587, 117);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 16);
+            this.label14.Size = new System.Drawing.Size(46, 16);
             this.label14.TabIndex = 21;
             this.label14.Text = "Doctor:";
             // 
@@ -577,7 +614,7 @@ namespace CIS2201_Assignment
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(587, 77);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 16);
+            this.label13.Size = new System.Drawing.Size(34, 16);
             this.label13.TabIndex = 20;
             this.label13.Text = "Date:";
             // 
@@ -586,7 +623,7 @@ namespace CIS2201_Assignment
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(31, 393);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 16);
+            this.label12.Size = new System.Drawing.Size(55, 16);
             this.label12.TabIndex = 19;
             this.label12.Text = "Allergies:";
             // 
@@ -646,7 +683,7 @@ namespace CIS2201_Assignment
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(31, 357);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 16);
+            this.label8.Size = new System.Drawing.Size(70, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "Blood Type:";
             // 
@@ -655,7 +692,7 @@ namespace CIS2201_Assignment
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(31, 318);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 16);
+            this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "Telphone:";
             // 
@@ -664,7 +701,7 @@ namespace CIS2201_Assignment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(31, 277);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.Size = new System.Drawing.Size(55, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "Address: ";
             // 
@@ -673,7 +710,7 @@ namespace CIS2201_Assignment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(31, 193);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 16);
+            this.label5.Size = new System.Drawing.Size(21, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "ID:";
             // 
@@ -682,7 +719,7 @@ namespace CIS2201_Assignment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(31, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Date Of Birth:";
             // 
@@ -699,7 +736,7 @@ namespace CIS2201_Assignment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(266, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Surname:";
             // 
@@ -708,7 +745,7 @@ namespace CIS2201_Assignment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Name:";
             // 
@@ -741,6 +778,19 @@ namespace CIS2201_Assignment
             this.Appointment.Text = "Appointment";
             this.Appointment.UseVisualStyleBackColor = true;
             this.Appointment.Click += new System.EventHandler(this.Appointment_Click);
+            // 
+            // Appbackbtn
+            // 
+            this.Appbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Appbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Appbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Appbackbtn.Location = new System.Drawing.Point(8, 605);
+            this.Appbackbtn.Name = "Appbackbtn";
+            this.Appbackbtn.Size = new System.Drawing.Size(75, 23);
+            this.Appbackbtn.TabIndex = 51;
+            this.Appbackbtn.Text = "Back";
+            this.Appbackbtn.UseVisualStyleBackColor = false;
+            this.Appbackbtn.Click += new System.EventHandler(this.Appbackbtn_Click);
             // 
             // panel3
             // 
@@ -984,6 +1034,17 @@ namespace CIS2201_Assignment
             // CalcBill
             // 
             this.CalcBill.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.CalcBill.Controls.Add(this.button1);
+            this.CalcBill.Controls.Add(this.textBoxPay);
+            this.CalcBill.Controls.Add(this.textBoxInsuranceExpense);
+            this.CalcBill.Controls.Add(this.textBoxExpenseTotal);
+            this.CalcBill.Controls.Add(this.textBoxNights);
+            this.CalcBill.Controls.Add(this.textBoxID);
+            this.CalcBill.Controls.Add(this.label40);
+            this.CalcBill.Controls.Add(this.label39);
+            this.CalcBill.Controls.Add(this.label38);
+            this.CalcBill.Controls.Add(this.label37);
+            this.CalcBill.Controls.Add(this.label32);
             this.CalcBill.Controls.Add(this.billBackbtn);
             this.CalcBill.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.CalcBill.Location = new System.Drawing.Point(4, 26);
@@ -993,6 +1054,19 @@ namespace CIS2201_Assignment
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Bill";
             this.CalcBill.UseVisualStyleBackColor = true;
+            // 
+            // billBackbtn
+            // 
+            this.billBackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.billBackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.billBackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billBackbtn.Location = new System.Drawing.Point(8, 607);
+            this.billBackbtn.Name = "billBackbtn";
+            this.billBackbtn.Size = new System.Drawing.Size(75, 23);
+            this.billBackbtn.TabIndex = 52;
+            this.billBackbtn.Text = "Back";
+            this.billBackbtn.UseVisualStyleBackColor = false;
+            this.billBackbtn.Click += new System.EventHandler(this.billBackbtn_Click);
             // 
             // Search
             // 
@@ -1017,6 +1091,19 @@ namespace CIS2201_Assignment
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            // 
+            // searchPatbackbtn
+            // 
+            this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 605);
+            this.searchPatbackbtn.Name = "searchPatbackbtn";
+            this.searchPatbackbtn.Size = new System.Drawing.Size(75, 23);
+            this.searchPatbackbtn.TabIndex = 52;
+            this.searchPatbackbtn.Text = "Back";
+            this.searchPatbackbtn.UseVisualStyleBackColor = false;
+            this.searchPatbackbtn.Click += new System.EventHandler(this.searchPatbackbtn_Click);
             // 
             // Filtercbx
             // 
@@ -1098,7 +1185,7 @@ namespace CIS2201_Assignment
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(22, 372);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(315, 16);
+            this.label23.Size = new System.Drawing.Size(314, 16);
             this.label23.TabIndex = 4;
             this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
             // 
@@ -1136,7 +1223,7 @@ namespace CIS2201_Assignment
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(22, 90);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(273, 16);
+            this.label22.Size = new System.Drawing.Size(272, 16);
             this.label22.TabIndex = 0;
             this.label22.Text = "Enter the ID of the patient that you want to search:";
             // 
@@ -1147,70 +1234,95 @@ namespace CIS2201_Assignment
             this.searchVisit.Size = new System.Drawing.Size(75, 23);
             this.searchVisit.TabIndex = 0;
             // 
-            // addPatbackbtn
+            // label32
             // 
-            this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPatbackbtn.Location = new System.Drawing.Point(8, 605);
-            this.addPatbackbtn.Name = "addPatbackbtn";
-            this.addPatbackbtn.Size = new System.Drawing.Size(75, 23);
-            this.addPatbackbtn.TabIndex = 50;
-            this.addPatbackbtn.Text = "Back";
-            this.addPatbackbtn.UseVisualStyleBackColor = false;
-            this.addPatbackbtn.Click += new System.EventHandler(this.addPatbackbtn_Click);
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(49, 56);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(46, 16);
+            this.label32.TabIndex = 53;
+            this.label32.Text = "ID Card";
             // 
-            // Appbackbtn
+            // label37
             // 
-            this.Appbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.Appbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Appbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Appbackbtn.Location = new System.Drawing.Point(8, 605);
-            this.Appbackbtn.Name = "Appbackbtn";
-            this.Appbackbtn.Size = new System.Drawing.Size(75, 23);
-            this.Appbackbtn.TabIndex = 51;
-            this.Appbackbtn.Text = "Back";
-            this.Appbackbtn.UseVisualStyleBackColor = false;
-            this.Appbackbtn.Click += new System.EventHandler(this.Appbackbtn_Click);
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(49, 114);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(101, 16);
+            this.label37.TabIndex = 54;
+            this.label37.Text = "Number of nights";
             // 
-            // billBackbtn
+            // label38
             // 
-            this.billBackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.billBackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.billBackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billBackbtn.Location = new System.Drawing.Point(8, 607);
-            this.billBackbtn.Name = "billBackbtn";
-            this.billBackbtn.Size = new System.Drawing.Size(75, 23);
-            this.billBackbtn.TabIndex = 52;
-            this.billBackbtn.Text = "Back";
-            this.billBackbtn.UseVisualStyleBackColor = false;
-            this.billBackbtn.Click += new System.EventHandler(this.billBackbtn_Click);
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(49, 282);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(79, 16);
+            this.label38.TabIndex = 55;
+            this.label38.Text = "Total Expense";
             // 
-            // searchPatbackbtn
+            // label39
             // 
-            this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 605);
-            this.searchPatbackbtn.Name = "searchPatbackbtn";
-            this.searchPatbackbtn.Size = new System.Drawing.Size(75, 23);
-            this.searchPatbackbtn.TabIndex = 52;
-            this.searchPatbackbtn.Text = "Back";
-            this.searchPatbackbtn.UseVisualStyleBackColor = false;
-            this.searchPatbackbtn.Click += new System.EventHandler(this.searchPatbackbtn_Click);
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(49, 355);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(121, 16);
+            this.label39.TabIndex = 56;
+            this.label39.Text = "Covered by Insurance";
             // 
-            // patHomebackbtn
+            // label40
             // 
-            this.patHomebackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.patHomebackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.patHomebackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patHomebackbtn.Location = new System.Drawing.Point(6, 607);
-            this.patHomebackbtn.Name = "patHomebackbtn";
-            this.patHomebackbtn.Size = new System.Drawing.Size(75, 23);
-            this.patHomebackbtn.TabIndex = 52;
-            this.patHomebackbtn.Text = "Back";
-            this.patHomebackbtn.UseVisualStyleBackColor = false;
-            this.patHomebackbtn.Click += new System.EventHandler(this.patHomebackbtn_Click);
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(49, 411);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(80, 16);
+            this.label40.TabIndex = 57;
+            this.label40.Text = "Patient to pay";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(195, 51);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(100, 23);
+            this.textBoxID.TabIndex = 58;
+            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
+            // 
+            // textBoxNights
+            // 
+            this.textBoxNights.Location = new System.Drawing.Point(195, 109);
+            this.textBoxNights.Name = "textBoxNights";
+            this.textBoxNights.Size = new System.Drawing.Size(100, 23);
+            this.textBoxNights.TabIndex = 59;
+            // 
+            // textBoxExpenseTotal
+            // 
+            this.textBoxExpenseTotal.Location = new System.Drawing.Point(195, 277);
+            this.textBoxExpenseTotal.Name = "textBoxExpenseTotal";
+            this.textBoxExpenseTotal.Size = new System.Drawing.Size(100, 23);
+            this.textBoxExpenseTotal.TabIndex = 60;
+            // 
+            // textBoxInsuranceExpense
+            // 
+            this.textBoxInsuranceExpense.Location = new System.Drawing.Point(195, 352);
+            this.textBoxInsuranceExpense.Name = "textBoxInsuranceExpense";
+            this.textBoxInsuranceExpense.Size = new System.Drawing.Size(100, 23);
+            this.textBoxInsuranceExpense.TabIndex = 61;
+            // 
+            // textBoxPay
+            // 
+            this.textBoxPay.Location = new System.Drawing.Point(195, 411);
+            this.textBoxPay.Name = "textBoxPay";
+            this.textBoxPay.Size = new System.Drawing.Size(100, 23);
+            this.textBoxPay.TabIndex = 62;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 56);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Patients
             // 
@@ -1234,6 +1346,7 @@ namespace CIS2201_Assignment
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.CalcBill.ResumeLayout(false);
+            this.CalcBill.PerformLayout();
             this.Search.ResumeLayout(false);
             this.Search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
@@ -1356,5 +1469,16 @@ namespace CIS2201_Assignment
         private Button Appbackbtn;
         private Button billBackbtn;
         private Button searchPatbackbtn;
+        private Button button1;
+        private TextBox textBoxPay;
+        private TextBox textBoxInsuranceExpense;
+        private TextBox textBoxExpenseTotal;
+        private TextBox textBoxNights;
+        private TextBox textBoxID;
+        private Label label40;
+        private Label label39;
+        private Label label38;
+        private Label label37;
+        private Label label32;
     }
 }
