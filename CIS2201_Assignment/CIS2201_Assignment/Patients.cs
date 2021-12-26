@@ -538,6 +538,41 @@ namespace CIS2201_Assignment
         {
 
         }
+
+        private void patHomebackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void addPatbackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void Appbackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void billBackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void searchPatbackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
     }
 
 }

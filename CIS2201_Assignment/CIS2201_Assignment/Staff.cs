@@ -243,5 +243,33 @@ namespace CIS2201_Assignment
         {
 
         }
+
+        private void searchstaffbackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void payrollBackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void addStaffbackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
+
+        private void staffHomebackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
     }
 }
