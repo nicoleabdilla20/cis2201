@@ -229,5 +229,19 @@ namespace CIS2201_Assignment
             ReportIssue.ShowDialog();
         }
 
+        private void Appsearchbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crtAppbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ApppatID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

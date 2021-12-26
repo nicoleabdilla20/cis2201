@@ -16,6 +16,8 @@ VALUES( '12431', '27.OCT.2021', 'Staff Tab not opening');
 INSERT INTO [Hospital].[issues](StaffID, StaffDate, Details)
 VALUES('31435',  '14.DEC.2021', 'Staff not working');
 
+GO 
+SELECT * FROM [Hospital].[issue]; 
 
 GO
 CREATE PROCEDURE [Hospital].[addIssue]  

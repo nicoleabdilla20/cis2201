@@ -1,5 +1,9 @@
 {
-  "ExpandedNodes": [],
-  "SelectedNode": "\\CIS2201_Assignment.sln",
+  "ExpandedNodes": [
+    "",
+    "\\CIS2201_Assignment",
+    "\\CIS2201_Assignment\\CIS2201_Assignment"
+  ],
+  "SelectedNode": "\\CIS2201_Assignment\\CIS2201_Assignment.sln",
   "PreviewInSolutionExplorer": false
 }

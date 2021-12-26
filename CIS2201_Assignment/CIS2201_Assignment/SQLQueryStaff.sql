@@ -35,5 +35,3 @@ INSERT INTO [Hospital].[staff](StaffID, StaffName, StaffSurnameName, StaffGender
 VALUES('00965G', 'Maria', 'Grech', 'Female', 'mgrech22@gmail.com', '76543289', 'Doctor', '50');
 
 SELECT * FROM [Hospital].[staff];
-
-DROP TABLE [Hospital].[staff];

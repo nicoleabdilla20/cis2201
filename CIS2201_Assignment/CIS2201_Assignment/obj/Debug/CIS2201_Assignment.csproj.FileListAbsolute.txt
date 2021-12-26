@@ -83,3 +83,7 @@ C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bi
 C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
 C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.ReportIssue.resources
 C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
+C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.ReportIssue.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201 Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete

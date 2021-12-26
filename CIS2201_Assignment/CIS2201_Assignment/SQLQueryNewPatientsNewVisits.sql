@@ -64,8 +64,6 @@ VALUES('13445G', 'Joan', 'Attard', '2.JUL.2021', 'Dr.Camillerri', 'Food poisonin
 
 SELECT * FROM [Hospital].[patientsVisits];
 
-DROP TABLE [Hospital].[patientsVisits];
-
 GO
 CREATE PROCEDURE [Hospital].[addPatient]  
 @PatientsID VARCHAR(10), @PatientsName NVARCHAR(40), @PatientsSurnameName NVARCHAR(40), @PatientsGender NVARCHAR(40), @PatientsAge INT, @PatientsDateOfBirth DATE, @PatientsAddress VARCHAR(100), @PatientsTelephone INT, @PatientsBloodType VARCHAR(10), @PatientsAllergies VARCHAR(10), @PatientsInsurance CHAR(1)
@@ -88,4 +86,3 @@ COMMIT TRANSACTION
 END
 
 
-DROP PROCEDURE [Hospital].[addPatientVisit];
