@@ -59,6 +59,19 @@ namespace CIS2201_Assignment
             }
         }
 
+        private bool IsPatientPlanIDValid()
+        {
+            if (textBoxID.Text == "")
+            {
+                MessageBox.Show("Please make sure that you have entered the patient's ID!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private bool IsPatientvisitIDValid()
         {
             if (pvisitID.Text == "")
@@ -575,6 +588,152 @@ namespace CIS2201_Assignment
         }
 
         private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //=================================================================Calculate Patient Bill=================================================================
+        int expenseTotal = 100;
+        int finalAnswer;
+        public class planBase
+        {
+            public virtual int calculate(int expense)
+            {
+                return expense;
+            }
+        }
+
+        // Derived Classes
+        public class planX : planBase
+        {
+            //Insurance fully covers expense
+            int insurance;
+            int toPay;
+            public override int calculate(int expense)
+            {
+                insurance = expense;
+                toPay = 0;
+                return toPay;
+            }
+        }
+
+        public class planY : planBase
+        {
+            //50 / 50
+            int insurance;
+            int toPay;
+            public override int calculate(int expense)
+            {
+                insurance = expense / 2;
+                toPay = expense / 2;
+                return toPay;
+            }
+        }
+
+        public class planZ : planBase
+        {
+            //Patient pays everything
+            int insurance;
+            int toPay;
+            public override int calculate(int expense)
+            {
+                insurance = 0;
+                toPay = expense;
+                return toPay;
+            }
+        }
+
+        private string getPatientsInsurance()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                List<string> planInformation = new List<string>();
+                String selectedItem = (string)Filtercbx.SelectedItem;
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[patients] WHERE PatientsID = @PatientsID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@PatientsID"].Value = textBoxID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        String pl = read["PatientsInsurance"].ToString();
+                        planInformation.Add(pl.ToString());
+
+                    }
+                    String patientPlan = planInformation[0].ToString();
+                    MessageBox.Show(patientPlan);
+
+                    calculateBill(patientPlan);
+                    return patientPlan;
+
+                }
+            }
+        }
+        
+        private void calculateBill(String plan)
+        {
+            int night = Convert.ToInt32(textBoxNights.Text);
+            if (plan.Equals("X"))
+            {
+                MessageBox.Show("Plan is X");
+                expenseTotal = expenseTotal * night;
+                planX x = new planX();
+                finalAnswer = x.calculate(expenseTotal);
+                MessageBox.Show("Final Answer: "+finalAnswer);
+            }
+            else if (plan.Equals("Y"))
+            {
+                MessageBox.Show("Plan is Y");
+                expenseTotal = expenseTotal * night;
+                planY y = new planY();
+                finalAnswer = y.calculate(expenseTotal);
+                MessageBox.Show("Final Answer: " + finalAnswer);
+            }
+            else
+            {
+                MessageBox.Show("Plan is Z");
+                expenseTotal = expenseTotal * night;
+                planZ z = new planZ();
+                finalAnswer = z.calculate(expenseTotal);
+                MessageBox.Show("Final Answer: " + finalAnswer);
+            }
+
+            textBoxExpenseTotal.Text = expenseTotal.ToString();
+            textBoxPay.Text = finalAnswer.ToString();
+            expenseTotal = 100;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {            
+            if (IsPatientPlanIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        getPatientsInsurance();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+        }
+
+        private void psearchID_TextChanged(object sender, EventArgs e)
         {
 
         }

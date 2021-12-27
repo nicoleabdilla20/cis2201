@@ -88,6 +88,15 @@ namespace CIS2201_Assignment
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.CalcBill = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxPay = new System.Windows.Forms.TextBox();
+            this.textBoxExpenseTotal = new System.Windows.Forms.TextBox();
+            this.textBoxNights = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.billBackbtn = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TabPage();
             this.searchPatbackbtn = new System.Windows.Forms.Button();
@@ -103,17 +112,6 @@ namespace CIS2201_Assignment
             this.psearchID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.searchVisit = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.textBoxNights = new System.Windows.Forms.TextBox();
-            this.textBoxExpenseTotal = new System.Windows.Forms.TextBox();
-            this.textBoxInsuranceExpense = new System.Windows.Forms.TextBox();
-            this.textBoxPay = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.BlueBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.PatientsTabControl.SuspendLayout();
@@ -1036,12 +1034,10 @@ namespace CIS2201_Assignment
             this.CalcBill.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
             this.CalcBill.Controls.Add(this.button1);
             this.CalcBill.Controls.Add(this.textBoxPay);
-            this.CalcBill.Controls.Add(this.textBoxInsuranceExpense);
             this.CalcBill.Controls.Add(this.textBoxExpenseTotal);
             this.CalcBill.Controls.Add(this.textBoxNights);
             this.CalcBill.Controls.Add(this.textBoxID);
             this.CalcBill.Controls.Add(this.label40);
-            this.CalcBill.Controls.Add(this.label39);
             this.CalcBill.Controls.Add(this.label38);
             this.CalcBill.Controls.Add(this.label37);
             this.CalcBill.Controls.Add(this.label32);
@@ -1054,6 +1050,81 @@ namespace CIS2201_Assignment
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Bill";
             this.CalcBill.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 56);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBoxPay
+            // 
+            this.textBoxPay.Location = new System.Drawing.Point(195, 347);
+            this.textBoxPay.Name = "textBoxPay";
+            this.textBoxPay.Size = new System.Drawing.Size(100, 23);
+            this.textBoxPay.TabIndex = 62;
+            // 
+            // textBoxExpenseTotal
+            // 
+            this.textBoxExpenseTotal.Location = new System.Drawing.Point(195, 277);
+            this.textBoxExpenseTotal.Name = "textBoxExpenseTotal";
+            this.textBoxExpenseTotal.Size = new System.Drawing.Size(100, 23);
+            this.textBoxExpenseTotal.TabIndex = 60;
+            // 
+            // textBoxNights
+            // 
+            this.textBoxNights.Location = new System.Drawing.Point(195, 109);
+            this.textBoxNights.Name = "textBoxNights";
+            this.textBoxNights.Size = new System.Drawing.Size(100, 23);
+            this.textBoxNights.TabIndex = 59;
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(195, 51);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(100, 23);
+            this.textBoxID.TabIndex = 58;
+            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(49, 354);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(80, 16);
+            this.label40.TabIndex = 57;
+            this.label40.Text = "Patient to pay";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(49, 282);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(79, 16);
+            this.label38.TabIndex = 55;
+            this.label38.Text = "Total Expense";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(49, 114);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(101, 16);
+            this.label37.TabIndex = 54;
+            this.label37.Text = "Number of nights";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(49, 56);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(46, 16);
+            this.label32.TabIndex = 53;
+            this.label32.Text = "ID Card";
             // 
             // billBackbtn
             // 
@@ -1217,6 +1288,7 @@ namespace CIS2201_Assignment
             this.psearchID.Name = "psearchID";
             this.psearchID.Size = new System.Drawing.Size(100, 23);
             this.psearchID.TabIndex = 1;
+            this.psearchID.TextChanged += new System.EventHandler(this.psearchID_TextChanged);
             // 
             // label22
             // 
@@ -1233,96 +1305,6 @@ namespace CIS2201_Assignment
             this.searchVisit.Name = "searchVisit";
             this.searchVisit.Size = new System.Drawing.Size(75, 23);
             this.searchVisit.TabIndex = 0;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(49, 56);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(46, 16);
-            this.label32.TabIndex = 53;
-            this.label32.Text = "ID Card";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(49, 114);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(101, 16);
-            this.label37.TabIndex = 54;
-            this.label37.Text = "Number of nights";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(49, 282);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(79, 16);
-            this.label38.TabIndex = 55;
-            this.label38.Text = "Total Expense";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(49, 355);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(121, 16);
-            this.label39.TabIndex = 56;
-            this.label39.Text = "Covered by Insurance";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(49, 411);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(80, 16);
-            this.label40.TabIndex = 57;
-            this.label40.Text = "Patient to pay";
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(195, 51);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 23);
-            this.textBoxID.TabIndex = 58;
-            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
-            // 
-            // textBoxNights
-            // 
-            this.textBoxNights.Location = new System.Drawing.Point(195, 109);
-            this.textBoxNights.Name = "textBoxNights";
-            this.textBoxNights.Size = new System.Drawing.Size(100, 23);
-            this.textBoxNights.TabIndex = 59;
-            // 
-            // textBoxExpenseTotal
-            // 
-            this.textBoxExpenseTotal.Location = new System.Drawing.Point(195, 277);
-            this.textBoxExpenseTotal.Name = "textBoxExpenseTotal";
-            this.textBoxExpenseTotal.Size = new System.Drawing.Size(100, 23);
-            this.textBoxExpenseTotal.TabIndex = 60;
-            // 
-            // textBoxInsuranceExpense
-            // 
-            this.textBoxInsuranceExpense.Location = new System.Drawing.Point(195, 352);
-            this.textBoxInsuranceExpense.Name = "textBoxInsuranceExpense";
-            this.textBoxInsuranceExpense.Size = new System.Drawing.Size(100, 23);
-            this.textBoxInsuranceExpense.TabIndex = 61;
-            // 
-            // textBoxPay
-            // 
-            this.textBoxPay.Location = new System.Drawing.Point(195, 411);
-            this.textBoxPay.Name = "textBoxPay";
-            this.textBoxPay.Size = new System.Drawing.Size(100, 23);
-            this.textBoxPay.TabIndex = 62;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(52, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 56);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Patients
             // 
@@ -1471,12 +1453,10 @@ namespace CIS2201_Assignment
         private Button searchPatbackbtn;
         private Button button1;
         private TextBox textBoxPay;
-        private TextBox textBoxInsuranceExpense;
         private TextBox textBoxExpenseTotal;
         private TextBox textBoxNights;
         private TextBox textBoxID;
         private Label label40;
-        private Label label39;
         private Label label38;
         private Label label37;
         private Label label32;
