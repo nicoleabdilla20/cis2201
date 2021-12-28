@@ -37,5 +37,12 @@ namespace CIS2201_Assignment
             Login frm = new Login();
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form frm = new Medication();
+            frm.Show();
+        }
     }
 }

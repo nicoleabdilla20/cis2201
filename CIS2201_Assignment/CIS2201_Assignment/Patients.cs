@@ -156,6 +156,8 @@ namespace CIS2201_Assignment
                             connection.Open();
 
                             sqlCommand.ExecuteNonQuery();
+                            string message = "Successfully added";
+                            MessageBox.Show(message);
                         }
                         catch (System.Data.SqlClient.SqlException sqlException)
                         {
@@ -734,6 +736,16 @@ namespace CIS2201_Assignment
         }
 
         private void psearchID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Patients_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void patientdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

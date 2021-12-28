@@ -34,6 +34,7 @@ namespace CIS2201_Assignment
             this.btnExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMedication_Click = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@ namespace CIS2201_Assignment
             this.btnPatients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPatients.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatients.Location = new System.Drawing.Point(110, 147);
+            this.btnPatients.Location = new System.Drawing.Point(89, 100);
             this.btnPatients.Margin = new System.Windows.Forms.Padding(4);
             this.btnPatients.Name = "btnPatients";
             this.btnPatients.Size = new System.Drawing.Size(187, 168);
@@ -60,7 +61,7 @@ namespace CIS2201_Assignment
             this.btnStaff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F);
-            this.btnStaff.Location = new System.Drawing.Point(418, 147);
+            this.btnStaff.Location = new System.Drawing.Point(479, 100);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(187, 168);
@@ -111,12 +112,29 @@ namespace CIS2201_Assignment
             this.panel1.Size = new System.Drawing.Size(739, 39);
             this.panel1.TabIndex = 7;
             // 
+            // btnMedication_Click
+            // 
+            this.btnMedication_Click.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnMedication_Click.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMedication_Click.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMedication_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedication_Click.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F);
+            this.btnMedication_Click.Location = new System.Drawing.Point(284, 265);
+            this.btnMedication_Click.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMedication_Click.Name = "btnMedication_Click";
+            this.btnMedication_Click.Size = new System.Drawing.Size(187, 168);
+            this.btnMedication_Click.TabIndex = 8;
+            this.btnMedication_Click.Text = "Manage Medication";
+            this.btnMedication_Click.UseVisualStyleBackColor = false;
+            this.btnMedication_Click.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(739, 474);
+            this.Controls.Add(this.btnMedication_Click);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnStaff);
@@ -136,6 +154,7 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnMedication_Click;
     }
 }
 

@@ -194,10 +194,10 @@ namespace CIS2201_Assignment
             this.Home.Cursor = System.Windows.Forms.Cursors.Default;
             this.Home.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Home.Location = new System.Drawing.Point(4, 26);
+            this.Home.Location = new System.Drawing.Point(4, 29);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(1204, 636);
+            this.Home.Size = new System.Drawing.Size(1204, 633);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             // 
@@ -224,7 +224,7 @@ namespace CIS2201_Assignment
             this.pictureBox1.Image = global::CIS2201_Assignment.Properties.Resources._2008_i504_005__isometric_hospital_infographics;
             this.pictureBox1.Location = new System.Drawing.Point(0, 113);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1208, 523);
+            this.pictureBox1.Size = new System.Drawing.Size(1208, 520);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -296,7 +296,7 @@ namespace CIS2201_Assignment
             this.richTextBox1.Location = new System.Drawing.Point(13, 68);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ShowSelectionMargin = true;
-            this.richTextBox1.Size = new System.Drawing.Size(834, 122);
+            this.richTextBox1.Size = new System.Drawing.Size(834, 119);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "Thank you for your service. If you ever encounter any issues with the system. Ple" +
     "ase inform us on the following number +356 77657333 or send us an issue!";
@@ -349,10 +349,10 @@ namespace CIS2201_Assignment
             this.AddPat.Controls.Add(this.label1);
             this.AddPat.Cursor = System.Windows.Forms.Cursors.Default;
             this.AddPat.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            this.AddPat.Location = new System.Drawing.Point(4, 26);
+            this.AddPat.Location = new System.Drawing.Point(4, 29);
             this.AddPat.Name = "AddPat";
             this.AddPat.Padding = new System.Windows.Forms.Padding(3);
-            this.AddPat.Size = new System.Drawing.Size(1204, 636);
+            this.AddPat.Size = new System.Drawing.Size(1204, 633);
             this.AddPat.TabIndex = 1;
             this.AddPat.Text = "Add Patient";
             // 
@@ -391,7 +391,7 @@ namespace CIS2201_Assignment
             "Z"});
             this.insurancetxt.Location = new System.Drawing.Point(399, 327);
             this.insurancetxt.Name = "insurancetxt";
-            this.insurancetxt.Size = new System.Drawing.Size(56, 24);
+            this.insurancetxt.Size = new System.Drawing.Size(56, 27);
             this.insurancetxt.TabIndex = 48;
             // 
             // label21
@@ -399,7 +399,7 @@ namespace CIS2201_Assignment
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(330, 327);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(61, 16);
+            this.label21.Size = new System.Drawing.Size(74, 19);
             this.label21.TabIndex = 47;
             this.label21.Text = "Insurance:";
             // 
@@ -408,7 +408,7 @@ namespace CIS2201_Assignment
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(330, 237);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 16);
+            this.label20.Size = new System.Drawing.Size(39, 19);
             this.label20.TabIndex = 46;
             this.label20.Text = "Age:";
             // 
@@ -416,28 +416,28 @@ namespace CIS2201_Assignment
             // 
             this.IDtxt.Location = new System.Drawing.Point(98, 195);
             this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(136, 23);
+            this.IDtxt.Size = new System.Drawing.Size(136, 27);
             this.IDtxt.TabIndex = 45;
             // 
             // agetxt
             // 
             this.agetxt.Location = new System.Drawing.Point(368, 234);
             this.agetxt.Name = "agetxt";
-            this.agetxt.Size = new System.Drawing.Size(86, 23);
+            this.agetxt.Size = new System.Drawing.Size(86, 27);
             this.agetxt.TabIndex = 44;
             // 
             // surnametxt
             // 
             this.surnametxt.Location = new System.Drawing.Point(330, 155);
             this.surnametxt.Name = "surnametxt";
-            this.surnametxt.Size = new System.Drawing.Size(125, 23);
+            this.surnametxt.Size = new System.Drawing.Size(125, 27);
             this.surnametxt.TabIndex = 42;
             // 
             // gendertxt
             // 
             this.gendertxt.Location = new System.Drawing.Point(330, 195);
             this.gendertxt.Name = "gendertxt";
-            this.gendertxt.Size = new System.Drawing.Size(125, 23);
+            this.gendertxt.Size = new System.Drawing.Size(125, 27);
             this.gendertxt.TabIndex = 41;
             // 
             // label19
@@ -445,7 +445,7 @@ namespace CIS2201_Assignment
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(266, 200);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(48, 16);
+            this.label19.Size = new System.Drawing.Size(60, 19);
             this.label19.TabIndex = 40;
             this.label19.Text = "Gender:";
             // 
@@ -476,7 +476,7 @@ namespace CIS2201_Assignment
             // 
             this.historydoctor.Location = new System.Drawing.Point(662, 363);
             this.historydoctor.Name = "historydoctor";
-            this.historydoctor.Size = new System.Drawing.Size(136, 23);
+            this.historydoctor.Size = new System.Drawing.Size(136, 27);
             this.historydoctor.TabIndex = 37;
             // 
             // historydate
@@ -484,7 +484,7 @@ namespace CIS2201_Assignment
             this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.historydate.Location = new System.Drawing.Point(654, 317);
             this.historydate.Name = "historydate";
-            this.historydate.Size = new System.Drawing.Size(200, 23);
+            this.historydate.Size = new System.Drawing.Size(200, 27);
             this.historydate.TabIndex = 36;
             // 
             // summarytxt
@@ -500,7 +500,7 @@ namespace CIS2201_Assignment
             // 
             this.doctortxt.Location = new System.Drawing.Point(662, 117);
             this.doctortxt.Name = "doctortxt";
-            this.doctortxt.Size = new System.Drawing.Size(136, 23);
+            this.doctortxt.Size = new System.Drawing.Size(136, 27);
             this.doctortxt.TabIndex = 34;
             // 
             // visitdate
@@ -508,7 +508,7 @@ namespace CIS2201_Assignment
             this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.visitdate.Location = new System.Drawing.Point(654, 71);
             this.visitdate.Name = "visitdate";
-            this.visitdate.Size = new System.Drawing.Size(200, 23);
+            this.visitdate.Size = new System.Drawing.Size(200, 27);
             this.visitdate.TabIndex = 33;
             // 
             // allergiesopts
@@ -523,7 +523,7 @@ namespace CIS2201_Assignment
             "Pet Pollen"});
             this.allergiesopts.Location = new System.Drawing.Point(121, 390);
             this.allergiesopts.Name = "allergiesopts";
-            this.allergiesopts.Size = new System.Drawing.Size(121, 24);
+            this.allergiesopts.Size = new System.Drawing.Size(121, 27);
             this.allergiesopts.TabIndex = 32;
             this.allergiesopts.Text = "Select";
             // 
@@ -531,21 +531,21 @@ namespace CIS2201_Assignment
             // 
             this.addresstxt.Location = new System.Drawing.Point(121, 273);
             this.addresstxt.Name = "addresstxt";
-            this.addresstxt.Size = new System.Drawing.Size(334, 23);
+            this.addresstxt.Size = new System.Drawing.Size(334, 27);
             this.addresstxt.TabIndex = 31;
             // 
             // telephonetxt
             // 
             this.telephonetxt.Location = new System.Drawing.Point(121, 318);
             this.telephonetxt.Name = "telephonetxt";
-            this.telephonetxt.Size = new System.Drawing.Size(121, 23);
+            this.telephonetxt.Size = new System.Drawing.Size(121, 27);
             this.telephonetxt.TabIndex = 30;
             // 
             // nametxt
             // 
             this.nametxt.Location = new System.Drawing.Point(98, 152);
             this.nametxt.Name = "nametxt";
-            this.nametxt.Size = new System.Drawing.Size(136, 23);
+            this.nametxt.Size = new System.Drawing.Size(136, 27);
             this.nametxt.TabIndex = 27;
             // 
             // bloodopts
@@ -558,7 +558,7 @@ namespace CIS2201_Assignment
             "O"});
             this.bloodopts.Location = new System.Drawing.Point(121, 354);
             this.bloodopts.Name = "bloodopts";
-            this.bloodopts.Size = new System.Drawing.Size(121, 24);
+            this.bloodopts.Size = new System.Drawing.Size(121, 27);
             this.bloodopts.TabIndex = 26;
             this.bloodopts.Text = "Select";
             // 
@@ -567,7 +567,7 @@ namespace CIS2201_Assignment
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(587, 410);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(100, 16);
+            this.label16.Size = new System.Drawing.Size(124, 19);
             this.label16.TabIndex = 25;
             this.label16.Text = "Summary of Visit:";
             // 
@@ -576,7 +576,7 @@ namespace CIS2201_Assignment
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(587, 362);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 16);
+            this.label17.Size = new System.Drawing.Size(58, 19);
             this.label17.TabIndex = 24;
             this.label17.Text = "Doctor:";
             // 
@@ -585,7 +585,7 @@ namespace CIS2201_Assignment
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(587, 323);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 16);
+            this.label18.Size = new System.Drawing.Size(44, 19);
             this.label18.TabIndex = 23;
             this.label18.Text = "Date:";
             // 
@@ -594,7 +594,7 @@ namespace CIS2201_Assignment
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(587, 165);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 16);
+            this.label15.Size = new System.Drawing.Size(124, 19);
             this.label15.TabIndex = 22;
             this.label15.Text = "Summary of Visit:";
             // 
@@ -603,7 +603,7 @@ namespace CIS2201_Assignment
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(587, 117);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 16);
+            this.label14.Size = new System.Drawing.Size(58, 19);
             this.label14.TabIndex = 21;
             this.label14.Text = "Doctor:";
             // 
@@ -612,7 +612,7 @@ namespace CIS2201_Assignment
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(587, 77);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 16);
+            this.label13.Size = new System.Drawing.Size(44, 19);
             this.label13.TabIndex = 20;
             this.label13.Text = "Date:";
             // 
@@ -621,7 +621,7 @@ namespace CIS2201_Assignment
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(31, 393);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 16);
+            this.label12.Size = new System.Drawing.Size(70, 19);
             this.label12.TabIndex = 19;
             this.label12.Text = "Allergies:";
             // 
@@ -681,7 +681,7 @@ namespace CIS2201_Assignment
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(31, 357);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 16);
+            this.label8.Size = new System.Drawing.Size(88, 19);
             this.label8.TabIndex = 15;
             this.label8.Text = "Blood Type:";
             // 
@@ -690,7 +690,7 @@ namespace CIS2201_Assignment
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(31, 318);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 16);
+            this.label7.Size = new System.Drawing.Size(74, 19);
             this.label7.TabIndex = 14;
             this.label7.Text = "Telphone:";
             // 
@@ -699,7 +699,7 @@ namespace CIS2201_Assignment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(31, 277);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 16);
+            this.label6.Size = new System.Drawing.Size(69, 19);
             this.label6.TabIndex = 13;
             this.label6.Text = "Address: ";
             // 
@@ -708,7 +708,7 @@ namespace CIS2201_Assignment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(31, 193);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 16);
+            this.label5.Size = new System.Drawing.Size(27, 19);
             this.label5.TabIndex = 12;
             this.label5.Text = "ID:";
             // 
@@ -717,7 +717,7 @@ namespace CIS2201_Assignment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(31, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "Date Of Birth:";
             // 
@@ -726,7 +726,7 @@ namespace CIS2201_Assignment
             this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dob.Location = new System.Drawing.Point(134, 234);
             this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(190, 23);
+            this.dob.Size = new System.Drawing.Size(190, 27);
             this.dob.TabIndex = 10;
             // 
             // label3
@@ -734,7 +734,7 @@ namespace CIS2201_Assignment
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(266, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "Surname:";
             // 
@@ -743,7 +743,7 @@ namespace CIS2201_Assignment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.Size = new System.Drawing.Size(52, 19);
             this.label2.TabIndex = 8;
             this.label2.Text = "Name:";
             // 
@@ -769,9 +769,9 @@ namespace CIS2201_Assignment
             this.Appointment.Controls.Add(this.Appbackbtn);
             this.Appointment.Controls.Add(this.panel3);
             this.Appointment.Controls.Add(this.panel2);
-            this.Appointment.Location = new System.Drawing.Point(4, 26);
+            this.Appointment.Location = new System.Drawing.Point(4, 29);
             this.Appointment.Name = "Appointment";
-            this.Appointment.Size = new System.Drawing.Size(1204, 636);
+            this.Appointment.Size = new System.Drawing.Size(1204, 633);
             this.Appointment.TabIndex = 4;
             this.Appointment.Text = "Appointment";
             this.Appointment.UseVisualStyleBackColor = true;
@@ -812,7 +812,7 @@ namespace CIS2201_Assignment
             "Sort by Date: Oldest First "});
             this.AppFiltercbx.Location = new System.Drawing.Point(958, 87);
             this.AppFiltercbx.Name = "AppFiltercbx";
-            this.AppFiltercbx.Size = new System.Drawing.Size(153, 21);
+            this.AppFiltercbx.Size = new System.Drawing.Size(153, 24);
             this.AppFiltercbx.TabIndex = 39;
             this.AppFiltercbx.Text = "Sort by Date: Newest First";
             // 
@@ -842,7 +842,7 @@ namespace CIS2201_Assignment
             // 
             this.AppsearchID.Location = new System.Drawing.Point(424, 88);
             this.AppsearchID.Name = "AppsearchID";
-            this.AppsearchID.Size = new System.Drawing.Size(100, 20);
+            this.AppsearchID.Size = new System.Drawing.Size(100, 22);
             this.AppsearchID.TabIndex = 36;
             // 
             // label34
@@ -850,7 +850,7 @@ namespace CIS2201_Assignment
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(16, 91);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(303, 13);
+            this.label34.Size = new System.Drawing.Size(402, 17);
             this.label34.TabIndex = 35;
             this.label34.Text = "Enter the patient\'s ID whom\'s appointment you want so search:";
             // 
@@ -911,7 +911,7 @@ namespace CIS2201_Assignment
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(308, 121);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(85, 13);
+            this.label35.Size = new System.Drawing.Size(111, 17);
             this.label35.TabIndex = 33;
             this.label35.Text = "Scheduled date:";
             this.label35.Click += new System.EventHandler(this.label35_Click);
@@ -920,7 +920,7 @@ namespace CIS2201_Assignment
             // 
             this.Appsdate.Location = new System.Drawing.Point(499, 116);
             this.Appsdate.Name = "Appsdate";
-            this.Appsdate.Size = new System.Drawing.Size(200, 20);
+            this.Appsdate.Size = new System.Drawing.Size(200, 22);
             this.Appsdate.TabIndex = 12;
             this.Appsdate.ValueChanged += new System.EventHandler(this.Appsdate_ValueChanged);
             // 
@@ -928,7 +928,7 @@ namespace CIS2201_Assignment
             // 
             this.Appcdate.Location = new System.Drawing.Point(499, 82);
             this.Appcdate.Name = "Appcdate";
-            this.Appcdate.Size = new System.Drawing.Size(200, 20);
+            this.Appcdate.Size = new System.Drawing.Size(200, 22);
             this.Appcdate.TabIndex = 31;
             this.Appcdate.ValueChanged += new System.EventHandler(this.Appcdate_ValueChanged);
             // 
@@ -937,7 +937,7 @@ namespace CIS2201_Assignment
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(308, 87);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(136, 13);
+            this.label33.Size = new System.Drawing.Size(180, 17);
             this.label33.TabIndex = 30;
             this.label33.Text = "Appointment creation Date:";
             this.label33.Click += new System.EventHandler(this.label33_Click);
@@ -946,7 +946,7 @@ namespace CIS2201_Assignment
             // 
             this.AppDoctor.Location = new System.Drawing.Point(138, 196);
             this.AppDoctor.Name = "AppDoctor";
-            this.AppDoctor.Size = new System.Drawing.Size(118, 20);
+            this.AppDoctor.Size = new System.Drawing.Size(118, 22);
             this.AppDoctor.TabIndex = 29;
             this.AppDoctor.TextChanged += new System.EventHandler(this.AppDoctor_TextChanged);
             // 
@@ -955,7 +955,7 @@ namespace CIS2201_Assignment
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(15, 201);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(42, 13);
+            this.label31.Size = new System.Drawing.Size(54, 17);
             this.label31.TabIndex = 28;
             this.label31.Text = "Doctor:";
             this.label31.Click += new System.EventHandler(this.label31_Click);
@@ -964,7 +964,7 @@ namespace CIS2201_Assignment
             // 
             this.ApppatSurname.Location = new System.Drawing.Point(138, 158);
             this.ApppatSurname.Name = "ApppatSurname";
-            this.ApppatSurname.Size = new System.Drawing.Size(118, 20);
+            this.ApppatSurname.Size = new System.Drawing.Size(118, 22);
             this.ApppatSurname.TabIndex = 27;
             this.ApppatSurname.TextChanged += new System.EventHandler(this.ApppatSurname_TextChanged);
             // 
@@ -972,7 +972,7 @@ namespace CIS2201_Assignment
             // 
             this.ApppatName.Location = new System.Drawing.Point(138, 121);
             this.ApppatName.Name = "ApppatName";
-            this.ApppatName.Size = new System.Drawing.Size(118, 20);
+            this.ApppatName.Size = new System.Drawing.Size(118, 22);
             this.ApppatName.TabIndex = 26;
             this.ApppatName.TextChanged += new System.EventHandler(this.ApppatName_TextChanged);
             // 
@@ -980,7 +980,7 @@ namespace CIS2201_Assignment
             // 
             this.ApppatID.Location = new System.Drawing.Point(138, 84);
             this.ApppatID.Name = "ApppatID";
-            this.ApppatID.Size = new System.Drawing.Size(118, 20);
+            this.ApppatID.Size = new System.Drawing.Size(118, 22);
             this.ApppatID.TabIndex = 25;
             // 
             // label30
@@ -988,7 +988,7 @@ namespace CIS2201_Assignment
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(15, 161);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(88, 13);
+            this.label30.Size = new System.Drawing.Size(117, 17);
             this.label30.TabIndex = 24;
             this.label30.Text = "Patient Surname:";
             this.label30.Click += new System.EventHandler(this.label30_Click);
@@ -998,7 +998,7 @@ namespace CIS2201_Assignment
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(15, 121);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(75, 13);
+            this.label29.Size = new System.Drawing.Size(99, 17);
             this.label29.TabIndex = 23;
             this.label29.Text = "Patient name: ";
             this.label29.Click += new System.EventHandler(this.label29_Click);
@@ -1008,7 +1008,7 @@ namespace CIS2201_Assignment
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(15, 82);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(57, 13);
+            this.label28.Size = new System.Drawing.Size(73, 17);
             this.label28.TabIndex = 22;
             this.label28.Text = "Patient ID:";
             // 
@@ -1043,10 +1043,10 @@ namespace CIS2201_Assignment
             this.CalcBill.Controls.Add(this.label32);
             this.CalcBill.Controls.Add(this.billBackbtn);
             this.CalcBill.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            this.CalcBill.Location = new System.Drawing.Point(4, 26);
+            this.CalcBill.Location = new System.Drawing.Point(4, 29);
             this.CalcBill.Name = "CalcBill";
             this.CalcBill.Padding = new System.Windows.Forms.Padding(3);
-            this.CalcBill.Size = new System.Drawing.Size(1204, 636);
+            this.CalcBill.Size = new System.Drawing.Size(1204, 633);
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Bill";
             this.CalcBill.UseVisualStyleBackColor = true;
@@ -1065,28 +1065,28 @@ namespace CIS2201_Assignment
             // 
             this.textBoxPay.Location = new System.Drawing.Point(195, 347);
             this.textBoxPay.Name = "textBoxPay";
-            this.textBoxPay.Size = new System.Drawing.Size(100, 23);
+            this.textBoxPay.Size = new System.Drawing.Size(100, 27);
             this.textBoxPay.TabIndex = 62;
             // 
             // textBoxExpenseTotal
             // 
             this.textBoxExpenseTotal.Location = new System.Drawing.Point(195, 277);
             this.textBoxExpenseTotal.Name = "textBoxExpenseTotal";
-            this.textBoxExpenseTotal.Size = new System.Drawing.Size(100, 23);
+            this.textBoxExpenseTotal.Size = new System.Drawing.Size(100, 27);
             this.textBoxExpenseTotal.TabIndex = 60;
             // 
             // textBoxNights
             // 
             this.textBoxNights.Location = new System.Drawing.Point(195, 109);
             this.textBoxNights.Name = "textBoxNights";
-            this.textBoxNights.Size = new System.Drawing.Size(100, 23);
+            this.textBoxNights.Size = new System.Drawing.Size(100, 27);
             this.textBoxNights.TabIndex = 59;
             // 
             // textBoxID
             // 
             this.textBoxID.Location = new System.Drawing.Point(195, 51);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 23);
+            this.textBoxID.Size = new System.Drawing.Size(100, 27);
             this.textBoxID.TabIndex = 58;
             this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
@@ -1095,7 +1095,7 @@ namespace CIS2201_Assignment
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(49, 354);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(80, 16);
+            this.label40.Size = new System.Drawing.Size(101, 19);
             this.label40.TabIndex = 57;
             this.label40.Text = "Patient to pay";
             // 
@@ -1104,7 +1104,7 @@ namespace CIS2201_Assignment
             this.label38.AutoSize = true;
             this.label38.Location = new System.Drawing.Point(49, 282);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(79, 16);
+            this.label38.Size = new System.Drawing.Size(101, 19);
             this.label38.TabIndex = 55;
             this.label38.Text = "Total Expense";
             // 
@@ -1113,7 +1113,7 @@ namespace CIS2201_Assignment
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(49, 114);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(101, 16);
+            this.label37.Size = new System.Drawing.Size(125, 19);
             this.label37.TabIndex = 54;
             this.label37.Text = "Number of nights";
             // 
@@ -1122,7 +1122,7 @@ namespace CIS2201_Assignment
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(49, 56);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(46, 16);
+            this.label32.Size = new System.Drawing.Size(59, 19);
             this.label32.TabIndex = 53;
             this.label32.Text = "ID Card";
             // 
@@ -1155,10 +1155,10 @@ namespace CIS2201_Assignment
             this.Search.Controls.Add(this.psearchID);
             this.Search.Controls.Add(this.label22);
             this.Search.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
-            this.Search.Location = new System.Drawing.Point(4, 26);
+            this.Search.Location = new System.Drawing.Point(4, 29);
             this.Search.Name = "Search";
             this.Search.Padding = new System.Windows.Forms.Padding(3);
-            this.Search.Size = new System.Drawing.Size(1204, 636);
+            this.Search.Size = new System.Drawing.Size(1204, 633);
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
@@ -1184,7 +1184,7 @@ namespace CIS2201_Assignment
             "Date: Oldest First"});
             this.Filtercbx.Location = new System.Drawing.Point(1026, 372);
             this.Filtercbx.Name = "Filtercbx";
-            this.Filtercbx.Size = new System.Drawing.Size(121, 24);
+            this.Filtercbx.Size = new System.Drawing.Size(121, 27);
             this.Filtercbx.TabIndex = 22;
             this.Filtercbx.Text = "Sort by";
             // 
@@ -1248,7 +1248,7 @@ namespace CIS2201_Assignment
             // 
             this.pvisitID.Location = new System.Drawing.Point(422, 368);
             this.pvisitID.Name = "pvisitID";
-            this.pvisitID.Size = new System.Drawing.Size(100, 23);
+            this.pvisitID.Size = new System.Drawing.Size(100, 27);
             this.pvisitID.TabIndex = 5;
             // 
             // label23
@@ -1256,7 +1256,7 @@ namespace CIS2201_Assignment
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(22, 372);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(314, 16);
+            this.label23.Size = new System.Drawing.Size(394, 19);
             this.label23.TabIndex = 4;
             this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
             // 
@@ -1281,12 +1281,13 @@ namespace CIS2201_Assignment
             this.patientdgv.RowHeadersWidth = 51;
             this.patientdgv.Size = new System.Drawing.Size(1122, 119);
             this.patientdgv.TabIndex = 2;
+            this.patientdgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientdgv_CellContentClick);
             // 
             // psearchID
             // 
             this.psearchID.Location = new System.Drawing.Point(376, 87);
             this.psearchID.Name = "psearchID";
-            this.psearchID.Size = new System.Drawing.Size(100, 23);
+            this.psearchID.Size = new System.Drawing.Size(100, 27);
             this.psearchID.TabIndex = 1;
             this.psearchID.TextChanged += new System.EventHandler(this.psearchID_TextChanged);
             // 
@@ -1295,7 +1296,7 @@ namespace CIS2201_Assignment
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(22, 90);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(272, 16);
+            this.label22.Size = new System.Drawing.Size(342, 19);
             this.label22.TabIndex = 0;
             this.label22.Text = "Enter the ID of the patient that you want to search:";
             // 
@@ -1313,6 +1314,7 @@ namespace CIS2201_Assignment
             this.Controls.Add(this.PatientsTabControl);
             this.Controls.Add(this.BlueBack);
             this.Name = "Patients";
+            this.Load += new System.EventHandler(this.Patients_Load);
             this.BlueBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             this.PatientsTabControl.ResumeLayout(false);

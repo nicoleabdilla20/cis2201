@@ -271,5 +271,10 @@ namespace CIS2201_Assignment
             Navigation fm = new Navigation();
             fm.Show();
         }
+
+        private void AddStaff_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
