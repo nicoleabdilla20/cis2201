@@ -79,15 +79,16 @@ namespace CIS2201_Assignment
         }
         private bool IsTypeValid()
         {
-            if (typeOfMed.Items == null)
-            {
-                MessageBox.Show("Please make sure that you have entered the type of medication!");
+        if (string.IsNullOrEmpty(typeOfMed.Text))
+{
+    MessageBox.Show("No Item is Selected"); 
                 return false;
-            }
-            else
-            {
+}
+else
+{
+    MessageBox.Show("Item Selected is:" + typeOfMed.Text);
                 return true;
-            }
+}
         }
 
         private bool IfTypeBloodSamples()
@@ -151,10 +152,8 @@ namespace CIS2201_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IsTypeValid() && IfTypeBloodSamples() && IsStockValid() && IsPriceValid() && IsMaintenanceValid())
+            if (IsTypeValid())
             {
-                string message = "adding medication";
-                MessageBox.Show(message);
                 // Create the connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
@@ -178,8 +177,8 @@ namespace CIS2201_Assignment
                         sqlCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.NVarChar, 40));
                         sqlCommand.Parameters["@price"].Value = price.Text;
 
-                        sqlCommand.Parameters.Add(new SqlParameter("@maintenanceRequired", SqlDbType.NVarChar, 40));
-                        sqlCommand.Parameters["@maintenanceRequired"].Value = checkbox.Text;
+                        sqlCommand.Parameters.Add(new SqlParameter("@requireMaintenance", SqlDbType.VarChar, 40));
+                        sqlCommand.Parameters["@requireMaintenance"].Value = checkbox.Text;
 
                         try
                         {
@@ -199,15 +198,16 @@ namespace CIS2201_Assignment
                         }
                     }
                 }
-
-            }
-            else {
+                }
+            else 
+             {
                 string errorMessage = "Whoops......something went wrong!";
                 MessageBox.Show(errorMessage);
-            }
+
+             }
         }
 
-        private void searchStaffID_Click(object sender, EventArgs e)
+        private void searchMedID_Click(object sender, EventArgs e)
         {
             if (IsTypeValid())
             {

@@ -123,3 +123,10 @@ C:\Users\Nicole Bezzina\source\repos\CIS2201 OOP Assignment\CIS2201_Assignment\C
 C:\Users\Nicole Bezzina\source\repos\CIS2201 OOP Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
 C:\Users\Nicole Bezzina\source\repos\CIS2201 OOP Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
 C:\Users\Nicole Bezzina\source\repos\CIS2201 OOP Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Medication.resources
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Medication.resources
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
