@@ -606,7 +606,7 @@ namespace CIS2201_Assignment
         }
 
         // Derived Classes
-        public class planX : planBase
+        public class planZ : planBase
         {
             //Insurance fully covers expense
             int insurance;
@@ -626,13 +626,22 @@ namespace CIS2201_Assignment
             int toPay;
             public override int calculate(int expense)
             {
-                insurance = expense / 2;
-                toPay = expense / 2;
-                return toPay;
+                if (expense >= 700)
+                {
+                    insurance = expense / 2;
+                    toPay = expense / 2;
+                    return toPay;
+                }
+                else
+                {
+                    insurance = 0;
+                    toPay = expense;
+                    return toPay;
+                }
             }
         }
 
-        public class planZ : planBase
+        public class planX : planBase
         {
             //Patient pays everything
             int insurance;
@@ -682,7 +691,7 @@ namespace CIS2201_Assignment
             int night = Convert.ToInt32(textBoxNights.Text);
             if (plan.Equals("X"))
             {
-                MessageBox.Show("Plan is X");
+                MessageBox.Show("Your insurance plan is X: you agreed to pay 100% of the bill out of pocket.");
                 expenseTotal = expenseTotal * night;
                 planX x = new planX();
                 finalAnswer = x.calculate(expenseTotal);
@@ -690,7 +699,7 @@ namespace CIS2201_Assignment
             }
             else if (plan.Equals("Y"))
             {
-                MessageBox.Show("Plan is Y");
+                MessageBox.Show("Your insurance plan is Y: you agreed to pay counterpart funding (50%) if the bill is more than 700. If it's less than 700, you agreed to pay 100% of the bill out of pocket.");
                 expenseTotal = expenseTotal * night;
                 planY y = new planY();
                 finalAnswer = y.calculate(expenseTotal);
@@ -698,7 +707,7 @@ namespace CIS2201_Assignment
             }
             else
             {
-                MessageBox.Show("Plan is Z");
+                MessageBox.Show("Your insurance plan is Z: you agreed to pay no counterpart for service uptake.");
                 expenseTotal = expenseTotal * night;
                 planZ z = new planZ();
                 finalAnswer = z.calculate(expenseTotal);
@@ -746,6 +755,11 @@ namespace CIS2201_Assignment
         }
 
         private void patientdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label39_Click(object sender, EventArgs e)
         {
 
         }

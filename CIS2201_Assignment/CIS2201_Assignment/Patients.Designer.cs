@@ -22,8 +22,21 @@ namespace CIS2201_Assignment
             this.label36 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.AddPat = new System.Windows.Forms.TabPage();
-            this.addPatbackbtn = new System.Windows.Forms.Button();
-            this.visitsubmit = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.historysummary = new System.Windows.Forms.RichTextBox();
+            this.historydoctor = new System.Windows.Forms.TextBox();
+            this.historydate = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.summarytxt = new System.Windows.Forms.RichTextBox();
+            this.doctortxt = new System.Windows.Forms.TextBox();
+            this.visitdate = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.insurancetxt = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -32,28 +45,12 @@ namespace CIS2201_Assignment
             this.surnametxt = new System.Windows.Forms.TextBox();
             this.gendertxt = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.submit = new System.Windows.Forms.Button();
-            this.historysummary = new System.Windows.Forms.RichTextBox();
-            this.historydoctor = new System.Windows.Forms.TextBox();
-            this.historydate = new System.Windows.Forms.DateTimePicker();
-            this.summarytxt = new System.Windows.Forms.RichTextBox();
-            this.doctortxt = new System.Windows.Forms.TextBox();
-            this.visitdate = new System.Windows.Forms.DateTimePicker();
             this.allergiesopts = new System.Windows.Forms.ComboBox();
             this.addresstxt = new System.Windows.Forms.TextBox();
             this.telephonetxt = new System.Windows.Forms.TextBox();
             this.nametxt = new System.Windows.Forms.TextBox();
             this.bloodopts = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,6 +59,12 @@ namespace CIS2201_Assignment
             this.dob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.addPatbackbtn = new System.Windows.Forms.Button();
+            this.visitsubmit = new System.Windows.Forms.Button();
+            this.submit = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Appointment = new System.Windows.Forms.TabPage();
             this.Appbackbtn = new System.Windows.Forms.Button();
@@ -88,6 +91,9 @@ namespace CIS2201_Assignment
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.CalcBill = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPay = new System.Windows.Forms.TextBox();
             this.textBoxExpenseTotal = new System.Windows.Forms.TextBox();
@@ -99,18 +105,20 @@ namespace CIS2201_Assignment
             this.label32 = new System.Windows.Forms.Label();
             this.billBackbtn = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TabPage();
-            this.searchPatbackbtn = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.Filtercbx = new System.Windows.Forms.ComboBox();
             this.visitsearch = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.visitdgv = new System.Windows.Forms.DataGridView();
             this.pvisitID = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.searchPatient = new System.Windows.Forms.Button();
             this.patientdgv = new System.Windows.Forms.DataGridView();
             this.psearchID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.searchPatbackbtn = new System.Windows.Forms.Button();
             this.searchVisit = new System.Windows.Forms.Button();
             this.BlueBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
@@ -119,13 +127,19 @@ namespace CIS2201_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.AddPat.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.Appointment.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Appsearchdgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.CalcBill.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.Search.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,9 +220,9 @@ namespace CIS2201_Assignment
             this.patHomebackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.patHomebackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.patHomebackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patHomebackbtn.Location = new System.Drawing.Point(6, 607);
+            this.patHomebackbtn.Location = new System.Drawing.Point(6, 598);
             this.patHomebackbtn.Name = "patHomebackbtn";
-            this.patHomebackbtn.Size = new System.Drawing.Size(75, 23);
+            this.patHomebackbtn.Size = new System.Drawing.Size(75, 27);
             this.patHomebackbtn.TabIndex = 52;
             this.patHomebackbtn.Text = "Back";
             this.patHomebackbtn.UseVisualStyleBackColor = false;
@@ -306,46 +320,15 @@ namespace CIS2201_Assignment
             // 
             this.AddPat.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
             this.AddPat.BackColor = System.Drawing.Color.White;
+            this.AddPat.Controls.Add(this.panel9);
+            this.AddPat.Controls.Add(this.panel8);
+            this.AddPat.Controls.Add(this.panel7);
             this.AddPat.Controls.Add(this.addPatbackbtn);
             this.AddPat.Controls.Add(this.visitsubmit);
-            this.AddPat.Controls.Add(this.insurancetxt);
-            this.AddPat.Controls.Add(this.label21);
-            this.AddPat.Controls.Add(this.label20);
-            this.AddPat.Controls.Add(this.IDtxt);
-            this.AddPat.Controls.Add(this.agetxt);
-            this.AddPat.Controls.Add(this.surnametxt);
-            this.AddPat.Controls.Add(this.gendertxt);
-            this.AddPat.Controls.Add(this.label19);
             this.AddPat.Controls.Add(this.submit);
-            this.AddPat.Controls.Add(this.historysummary);
-            this.AddPat.Controls.Add(this.historydoctor);
-            this.AddPat.Controls.Add(this.historydate);
-            this.AddPat.Controls.Add(this.summarytxt);
-            this.AddPat.Controls.Add(this.doctortxt);
-            this.AddPat.Controls.Add(this.visitdate);
-            this.AddPat.Controls.Add(this.allergiesopts);
-            this.AddPat.Controls.Add(this.addresstxt);
-            this.AddPat.Controls.Add(this.telephonetxt);
-            this.AddPat.Controls.Add(this.nametxt);
-            this.AddPat.Controls.Add(this.bloodopts);
-            this.AddPat.Controls.Add(this.label16);
-            this.AddPat.Controls.Add(this.label17);
-            this.AddPat.Controls.Add(this.label18);
-            this.AddPat.Controls.Add(this.label15);
-            this.AddPat.Controls.Add(this.label14);
-            this.AddPat.Controls.Add(this.label13);
-            this.AddPat.Controls.Add(this.label12);
             this.AddPat.Controls.Add(this.label11);
             this.AddPat.Controls.Add(this.label10);
             this.AddPat.Controls.Add(this.label9);
-            this.AddPat.Controls.Add(this.label8);
-            this.AddPat.Controls.Add(this.label7);
-            this.AddPat.Controls.Add(this.label6);
-            this.AddPat.Controls.Add(this.label5);
-            this.AddPat.Controls.Add(this.label4);
-            this.AddPat.Controls.Add(this.dob);
-            this.AddPat.Controls.Add(this.label3);
-            this.AddPat.Controls.Add(this.label2);
             this.AddPat.Controls.Add(this.label1);
             this.AddPat.Cursor = System.Windows.Forms.Cursors.Default;
             this.AddPat.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
@@ -356,48 +339,182 @@ namespace CIS2201_Assignment
             this.AddPat.TabIndex = 1;
             this.AddPat.Text = "Add Patient";
             // 
-            // addPatbackbtn
+            // panel9
             // 
-            this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPatbackbtn.Location = new System.Drawing.Point(8, 605);
-            this.addPatbackbtn.Name = "addPatbackbtn";
-            this.addPatbackbtn.Size = new System.Drawing.Size(75, 23);
-            this.addPatbackbtn.TabIndex = 50;
-            this.addPatbackbtn.Text = "Back";
-            this.addPatbackbtn.UseVisualStyleBackColor = false;
-            this.addPatbackbtn.Click += new System.EventHandler(this.addPatbackbtn_Click);
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.historysummary);
+            this.panel9.Controls.Add(this.historydoctor);
+            this.panel9.Controls.Add(this.historydate);
+            this.panel9.Controls.Add(this.label16);
+            this.panel9.Controls.Add(this.label17);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Location = new System.Drawing.Point(632, 310);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(524, 182);
+            this.panel9.TabIndex = 53;
             // 
-            // visitsubmit
+            // historysummary
             // 
-            this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.visitsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.visitsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.visitsubmit.Location = new System.Drawing.Point(931, 512);
-            this.visitsubmit.Name = "visitsubmit";
-            this.visitsubmit.Size = new System.Drawing.Size(156, 40);
-            this.visitsubmit.TabIndex = 49;
-            this.visitsubmit.Text = "Add Visits";
-            this.visitsubmit.UseVisualStyleBackColor = false;
-            this.visitsubmit.Click += new System.EventHandler(this.visitsubmit_Click);
+            this.historysummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.historysummary.Location = new System.Drawing.Point(164, 96);
+            this.historysummary.Name = "historysummary";
+            this.historysummary.Size = new System.Drawing.Size(344, 74);
+            this.historysummary.TabIndex = 38;
+            this.historysummary.Text = "";
+            // 
+            // historydoctor
+            // 
+            this.historydoctor.Location = new System.Drawing.Point(75, 46);
+            this.historydoctor.Name = "historydoctor";
+            this.historydoctor.Size = new System.Drawing.Size(200, 27);
+            this.historydoctor.TabIndex = 37;
+            // 
+            // historydate
+            // 
+            this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.historydate.Location = new System.Drawing.Point(75, 11);
+            this.historydate.Name = "historydate";
+            this.historydate.Size = new System.Drawing.Size(200, 27);
+            this.historydate.TabIndex = 36;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 98);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(124, 19);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Summary of Visit:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 19);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Doctor:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 17);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 19);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Date:";
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.summarytxt);
+            this.panel8.Controls.Add(this.doctortxt);
+            this.panel8.Controls.Add(this.visitdate);
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Location = new System.Drawing.Point(632, 71);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(524, 177);
+            this.panel8.TabIndex = 52;
+            // 
+            // summarytxt
+            // 
+            this.summarytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.summarytxt.Location = new System.Drawing.Point(164, 89);
+            this.summarytxt.Name = "summarytxt";
+            this.summarytxt.Size = new System.Drawing.Size(344, 74);
+            this.summarytxt.TabIndex = 35;
+            this.summarytxt.Text = "";
+            // 
+            // doctortxt
+            // 
+            this.doctortxt.Location = new System.Drawing.Point(75, 45);
+            this.doctortxt.Name = "doctortxt";
+            this.doctortxt.Size = new System.Drawing.Size(200, 27);
+            this.doctortxt.TabIndex = 34;
+            // 
+            // visitdate
+            // 
+            this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.visitdate.Location = new System.Drawing.Point(75, 10);
+            this.visitdate.Name = "visitdate";
+            this.visitdate.Size = new System.Drawing.Size(200, 27);
+            this.visitdate.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 91);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 19);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Summary of Visit:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 19);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Doctor:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 19);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Date:";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.insurancetxt);
+            this.panel7.Controls.Add(this.label21);
+            this.panel7.Controls.Add(this.label20);
+            this.panel7.Controls.Add(this.IDtxt);
+            this.panel7.Controls.Add(this.agetxt);
+            this.panel7.Controls.Add(this.surnametxt);
+            this.panel7.Controls.Add(this.gendertxt);
+            this.panel7.Controls.Add(this.label19);
+            this.panel7.Controls.Add(this.allergiesopts);
+            this.panel7.Controls.Add(this.addresstxt);
+            this.panel7.Controls.Add(this.telephonetxt);
+            this.panel7.Controls.Add(this.nametxt);
+            this.panel7.Controls.Add(this.bloodopts);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.dob);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Location = new System.Drawing.Point(51, 135);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(459, 364);
+            this.panel7.TabIndex = 51;
             // 
             // insurancetxt
             // 
             this.insurancetxt.FormattingEnabled = true;
             this.insurancetxt.Items.AddRange(new object[] {
-            "X",
-            "Y",
-            "Z"});
-            this.insurancetxt.Location = new System.Drawing.Point(399, 327);
+            "X - pay 100% of the bill out of pocket",
+            "Y - pay counterpart funding (50%) if the bill is more than 700",
+            "Z - pay no counterpart for service uptake"});
+            this.insurancetxt.Location = new System.Drawing.Point(103, 318);
             this.insurancetxt.Name = "insurancetxt";
-            this.insurancetxt.Size = new System.Drawing.Size(56, 27);
+            this.insurancetxt.Size = new System.Drawing.Size(121, 27);
             this.insurancetxt.TabIndex = 48;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(330, 327);
+            this.label21.Location = new System.Drawing.Point(18, 321);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(74, 19);
             this.label21.TabIndex = 47;
@@ -406,7 +523,7 @@ namespace CIS2201_Assignment
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(330, 237);
+            this.label20.Location = new System.Drawing.Point(305, 97);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(39, 19);
             this.label20.TabIndex = 46;
@@ -414,28 +531,28 @@ namespace CIS2201_Assignment
             // 
             // IDtxt
             // 
-            this.IDtxt.Location = new System.Drawing.Point(98, 195);
+            this.IDtxt.Location = new System.Drawing.Point(80, 55);
             this.IDtxt.Name = "IDtxt";
             this.IDtxt.Size = new System.Drawing.Size(136, 27);
             this.IDtxt.TabIndex = 45;
             // 
             // agetxt
             // 
-            this.agetxt.Location = new System.Drawing.Point(368, 234);
+            this.agetxt.Location = new System.Drawing.Point(350, 94);
             this.agetxt.Name = "agetxt";
             this.agetxt.Size = new System.Drawing.Size(86, 27);
             this.agetxt.TabIndex = 44;
             // 
             // surnametxt
             // 
-            this.surnametxt.Location = new System.Drawing.Point(330, 155);
+            this.surnametxt.Location = new System.Drawing.Point(312, 15);
             this.surnametxt.Name = "surnametxt";
             this.surnametxt.Size = new System.Drawing.Size(125, 27);
             this.surnametxt.TabIndex = 42;
             // 
             // gendertxt
             // 
-            this.gendertxt.Location = new System.Drawing.Point(330, 195);
+            this.gendertxt.Location = new System.Drawing.Point(312, 55);
             this.gendertxt.Name = "gendertxt";
             this.gendertxt.Size = new System.Drawing.Size(125, 27);
             this.gendertxt.TabIndex = 41;
@@ -443,73 +560,11 @@ namespace CIS2201_Assignment
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(266, 200);
+            this.label19.Location = new System.Drawing.Point(238, 58);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(60, 19);
             this.label19.TabIndex = 40;
             this.label19.Text = "Gender:";
-            // 
-            // submit
-            // 
-            this.submit.AutoSize = true;
-            this.submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.submit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Location = new System.Drawing.Point(299, 512);
-            this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(156, 40);
-            this.submit.TabIndex = 39;
-            this.submit.Text = "Add Patient";
-            this.submit.UseVisualStyleBackColor = false;
-            this.submit.Click += new System.EventHandler(this.submit_Click);
-            // 
-            // historysummary
-            // 
-            this.historysummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.historysummary.Location = new System.Drawing.Point(743, 408);
-            this.historysummary.Name = "historysummary";
-            this.historysummary.Size = new System.Drawing.Size(344, 74);
-            this.historysummary.TabIndex = 38;
-            this.historysummary.Text = "";
-            // 
-            // historydoctor
-            // 
-            this.historydoctor.Location = new System.Drawing.Point(662, 363);
-            this.historydoctor.Name = "historydoctor";
-            this.historydoctor.Size = new System.Drawing.Size(136, 27);
-            this.historydoctor.TabIndex = 37;
-            // 
-            // historydate
-            // 
-            this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.historydate.Location = new System.Drawing.Point(654, 317);
-            this.historydate.Name = "historydate";
-            this.historydate.Size = new System.Drawing.Size(200, 27);
-            this.historydate.TabIndex = 36;
-            // 
-            // summarytxt
-            // 
-            this.summarytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.summarytxt.Location = new System.Drawing.Point(743, 153);
-            this.summarytxt.Name = "summarytxt";
-            this.summarytxt.Size = new System.Drawing.Size(344, 74);
-            this.summarytxt.TabIndex = 35;
-            this.summarytxt.Text = "";
-            // 
-            // doctortxt
-            // 
-            this.doctortxt.Location = new System.Drawing.Point(662, 117);
-            this.doctortxt.Name = "doctortxt";
-            this.doctortxt.Size = new System.Drawing.Size(136, 27);
-            this.doctortxt.TabIndex = 34;
-            // 
-            // visitdate
-            // 
-            this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.visitdate.Location = new System.Drawing.Point(654, 71);
-            this.visitdate.Name = "visitdate";
-            this.visitdate.Size = new System.Drawing.Size(200, 27);
-            this.visitdate.TabIndex = 33;
             // 
             // allergiesopts
             // 
@@ -521,29 +576,28 @@ namespace CIS2201_Assignment
             "Latex",
             "Mold",
             "Pet Pollen"});
-            this.allergiesopts.Location = new System.Drawing.Point(121, 390);
+            this.allergiesopts.Location = new System.Drawing.Point(103, 273);
             this.allergiesopts.Name = "allergiesopts";
             this.allergiesopts.Size = new System.Drawing.Size(121, 27);
             this.allergiesopts.TabIndex = 32;
-            this.allergiesopts.Text = "Select";
             // 
             // addresstxt
             // 
-            this.addresstxt.Location = new System.Drawing.Point(121, 273);
+            this.addresstxt.Location = new System.Drawing.Point(102, 137);
             this.addresstxt.Name = "addresstxt";
             this.addresstxt.Size = new System.Drawing.Size(334, 27);
             this.addresstxt.TabIndex = 31;
             // 
             // telephonetxt
             // 
-            this.telephonetxt.Location = new System.Drawing.Point(121, 318);
+            this.telephonetxt.Location = new System.Drawing.Point(103, 178);
             this.telephonetxt.Name = "telephonetxt";
             this.telephonetxt.Size = new System.Drawing.Size(121, 27);
             this.telephonetxt.TabIndex = 30;
             // 
             // nametxt
             // 
-            this.nametxt.Location = new System.Drawing.Point(98, 152);
+            this.nametxt.Location = new System.Drawing.Point(80, 12);
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(136, 27);
             this.nametxt.TabIndex = 27;
@@ -556,74 +610,130 @@ namespace CIS2201_Assignment
             "B",
             "AB",
             "O"});
-            this.bloodopts.Location = new System.Drawing.Point(121, 354);
+            this.bloodopts.Location = new System.Drawing.Point(103, 224);
             this.bloodopts.Name = "bloodopts";
             this.bloodopts.Size = new System.Drawing.Size(121, 27);
             this.bloodopts.TabIndex = 26;
-            this.bloodopts.Text = "Select";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(587, 410);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(124, 19);
-            this.label16.TabIndex = 25;
-            this.label16.Text = "Summary of Visit:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(587, 362);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 19);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "Doctor:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(587, 323);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 19);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "Date:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(587, 165);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(124, 19);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Summary of Visit:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(587, 117);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 19);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Doctor:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(587, 77);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 19);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Date:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(31, 393);
+            this.label12.Location = new System.Drawing.Point(13, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 19);
             this.label12.TabIndex = 19;
             this.label12.Text = "Allergies:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 227);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 19);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Blood Type:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 181);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 19);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Telphone:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Address: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "ID:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 19);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Date Of Birth:";
+            // 
+            // dob
+            // 
+            this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dob.Location = new System.Drawing.Point(116, 94);
+            this.dob.Name = "dob";
+            this.dob.Size = new System.Drawing.Size(182, 27);
+            this.dob.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(238, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 19);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Surname:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Name:";
+            // 
+            // addPatbackbtn
+            // 
+            this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPatbackbtn.Location = new System.Drawing.Point(8, 598);
+            this.addPatbackbtn.Name = "addPatbackbtn";
+            this.addPatbackbtn.Size = new System.Drawing.Size(75, 27);
+            this.addPatbackbtn.TabIndex = 50;
+            this.addPatbackbtn.Text = "Back";
+            this.addPatbackbtn.UseVisualStyleBackColor = false;
+            this.addPatbackbtn.Click += new System.EventHandler(this.addPatbackbtn_Click);
+            // 
+            // visitsubmit
+            // 
+            this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.visitsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.visitsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.visitsubmit.Location = new System.Drawing.Point(1000, 505);
+            this.visitsubmit.Name = "visitsubmit";
+            this.visitsubmit.Size = new System.Drawing.Size(156, 40);
+            this.visitsubmit.TabIndex = 49;
+            this.visitsubmit.Text = "Add Visits";
+            this.visitsubmit.UseVisualStyleBackColor = false;
+            this.visitsubmit.Click += new System.EventHandler(this.visitsubmit_Click);
+            // 
+            // submit
+            // 
+            this.submit.AutoSize = true;
+            this.submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.submit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit.Location = new System.Drawing.Point(354, 505);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(156, 40);
+            this.submit.TabIndex = 39;
+            this.submit.Text = "Add Patient";
+            this.submit.UseVisualStyleBackColor = false;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // label11
             // 
@@ -634,10 +744,10 @@ namespace CIS2201_Assignment
             this.label11.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label11.Location = new System.Drawing.Point(10, 71);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(51, 88);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(445, 44);
+            this.label11.Size = new System.Drawing.Size(459, 44);
             this.label11.TabIndex = 18;
             this.label11.Text = "General Details:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -651,10 +761,10 @@ namespace CIS2201_Assignment
             this.label10.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(586, 239);
+            this.label10.Location = new System.Drawing.Point(632, 263);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(501, 44);
+            this.label10.Size = new System.Drawing.Size(524, 44);
             this.label10.TabIndex = 17;
             this.label10.Text = "Other Visits:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -668,84 +778,13 @@ namespace CIS2201_Assignment
             this.label9.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Location = new System.Drawing.Point(581, 24);
+            this.label9.Location = new System.Drawing.Point(632, 24);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(506, 44);
+            this.label9.Size = new System.Drawing.Size(524, 44);
             this.label9.TabIndex = 16;
             this.label9.Text = "Recent Visit:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 357);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 19);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Blood Type:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 318);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 19);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Telphone:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 277);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Address: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "ID:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 19);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Date Of Birth:";
-            // 
-            // dob
-            // 
-            this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dob.Location = new System.Drawing.Point(134, 234);
-            this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(190, 27);
-            this.dob.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 19);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Surname:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Name:";
             // 
             // label1
             // 
@@ -755,17 +794,17 @@ namespace CIS2201_Assignment
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(9, 12);
+            this.label1.Location = new System.Drawing.Point(51, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(446, 44);
+            this.label1.Size = new System.Drawing.Size(459, 44);
             this.label1.TabIndex = 7;
             this.label1.Text = "Add a Patient";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Appointment
             // 
+            this.Appointment.BackColor = System.Drawing.Color.White;
             this.Appointment.Controls.Add(this.Appbackbtn);
             this.Appointment.Controls.Add(this.panel3);
             this.Appointment.Controls.Add(this.panel2);
@@ -774,7 +813,6 @@ namespace CIS2201_Assignment
             this.Appointment.Size = new System.Drawing.Size(1204, 633);
             this.Appointment.TabIndex = 4;
             this.Appointment.Text = "Appointment";
-            this.Appointment.UseVisualStyleBackColor = true;
             this.Appointment.Click += new System.EventHandler(this.Appointment_Click);
             // 
             // Appbackbtn
@@ -782,9 +820,9 @@ namespace CIS2201_Assignment
             this.Appbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.Appbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Appbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Appbackbtn.Location = new System.Drawing.Point(8, 605);
+            this.Appbackbtn.Location = new System.Drawing.Point(8, 596);
             this.Appbackbtn.Name = "Appbackbtn";
-            this.Appbackbtn.Size = new System.Drawing.Size(75, 23);
+            this.Appbackbtn.Size = new System.Drawing.Size(75, 29);
             this.Appbackbtn.TabIndex = 51;
             this.Appbackbtn.Text = "Back";
             this.Appbackbtn.UseVisualStyleBackColor = false;
@@ -819,10 +857,10 @@ namespace CIS2201_Assignment
             // Appsearchdgv
             // 
             this.Appsearchdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Appsearchdgv.Location = new System.Drawing.Point(19, 129);
+            this.Appsearchdgv.Location = new System.Drawing.Point(18, 129);
             this.Appsearchdgv.Name = "Appsearchdgv";
             this.Appsearchdgv.RowHeadersWidth = 51;
-            this.Appsearchdgv.Size = new System.Drawing.Size(1092, 150);
+            this.Appsearchdgv.Size = new System.Drawing.Size(1093, 150);
             this.Appsearchdgv.TabIndex = 38;
             // 
             // Appsearchbtn
@@ -830,9 +868,9 @@ namespace CIS2201_Assignment
             this.Appsearchbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.Appsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Appsearchbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Appsearchbtn.Location = new System.Drawing.Point(539, 87);
+            this.Appsearchbtn.Location = new System.Drawing.Point(539, 85);
             this.Appsearchbtn.Name = "Appsearchbtn";
-            this.Appsearchbtn.Size = new System.Drawing.Size(75, 25);
+            this.Appsearchbtn.Size = new System.Drawing.Size(75, 26);
             this.Appsearchbtn.TabIndex = 37;
             this.Appsearchbtn.Text = "Search";
             this.Appsearchbtn.UseVisualStyleBackColor = false;
@@ -848,7 +886,7 @@ namespace CIS2201_Assignment
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(16, 91);
+            this.label34.Location = new System.Drawing.Point(15, 91);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(402, 17);
             this.label34.TabIndex = 35;
@@ -863,7 +901,7 @@ namespace CIS2201_Assignment
             this.label27.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label27.Location = new System.Drawing.Point(19, 6);
+            this.label27.Location = new System.Drawing.Point(14, 13);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(304, 44);
@@ -898,9 +936,9 @@ namespace CIS2201_Assignment
             this.crtAppbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.crtAppbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.crtAppbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crtAppbtn.Location = new System.Drawing.Point(413, 195);
+            this.crtAppbtn.Location = new System.Drawing.Point(413, 193);
             this.crtAppbtn.Name = "crtAppbtn";
-            this.crtAppbtn.Size = new System.Drawing.Size(75, 23);
+            this.crtAppbtn.Size = new System.Drawing.Size(75, 26);
             this.crtAppbtn.TabIndex = 34;
             this.crtAppbtn.Text = "Create";
             this.crtAppbtn.UseVisualStyleBackColor = false;
@@ -1021,7 +1059,7 @@ namespace CIS2201_Assignment
             this.label26.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label26.Location = new System.Drawing.Point(18, 11);
+            this.label26.Location = new System.Drawing.Point(14, 15);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(304, 44);
@@ -1032,15 +1070,8 @@ namespace CIS2201_Assignment
             // CalcBill
             // 
             this.CalcBill.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
-            this.CalcBill.Controls.Add(this.button1);
-            this.CalcBill.Controls.Add(this.textBoxPay);
-            this.CalcBill.Controls.Add(this.textBoxExpenseTotal);
-            this.CalcBill.Controls.Add(this.textBoxNights);
-            this.CalcBill.Controls.Add(this.textBoxID);
-            this.CalcBill.Controls.Add(this.label40);
-            this.CalcBill.Controls.Add(this.label38);
-            this.CalcBill.Controls.Add(this.label37);
-            this.CalcBill.Controls.Add(this.label32);
+            this.CalcBill.BackColor = System.Drawing.Color.White;
+            this.CalcBill.Controls.Add(this.panel4);
             this.CalcBill.Controls.Add(this.billBackbtn);
             this.CalcBill.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.CalcBill.Location = new System.Drawing.Point(4, 29);
@@ -1049,91 +1080,139 @@ namespace CIS2201_Assignment
             this.CalcBill.Size = new System.Drawing.Size(1204, 633);
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Bill";
-            this.CalcBill.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label41);
+            this.panel4.Controls.Add(this.label39);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.textBoxPay);
+            this.panel4.Controls.Add(this.textBoxExpenseTotal);
+            this.panel4.Controls.Add(this.textBoxNights);
+            this.panel4.Controls.Add(this.textBoxID);
+            this.panel4.Controls.Add(this.label40);
+            this.panel4.Controls.Add(this.label38);
+            this.panel4.Controls.Add(this.label37);
+            this.panel4.Controls.Add(this.label32);
+            this.panel4.Location = new System.Drawing.Point(434, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(358, 424);
+            this.panel4.TabIndex = 66;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(26, 72);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(232, 19);
+            this.label41.TabIndex = 65;
+            this.label41.Text = "Please enter the following details:";
+            // 
+            // label39
+            // 
+            this.label39.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label39.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label39.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label39.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label39.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label39.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label39.Location = new System.Drawing.Point(26, 10);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(304, 44);
+            this.label39.TabIndex = 64;
+            this.label39.Text = "Calculate Patient\'s Bill";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label39.Click += new System.EventHandler(this.label39_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(52, 180);
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(129, 236);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 56);
+            this.button1.Size = new System.Drawing.Size(80, 32);
             this.button1.TabIndex = 63;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Calculate ";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxPay
             // 
-            this.textBoxPay.Location = new System.Drawing.Point(195, 347);
+            this.textBoxPay.Location = new System.Drawing.Point(205, 374);
             this.textBoxPay.Name = "textBoxPay";
-            this.textBoxPay.Size = new System.Drawing.Size(100, 27);
+            this.textBoxPay.Size = new System.Drawing.Size(125, 27);
             this.textBoxPay.TabIndex = 62;
             // 
             // textBoxExpenseTotal
             // 
-            this.textBoxExpenseTotal.Location = new System.Drawing.Point(195, 277);
+            this.textBoxExpenseTotal.Location = new System.Drawing.Point(205, 310);
             this.textBoxExpenseTotal.Name = "textBoxExpenseTotal";
-            this.textBoxExpenseTotal.Size = new System.Drawing.Size(100, 27);
+            this.textBoxExpenseTotal.Size = new System.Drawing.Size(125, 27);
             this.textBoxExpenseTotal.TabIndex = 60;
             // 
             // textBoxNights
             // 
-            this.textBoxNights.Location = new System.Drawing.Point(195, 109);
+            this.textBoxNights.Location = new System.Drawing.Point(205, 171);
             this.textBoxNights.Name = "textBoxNights";
-            this.textBoxNights.Size = new System.Drawing.Size(100, 27);
+            this.textBoxNights.Size = new System.Drawing.Size(125, 27);
             this.textBoxNights.TabIndex = 59;
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(195, 51);
+            this.textBoxID.Location = new System.Drawing.Point(205, 109);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 27);
+            this.textBoxID.Size = new System.Drawing.Size(125, 27);
             this.textBoxID.TabIndex = 58;
             this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(49, 354);
+            this.label40.Location = new System.Drawing.Point(26, 377);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(101, 19);
+            this.label40.Size = new System.Drawing.Size(92, 19);
             this.label40.TabIndex = 57;
-            this.label40.Text = "Patient to pay";
+            this.label40.Text = "Patient\'s Bill:";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(49, 282);
+            this.label38.Location = new System.Drawing.Point(26, 313);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(101, 19);
+            this.label38.Size = new System.Drawing.Size(163, 19);
             this.label38.TabIndex = 55;
-            this.label38.Text = "Total Expense";
+            this.label38.Text = "Patient\'s Total Expense:";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(49, 114);
+            this.label37.Location = new System.Drawing.Point(26, 174);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(125, 19);
+            this.label37.Size = new System.Drawing.Size(128, 19);
             this.label37.TabIndex = 54;
-            this.label37.Text = "Number of nights";
+            this.label37.Text = "Number of nights:";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(49, 56);
+            this.label32.Location = new System.Drawing.Point(26, 112);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(59, 19);
+            this.label32.Size = new System.Drawing.Size(62, 19);
             this.label32.TabIndex = 53;
-            this.label32.Text = "ID Card";
+            this.label32.Text = "ID Card:";
             // 
             // billBackbtn
             // 
             this.billBackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.billBackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.billBackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billBackbtn.Location = new System.Drawing.Point(8, 607);
+            this.billBackbtn.Location = new System.Drawing.Point(8, 595);
             this.billBackbtn.Name = "billBackbtn";
-            this.billBackbtn.Size = new System.Drawing.Size(75, 23);
+            this.billBackbtn.Size = new System.Drawing.Size(75, 30);
             this.billBackbtn.TabIndex = 52;
             this.billBackbtn.Text = "Back";
             this.billBackbtn.UseVisualStyleBackColor = false;
@@ -1142,18 +1221,10 @@ namespace CIS2201_Assignment
             // Search
             // 
             this.Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.Search.BackColor = System.Drawing.Color.White;
+            this.Search.Controls.Add(this.panel6);
+            this.Search.Controls.Add(this.panel5);
             this.Search.Controls.Add(this.searchPatbackbtn);
-            this.Search.Controls.Add(this.Filtercbx);
-            this.Search.Controls.Add(this.visitsearch);
-            this.Search.Controls.Add(this.label25);
-            this.Search.Controls.Add(this.label24);
-            this.Search.Controls.Add(this.visitdgv);
-            this.Search.Controls.Add(this.pvisitID);
-            this.Search.Controls.Add(this.label23);
-            this.Search.Controls.Add(this.searchPatient);
-            this.Search.Controls.Add(this.patientdgv);
-            this.Search.Controls.Add(this.psearchID);
-            this.Search.Controls.Add(this.label22);
             this.Search.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.Search.Location = new System.Drawing.Point(4, 29);
             this.Search.Name = "Search";
@@ -1161,20 +1232,20 @@ namespace CIS2201_Assignment
             this.Search.Size = new System.Drawing.Size(1204, 633);
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
             // 
-            // searchPatbackbtn
+            // panel6
             // 
-            this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 605);
-            this.searchPatbackbtn.Name = "searchPatbackbtn";
-            this.searchPatbackbtn.Size = new System.Drawing.Size(75, 23);
-            this.searchPatbackbtn.TabIndex = 52;
-            this.searchPatbackbtn.Text = "Back";
-            this.searchPatbackbtn.UseVisualStyleBackColor = false;
-            this.searchPatbackbtn.Click += new System.EventHandler(this.searchPatbackbtn_Click);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.Filtercbx);
+            this.panel6.Controls.Add(this.visitsearch);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.visitdgv);
+            this.panel6.Controls.Add(this.pvisitID);
+            this.panel6.Controls.Add(this.label23);
+            this.panel6.Location = new System.Drawing.Point(21, 311);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1155, 272);
+            this.panel6.TabIndex = 54;
             // 
             // Filtercbx
             // 
@@ -1182,7 +1253,7 @@ namespace CIS2201_Assignment
             this.Filtercbx.Items.AddRange(new object[] {
             "Date: Newest First",
             "Date: Oldest First"});
-            this.Filtercbx.Location = new System.Drawing.Point(1026, 372);
+            this.Filtercbx.Location = new System.Drawing.Point(1005, 77);
             this.Filtercbx.Name = "Filtercbx";
             this.Filtercbx.Size = new System.Drawing.Size(121, 27);
             this.Filtercbx.TabIndex = 22;
@@ -1193,9 +1264,9 @@ namespace CIS2201_Assignment
             this.visitsearch.BackColor = System.Drawing.Color.DodgerBlue;
             this.visitsearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.visitsearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visitsearch.Location = new System.Drawing.Point(542, 364);
+            this.visitsearch.Location = new System.Drawing.Point(532, 73);
             this.visitsearch.Name = "visitsearch";
-            this.visitsearch.Size = new System.Drawing.Size(75, 30);
+            this.visitsearch.Size = new System.Drawing.Size(75, 26);
             this.visitsearch.TabIndex = 21;
             this.visitsearch.Text = " Search";
             this.visitsearch.UseVisualStyleBackColor = false;
@@ -1210,13 +1281,51 @@ namespace CIS2201_Assignment
             this.label25.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label25.Location = new System.Drawing.Point(22, 304);
+            this.label25.Location = new System.Drawing.Point(11, 14);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(304, 44);
             this.label25.TabIndex = 20;
             this.label25.Text = "Search a patient\'s visit";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // visitdgv
+            // 
+            this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitdgv.Location = new System.Drawing.Point(15, 122);
+            this.visitdgv.Name = "visitdgv";
+            this.visitdgv.RowHeadersWidth = 51;
+            this.visitdgv.Size = new System.Drawing.Size(1122, 131);
+            this.visitdgv.TabIndex = 7;
+            // 
+            // pvisitID
+            // 
+            this.pvisitID.Location = new System.Drawing.Point(411, 72);
+            this.pvisitID.Name = "pvisitID";
+            this.pvisitID.Size = new System.Drawing.Size(100, 27);
+            this.pvisitID.TabIndex = 5;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(11, 77);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(394, 19);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label24);
+            this.panel5.Controls.Add(this.searchPatient);
+            this.panel5.Controls.Add(this.patientdgv);
+            this.panel5.Controls.Add(this.psearchID);
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Location = new System.Drawing.Point(21, 23);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1155, 272);
+            this.panel5.TabIndex = 53;
             // 
             // label24
             // 
@@ -1227,7 +1336,7 @@ namespace CIS2201_Assignment
             this.label24.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label24.Location = new System.Drawing.Point(22, 40);
+            this.label24.Location = new System.Drawing.Point(12, 17);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(304, 44);
@@ -1235,39 +1344,14 @@ namespace CIS2201_Assignment
             this.label24.Text = "Search a patient";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // visitdgv
-            // 
-            this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.visitdgv.Location = new System.Drawing.Point(25, 417);
-            this.visitdgv.Name = "visitdgv";
-            this.visitdgv.RowHeadersWidth = 51;
-            this.visitdgv.Size = new System.Drawing.Size(1122, 131);
-            this.visitdgv.TabIndex = 7;
-            // 
-            // pvisitID
-            // 
-            this.pvisitID.Location = new System.Drawing.Point(422, 368);
-            this.pvisitID.Name = "pvisitID";
-            this.pvisitID.Size = new System.Drawing.Size(100, 27);
-            this.pvisitID.TabIndex = 5;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(22, 372);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(394, 19);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
-            // 
             // searchPatient
             // 
             this.searchPatient.BackColor = System.Drawing.Color.DodgerBlue;
             this.searchPatient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchPatient.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPatient.Location = new System.Drawing.Point(493, 84);
+            this.searchPatient.Location = new System.Drawing.Point(480, 75);
             this.searchPatient.Name = "searchPatient";
-            this.searchPatient.Size = new System.Drawing.Size(75, 30);
+            this.searchPatient.Size = new System.Drawing.Size(75, 27);
             this.searchPatient.TabIndex = 3;
             this.searchPatient.Text = "Search";
             this.searchPatient.UseVisualStyleBackColor = false;
@@ -1276,7 +1360,7 @@ namespace CIS2201_Assignment
             // patientdgv
             // 
             this.patientdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientdgv.Location = new System.Drawing.Point(25, 133);
+            this.patientdgv.Location = new System.Drawing.Point(16, 130);
             this.patientdgv.Name = "patientdgv";
             this.patientdgv.RowHeadersWidth = 51;
             this.patientdgv.Size = new System.Drawing.Size(1122, 119);
@@ -1285,7 +1369,7 @@ namespace CIS2201_Assignment
             // 
             // psearchID
             // 
-            this.psearchID.Location = new System.Drawing.Point(376, 87);
+            this.psearchID.Location = new System.Drawing.Point(360, 75);
             this.psearchID.Name = "psearchID";
             this.psearchID.Size = new System.Drawing.Size(100, 27);
             this.psearchID.TabIndex = 1;
@@ -1294,11 +1378,24 @@ namespace CIS2201_Assignment
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(22, 90);
+            this.label22.Location = new System.Drawing.Point(12, 78);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(342, 19);
             this.label22.TabIndex = 0;
             this.label22.Text = "Enter the ID of the patient that you want to search:";
+            // 
+            // searchPatbackbtn
+            // 
+            this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 599);
+            this.searchPatbackbtn.Name = "searchPatbackbtn";
+            this.searchPatbackbtn.Size = new System.Drawing.Size(76, 29);
+            this.searchPatbackbtn.TabIndex = 52;
+            this.searchPatbackbtn.Text = "Back";
+            this.searchPatbackbtn.UseVisualStyleBackColor = false;
+            this.searchPatbackbtn.Click += new System.EventHandler(this.searchPatbackbtn_Click);
             // 
             // searchVisit
             // 
@@ -1323,6 +1420,12 @@ namespace CIS2201_Assignment
             this.panel1.ResumeLayout(false);
             this.AddPat.ResumeLayout(false);
             this.AddPat.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.Appointment.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1330,10 +1433,14 @@ namespace CIS2201_Assignment
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.CalcBill.ResumeLayout(false);
-            this.CalcBill.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.Search.ResumeLayout(false);
-            this.Search.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
             this.ResumeLayout(false);
 
@@ -1462,5 +1569,13 @@ namespace CIS2201_Assignment
         private Label label38;
         private Label label37;
         private Label label32;
+        private Label label39;
+        private Label label41;
+        private Panel panel4;
+        private Panel panel9;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel5;
     }
 }
