@@ -56,11 +56,11 @@ SELECT * FROM [Hospital].[staffDetails];
 
 GO
 CREATE PROCEDURE [Hospital].[addStaff]  
-@StaffID VARCHAR(10), @StaffName NVARCHAR(40), @StaffSurnameName NVARCHAR(40), @StaffGender NVARCHAR(40), @StaffAge INT, @StaffDateOfBirth DATE, @StaffAddress VARCHAR(100), @StaffEmail NVARCHAR(40), @StaffPhoneNumber INT, @StaffBloodType VARCHAR(10), @StaffInsurance CHAR(1), @StaffRole NVARCHAR(10) 
+@StaffID VARCHAR(10), @StaffName NVARCHAR(40), @StaffSurnameName NVARCHAR(40), @StaffGender NVARCHAR(40), @StaffDateOfBirth DATE, @StaffAddress VARCHAR(100), @StaffEmail NVARCHAR(40), @StaffPhoneNumber INT, @StaffBloodType VARCHAR(10), @StaffInsurance CHAR(1), @StaffRole NVARCHAR(10) 
 AS  
 BEGIN
 BEGIN TRANSACTION  
-INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGender, StaffAge,  StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)   
+INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGender,   StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)   
      VALUES (@StaffID, @StaffName, @StaffSurnameName, @StaffGender, @StaffAge, @StaffDateOfBirth, @StaffAddress, @StaffEmail, @StaffPhoneNumber, @StaffBloodType, @StaffInsurance, @StaffRole);
 COMMIT TRANSACTION
 END
