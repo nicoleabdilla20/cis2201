@@ -18,6 +18,7 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
+       
         private void Medication_Load(object sender, EventArgs e)
         {
 
@@ -79,16 +80,16 @@ namespace CIS2201_Assignment
         }
         private bool IsTypeValid()
         {
-        if (string.IsNullOrEmpty(typeOfMed.Text))
-{
-    MessageBox.Show("No Item is Selected"); 
+            if (string.IsNullOrEmpty(typeOfMed.Text))
+            {
+                MessageBox.Show("No Item is Selected"); 
                 return false;
-}
-else
-{
-    MessageBox.Show("Item Selected is:" + typeOfMed.Text);
+            }
+            else
+            {
+                MessageBox.Show("Item Selected is:" + typeOfMed.Text);
                 return true;
-}
+            }
         }
 
         private bool IfTypeBloodSamples()
@@ -137,22 +138,39 @@ else
                 return true;
             }
         }
+
         private bool IsMaintenanceValid()
         {
-            if (checkbox.Items == null)
+
+            if (maintenancetxt.Text == "")
             {
-                MessageBox.Show("Please make sure that you have entered if maintenance is required or not!");
+                MessageBox.Show("Please make sure that you choose a maintenance option");
                 return false;
             }
-            else {
+            else 
+            {
                 return true;
             }
-          
         }
+
+        private bool IsNameValid()
+        {
+            if (nameOfMed.Text == "")
+            {
+                MessageBox.Show("Please make sure that you have entered a medication name!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IsTypeValid())
+            if (IsTypeValid() && IsMaintenanceValid() && IsPriceValid() && IsStockValid() && IsNameValid())
             {
                 // Create the connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -178,7 +196,7 @@ else
                         sqlCommand.Parameters["@price"].Value = price.Text;
 
                         sqlCommand.Parameters.Add(new SqlParameter("@requireMaintenance", SqlDbType.VarChar, 40));
-                        sqlCommand.Parameters["@requireMaintenance"].Value = checkbox.Text;
+                        sqlCommand.Parameters["@requireMaintenance"].Value = maintenancetxt.Text;
 
                         try
                         {
@@ -198,15 +216,17 @@ else
                         }
                     }
                 }
-                }
+            }
+            /*
             else 
-             {
-                string errorMessage = "Whoops......something went wrong!";
-                MessageBox.Show(errorMessage);
-
-             }
+            {
+               string errorMessage = "Whoops......something went wrong!";
+               MessageBox.Show(errorMessage);
+            }
+            */
         }
 
+        /*
         private void searchMedID_Click(object sender, EventArgs e)
         {
             if (IsTypeValid())
@@ -232,6 +252,7 @@ else
                 }
             }
         }
+        */
 
         private void searchMedBackBtn_Click(object sender, EventArgs e)
         {
@@ -260,6 +281,73 @@ else
         private void patientdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+        public bool validatesearch()
+        {
+            if(medNametxt.Text == "")
+            {
+                MessageBox.Show("Please enter a medication name!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private List<medications> getMedicationList()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[Medication] WHERE NameOfMed = @NameOfMed";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@NameOfMed", SqlDbType.VarChar, 40));
+                    comm.Parameters["@NameOfMed"].Value = medNametxt.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<medications> medList = new List<medications>();
+
+
+                    while (read.Read())
+                    {
+
+                        medications p = new medications(read["TypeOfMed"].ToString(), read["NameOfMed"].ToString(), read["bloodType"].ToString(), read["stockAmount"].ToString(), read["price"].ToString(), read["requireMaintenance"].ToString());
+                        medList.Add(p);
+                    }
+                    return medList;
+                }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (validatesearch())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        medgv.DataSource = getMedicationList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
         }
     }
 }

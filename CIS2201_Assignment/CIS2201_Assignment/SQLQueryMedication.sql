@@ -25,9 +25,21 @@ CREATE PROCEDURE [Hospital].[addMedication]
 AS
 BEGIN
 BEGIN TRANSACTION  
-INSERT INTO [Hospital].[Medication] (TypeOfMed, NameOfMed,bloodType, stockAmount,  price, requireMaintenance)   
-     VALUES (@TypeOfMed, @NameOfMed, @stockAmount,@bloodType, @price, @requireMaintenance);
+INSERT INTO [Hospital].[Medication] (TypeOfMed, NameOfMed, bloodType, stockAmount,  price, requireMaintenance)   
+     VALUES (@TypeOfMed, @NameOfMed, @bloodType, @stockAmount, @price, @requireMaintenance);
 COMMIT TRANSACTION
 END
 
+GO
+CREATE PROCEDURE [Hospital].[searchMedication]
+@NameOfMed VARCHAR(10)
+AS  
+BEGIN
+BEGIN TRANSACTION  
+SELECT * FROM [Hospital].[Medication] WHERE NameOfMed = @NameOfMed;
+COMMIT TRANSACTION
+END
+GO
 
+
+SELECT * FROM [Hospital].[Medication];

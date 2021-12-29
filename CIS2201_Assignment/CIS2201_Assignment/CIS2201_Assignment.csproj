@@ -55,6 +55,7 @@
     <Compile Include="Medication.Designer.cs">
       <DependentUpon>Medication.cs</DependentUpon>
     </Compile>
+    <Compile Include="medications.cs" />
     <Compile Include="patient.cs" />
     <Compile Include="patientAppointmet.cs" />
     <Compile Include="patientInformation.cs" />
