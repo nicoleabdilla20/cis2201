@@ -22,8 +22,21 @@ namespace CIS2201_Assignment
             this.label36 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.AddPat = new System.Windows.Forms.TabPage();
-            this.addPatbackbtn = new System.Windows.Forms.Button();
-            this.visitsubmit = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.historysummary = new System.Windows.Forms.RichTextBox();
+            this.historydoctor = new System.Windows.Forms.TextBox();
+            this.historydate = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.summarytxt = new System.Windows.Forms.RichTextBox();
+            this.doctortxt = new System.Windows.Forms.TextBox();
+            this.visitdate = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.insurancetxt = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -32,28 +45,12 @@ namespace CIS2201_Assignment
             this.surnametxt = new System.Windows.Forms.TextBox();
             this.gendertxt = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.submit = new System.Windows.Forms.Button();
-            this.historysummary = new System.Windows.Forms.RichTextBox();
-            this.historydoctor = new System.Windows.Forms.TextBox();
-            this.historydate = new System.Windows.Forms.DateTimePicker();
-            this.summarytxt = new System.Windows.Forms.RichTextBox();
-            this.doctortxt = new System.Windows.Forms.TextBox();
-            this.visitdate = new System.Windows.Forms.DateTimePicker();
             this.allergiesopts = new System.Windows.Forms.ComboBox();
             this.addresstxt = new System.Windows.Forms.TextBox();
             this.telephonetxt = new System.Windows.Forms.TextBox();
             this.nametxt = new System.Windows.Forms.TextBox();
             this.bloodopts = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,6 +59,12 @@ namespace CIS2201_Assignment
             this.dob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.addPatbackbtn = new System.Windows.Forms.Button();
+            this.visitsubmit = new System.Windows.Forms.Button();
+            this.submit = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Appointment = new System.Windows.Forms.TabPage();
             this.Appbackbtn = new System.Windows.Forms.Button();
@@ -88,6 +91,7 @@ namespace CIS2201_Assignment
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.CalcBill = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -101,25 +105,21 @@ namespace CIS2201_Assignment
             this.label32 = new System.Windows.Forms.Label();
             this.billBackbtn = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TabPage();
-            this.searchPatbackbtn = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.Filtercbx = new System.Windows.Forms.ComboBox();
             this.visitsearch = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.visitdgv = new System.Windows.Forms.DataGridView();
             this.pvisitID = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.searchPatient = new System.Windows.Forms.Button();
             this.patientdgv = new System.Windows.Forms.DataGridView();
             this.psearchID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.searchPatbackbtn = new System.Windows.Forms.Button();
             this.searchVisit = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.BlueBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.PatientsTabControl.SuspendLayout();
@@ -127,20 +127,20 @@ namespace CIS2201_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.AddPat.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.Appointment.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Appsearchdgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.CalcBill.SuspendLayout();
-            this.Search.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.Search.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -220,9 +220,9 @@ namespace CIS2201_Assignment
             this.patHomebackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.patHomebackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.patHomebackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patHomebackbtn.Location = new System.Drawing.Point(6, 607);
+            this.patHomebackbtn.Location = new System.Drawing.Point(6, 598);
             this.patHomebackbtn.Name = "patHomebackbtn";
-            this.patHomebackbtn.Size = new System.Drawing.Size(75, 23);
+            this.patHomebackbtn.Size = new System.Drawing.Size(75, 27);
             this.patHomebackbtn.TabIndex = 52;
             this.patHomebackbtn.Text = "Back";
             this.patHomebackbtn.UseVisualStyleBackColor = false;
@@ -339,31 +339,165 @@ namespace CIS2201_Assignment
             this.AddPat.TabIndex = 1;
             this.AddPat.Text = "Add Patient";
             // 
-            // addPatbackbtn
+            // panel9
             // 
-            this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPatbackbtn.Location = new System.Drawing.Point(8, 598);
-            this.addPatbackbtn.Name = "addPatbackbtn";
-            this.addPatbackbtn.Size = new System.Drawing.Size(75, 27);
-            this.addPatbackbtn.TabIndex = 50;
-            this.addPatbackbtn.Text = "Back";
-            this.addPatbackbtn.UseVisualStyleBackColor = false;
-            this.addPatbackbtn.Click += new System.EventHandler(this.addPatbackbtn_Click);
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.historysummary);
+            this.panel9.Controls.Add(this.historydoctor);
+            this.panel9.Controls.Add(this.historydate);
+            this.panel9.Controls.Add(this.label16);
+            this.panel9.Controls.Add(this.label17);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Location = new System.Drawing.Point(632, 310);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(524, 182);
+            this.panel9.TabIndex = 53;
             // 
-            // visitsubmit
+            // historysummary
             // 
-            this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.visitsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.visitsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.visitsubmit.Location = new System.Drawing.Point(1000, 505);
-            this.visitsubmit.Name = "visitsubmit";
-            this.visitsubmit.Size = new System.Drawing.Size(156, 40);
-            this.visitsubmit.TabIndex = 49;
-            this.visitsubmit.Text = "Add Visits";
-            this.visitsubmit.UseVisualStyleBackColor = false;
-            this.visitsubmit.Click += new System.EventHandler(this.visitsubmit_Click);
+            this.historysummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.historysummary.Location = new System.Drawing.Point(164, 96);
+            this.historysummary.Name = "historysummary";
+            this.historysummary.Size = new System.Drawing.Size(344, 74);
+            this.historysummary.TabIndex = 38;
+            this.historysummary.Text = "";
+            // 
+            // historydoctor
+            // 
+            this.historydoctor.Location = new System.Drawing.Point(75, 46);
+            this.historydoctor.Name = "historydoctor";
+            this.historydoctor.Size = new System.Drawing.Size(200, 27);
+            this.historydoctor.TabIndex = 37;
+            // 
+            // historydate
+            // 
+            this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.historydate.Location = new System.Drawing.Point(75, 11);
+            this.historydate.Name = "historydate";
+            this.historydate.Size = new System.Drawing.Size(200, 27);
+            this.historydate.TabIndex = 36;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 98);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(124, 19);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Summary of Visit:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 19);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Doctor:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 17);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 19);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Date:";
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.summarytxt);
+            this.panel8.Controls.Add(this.doctortxt);
+            this.panel8.Controls.Add(this.visitdate);
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Location = new System.Drawing.Point(632, 71);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(524, 177);
+            this.panel8.TabIndex = 52;
+            // 
+            // summarytxt
+            // 
+            this.summarytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.summarytxt.Location = new System.Drawing.Point(164, 89);
+            this.summarytxt.Name = "summarytxt";
+            this.summarytxt.Size = new System.Drawing.Size(344, 74);
+            this.summarytxt.TabIndex = 35;
+            this.summarytxt.Text = "";
+            // 
+            // doctortxt
+            // 
+            this.doctortxt.Location = new System.Drawing.Point(75, 45);
+            this.doctortxt.Name = "doctortxt";
+            this.doctortxt.Size = new System.Drawing.Size(200, 27);
+            this.doctortxt.TabIndex = 34;
+            // 
+            // visitdate
+            // 
+            this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.visitdate.Location = new System.Drawing.Point(75, 10);
+            this.visitdate.Name = "visitdate";
+            this.visitdate.Size = new System.Drawing.Size(200, 27);
+            this.visitdate.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 91);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 19);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Summary of Visit:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 19);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Doctor:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 19);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Date:";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.insurancetxt);
+            this.panel7.Controls.Add(this.label21);
+            this.panel7.Controls.Add(this.label20);
+            this.panel7.Controls.Add(this.IDtxt);
+            this.panel7.Controls.Add(this.agetxt);
+            this.panel7.Controls.Add(this.surnametxt);
+            this.panel7.Controls.Add(this.gendertxt);
+            this.panel7.Controls.Add(this.label19);
+            this.panel7.Controls.Add(this.allergiesopts);
+            this.panel7.Controls.Add(this.addresstxt);
+            this.panel7.Controls.Add(this.telephonetxt);
+            this.panel7.Controls.Add(this.nametxt);
+            this.panel7.Controls.Add(this.bloodopts);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.dob);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Location = new System.Drawing.Point(51, 135);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(459, 364);
+            this.panel7.TabIndex = 51;
             // 
             // insurancetxt
             // 
@@ -432,68 +566,6 @@ namespace CIS2201_Assignment
             this.label19.TabIndex = 40;
             this.label19.Text = "Gender:";
             // 
-            // submit
-            // 
-            this.submit.AutoSize = true;
-            this.submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.submit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Location = new System.Drawing.Point(354, 505);
-            this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(156, 40);
-            this.submit.TabIndex = 39;
-            this.submit.Text = "Add Patient";
-            this.submit.UseVisualStyleBackColor = false;
-            this.submit.Click += new System.EventHandler(this.submit_Click);
-            // 
-            // historysummary
-            // 
-            this.historysummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.historysummary.Location = new System.Drawing.Point(164, 96);
-            this.historysummary.Name = "historysummary";
-            this.historysummary.Size = new System.Drawing.Size(344, 74);
-            this.historysummary.TabIndex = 38;
-            this.historysummary.Text = "";
-            // 
-            // historydoctor
-            // 
-            this.historydoctor.Location = new System.Drawing.Point(75, 46);
-            this.historydoctor.Name = "historydoctor";
-            this.historydoctor.Size = new System.Drawing.Size(200, 27);
-            this.historydoctor.TabIndex = 37;
-            // 
-            // historydate
-            // 
-            this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.historydate.Location = new System.Drawing.Point(75, 11);
-            this.historydate.Name = "historydate";
-            this.historydate.Size = new System.Drawing.Size(200, 27);
-            this.historydate.TabIndex = 36;
-            // 
-            // summarytxt
-            // 
-            this.summarytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.summarytxt.Location = new System.Drawing.Point(164, 89);
-            this.summarytxt.Name = "summarytxt";
-            this.summarytxt.Size = new System.Drawing.Size(344, 74);
-            this.summarytxt.TabIndex = 35;
-            this.summarytxt.Text = "";
-            // 
-            // doctortxt
-            // 
-            this.doctortxt.Location = new System.Drawing.Point(75, 45);
-            this.doctortxt.Name = "doctortxt";
-            this.doctortxt.Size = new System.Drawing.Size(200, 27);
-            this.doctortxt.TabIndex = 34;
-            // 
-            // visitdate
-            // 
-            this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.visitdate.Location = new System.Drawing.Point(75, 10);
-            this.visitdate.Name = "visitdate";
-            this.visitdate.Size = new System.Drawing.Size(200, 27);
-            this.visitdate.TabIndex = 33;
-            // 
             // allergiesopts
             // 
             this.allergiesopts.FormattingEnabled = true;
@@ -543,60 +615,6 @@ namespace CIS2201_Assignment
             this.bloodopts.Size = new System.Drawing.Size(121, 27);
             this.bloodopts.TabIndex = 26;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 98);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(124, 19);
-            this.label16.TabIndex = 25;
-            this.label16.Text = "Summary of Visit:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 49);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 19);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "Doctor:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 17);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 19);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "Date:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 91);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(124, 19);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Summary of Visit:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 48);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 19);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Doctor:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 16);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 19);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Date:";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -605,57 +623,6 @@ namespace CIS2201_Assignment
             this.label12.Size = new System.Drawing.Size(70, 19);
             this.label12.TabIndex = 19;
             this.label12.Text = "Allergies:";
-            // 
-            // label11
-            // 
-            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label11.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label11.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label11.Location = new System.Drawing.Point(51, 88);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(459, 44);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "General Details:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label10.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label10.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(632, 263);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(524, 44);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Other Visits:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label9.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label9.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Location = new System.Drawing.Point(632, 24);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(524, 44);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Recent Visit:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -728,6 +695,97 @@ namespace CIS2201_Assignment
             this.label2.TabIndex = 8;
             this.label2.Text = "Name:";
             // 
+            // addPatbackbtn
+            // 
+            this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPatbackbtn.Location = new System.Drawing.Point(8, 598);
+            this.addPatbackbtn.Name = "addPatbackbtn";
+            this.addPatbackbtn.Size = new System.Drawing.Size(75, 27);
+            this.addPatbackbtn.TabIndex = 50;
+            this.addPatbackbtn.Text = "Back";
+            this.addPatbackbtn.UseVisualStyleBackColor = false;
+            this.addPatbackbtn.Click += new System.EventHandler(this.addPatbackbtn_Click);
+            // 
+            // visitsubmit
+            // 
+            this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.visitsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.visitsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.visitsubmit.Location = new System.Drawing.Point(1000, 505);
+            this.visitsubmit.Name = "visitsubmit";
+            this.visitsubmit.Size = new System.Drawing.Size(156, 40);
+            this.visitsubmit.TabIndex = 49;
+            this.visitsubmit.Text = "Add Visits";
+            this.visitsubmit.UseVisualStyleBackColor = false;
+            this.visitsubmit.Click += new System.EventHandler(this.visitsubmit_Click);
+            // 
+            // submit
+            // 
+            this.submit.AutoSize = true;
+            this.submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.submit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit.Location = new System.Drawing.Point(354, 505);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(156, 40);
+            this.submit.TabIndex = 39;
+            this.submit.Text = "Add Patient";
+            this.submit.UseVisualStyleBackColor = false;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // label11
+            // 
+            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label11.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label11.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label11.Location = new System.Drawing.Point(51, 88);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(459, 44);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "General Details:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label10.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label10.Location = new System.Drawing.Point(632, 263);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(524, 44);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Other Visits:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label9.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Location = new System.Drawing.Point(632, 24);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(524, 44);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Recent Visit:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label1
             // 
             this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -746,6 +804,7 @@ namespace CIS2201_Assignment
             // 
             // Appointment
             // 
+            this.Appointment.BackColor = System.Drawing.Color.White;
             this.Appointment.Controls.Add(this.Appbackbtn);
             this.Appointment.Controls.Add(this.panel3);
             this.Appointment.Controls.Add(this.panel2);
@@ -754,7 +813,6 @@ namespace CIS2201_Assignment
             this.Appointment.Size = new System.Drawing.Size(1204, 633);
             this.Appointment.TabIndex = 4;
             this.Appointment.Text = "Appointment";
-            this.Appointment.UseVisualStyleBackColor = true;
             this.Appointment.Click += new System.EventHandler(this.Appointment_Click);
             // 
             // Appbackbtn
@@ -1012,6 +1070,7 @@ namespace CIS2201_Assignment
             // CalcBill
             // 
             this.CalcBill.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.CalcBill.BackColor = System.Drawing.Color.White;
             this.CalcBill.Controls.Add(this.panel4);
             this.CalcBill.Controls.Add(this.billBackbtn);
             this.CalcBill.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
@@ -1021,7 +1080,26 @@ namespace CIS2201_Assignment
             this.CalcBill.Size = new System.Drawing.Size(1204, 633);
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Bill";
-            this.CalcBill.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label41);
+            this.panel4.Controls.Add(this.label39);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.textBoxPay);
+            this.panel4.Controls.Add(this.textBoxExpenseTotal);
+            this.panel4.Controls.Add(this.textBoxNights);
+            this.panel4.Controls.Add(this.textBoxID);
+            this.panel4.Controls.Add(this.label40);
+            this.panel4.Controls.Add(this.label38);
+            this.panel4.Controls.Add(this.label37);
+            this.panel4.Controls.Add(this.label32);
+            this.panel4.Location = new System.Drawing.Point(434, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(358, 424);
+            this.panel4.TabIndex = 66;
             // 
             // label41
             // 
@@ -1058,7 +1136,7 @@ namespace CIS2201_Assignment
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 32);
             this.button1.TabIndex = 63;
-            this.button1.Text = "Convert";
+            this.button1.Text = "Calculate ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1143,6 +1221,7 @@ namespace CIS2201_Assignment
             // Search
             // 
             this.Search.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.Search.BackColor = System.Drawing.Color.White;
             this.Search.Controls.Add(this.panel6);
             this.Search.Controls.Add(this.panel5);
             this.Search.Controls.Add(this.searchPatbackbtn);
@@ -1153,20 +1232,20 @@ namespace CIS2201_Assignment
             this.Search.Size = new System.Drawing.Size(1204, 633);
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
             // 
-            // searchPatbackbtn
+            // panel6
             // 
-            this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 599);
-            this.searchPatbackbtn.Name = "searchPatbackbtn";
-            this.searchPatbackbtn.Size = new System.Drawing.Size(76, 29);
-            this.searchPatbackbtn.TabIndex = 52;
-            this.searchPatbackbtn.Text = "Back";
-            this.searchPatbackbtn.UseVisualStyleBackColor = false;
-            this.searchPatbackbtn.Click += new System.EventHandler(this.searchPatbackbtn_Click);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.Filtercbx);
+            this.panel6.Controls.Add(this.visitsearch);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.visitdgv);
+            this.panel6.Controls.Add(this.pvisitID);
+            this.panel6.Controls.Add(this.label23);
+            this.panel6.Location = new System.Drawing.Point(21, 311);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1155, 272);
+            this.panel6.TabIndex = 54;
             // 
             // Filtercbx
             // 
@@ -1210,23 +1289,6 @@ namespace CIS2201_Assignment
             this.label25.Text = "Search a patient\'s visit";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label24
-            // 
-            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label24.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label24.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label24.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label24.Location = new System.Drawing.Point(12, 17);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(304, 44);
-            this.label24.TabIndex = 19;
-            this.label24.Text = "Search a patient";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // visitdgv
             // 
             this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1251,6 +1313,36 @@ namespace CIS2201_Assignment
             this.label23.Size = new System.Drawing.Size(394, 19);
             this.label23.TabIndex = 4;
             this.label23.Text = "Enter the ID of the patient whose visits you want to search:";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label24);
+            this.panel5.Controls.Add(this.searchPatient);
+            this.panel5.Controls.Add(this.patientdgv);
+            this.panel5.Controls.Add(this.psearchID);
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Location = new System.Drawing.Point(21, 23);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1155, 272);
+            this.panel5.TabIndex = 53;
+            // 
+            // label24
+            // 
+            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label24.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label24.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label24.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label24.Location = new System.Drawing.Point(12, 17);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(304, 44);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Search a patient";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // searchPatient
             // 
@@ -1292,116 +1384,25 @@ namespace CIS2201_Assignment
             this.label22.TabIndex = 0;
             this.label22.Text = "Enter the ID of the patient that you want to search:";
             // 
+            // searchPatbackbtn
+            // 
+            this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 599);
+            this.searchPatbackbtn.Name = "searchPatbackbtn";
+            this.searchPatbackbtn.Size = new System.Drawing.Size(76, 29);
+            this.searchPatbackbtn.TabIndex = 52;
+            this.searchPatbackbtn.Text = "Back";
+            this.searchPatbackbtn.UseVisualStyleBackColor = false;
+            this.searchPatbackbtn.Click += new System.EventHandler(this.searchPatbackbtn_Click);
+            // 
             // searchVisit
             // 
             this.searchVisit.Location = new System.Drawing.Point(0, 0);
             this.searchVisit.Name = "searchVisit";
             this.searchVisit.Size = new System.Drawing.Size(75, 23);
             this.searchVisit.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label41);
-            this.panel4.Controls.Add(this.label39);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.textBoxPay);
-            this.panel4.Controls.Add(this.textBoxExpenseTotal);
-            this.panel4.Controls.Add(this.textBoxNights);
-            this.panel4.Controls.Add(this.textBoxID);
-            this.panel4.Controls.Add(this.label40);
-            this.panel4.Controls.Add(this.label38);
-            this.panel4.Controls.Add(this.label37);
-            this.panel4.Controls.Add(this.label32);
-            this.panel4.Location = new System.Drawing.Point(434, 40);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(358, 424);
-            this.panel4.TabIndex = 66;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label24);
-            this.panel5.Controls.Add(this.searchPatient);
-            this.panel5.Controls.Add(this.patientdgv);
-            this.panel5.Controls.Add(this.psearchID);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Location = new System.Drawing.Point(21, 23);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1155, 272);
-            this.panel5.TabIndex = 53;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.Filtercbx);
-            this.panel6.Controls.Add(this.visitsearch);
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Controls.Add(this.visitdgv);
-            this.panel6.Controls.Add(this.pvisitID);
-            this.panel6.Controls.Add(this.label23);
-            this.panel6.Location = new System.Drawing.Point(21, 311);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1155, 272);
-            this.panel6.TabIndex = 54;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.insurancetxt);
-            this.panel7.Controls.Add(this.label21);
-            this.panel7.Controls.Add(this.label20);
-            this.panel7.Controls.Add(this.IDtxt);
-            this.panel7.Controls.Add(this.agetxt);
-            this.panel7.Controls.Add(this.surnametxt);
-            this.panel7.Controls.Add(this.gendertxt);
-            this.panel7.Controls.Add(this.label19);
-            this.panel7.Controls.Add(this.allergiesopts);
-            this.panel7.Controls.Add(this.addresstxt);
-            this.panel7.Controls.Add(this.telephonetxt);
-            this.panel7.Controls.Add(this.nametxt);
-            this.panel7.Controls.Add(this.bloodopts);
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.label8);
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.label4);
-            this.panel7.Controls.Add(this.dob);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Location = new System.Drawing.Point(51, 135);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(459, 364);
-            this.panel7.TabIndex = 51;
-            // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.summarytxt);
-            this.panel8.Controls.Add(this.doctortxt);
-            this.panel8.Controls.Add(this.visitdate);
-            this.panel8.Controls.Add(this.label15);
-            this.panel8.Controls.Add(this.label14);
-            this.panel8.Controls.Add(this.label13);
-            this.panel8.Location = new System.Drawing.Point(632, 71);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(524, 177);
-            this.panel8.TabIndex = 52;
-            // 
-            // panel9
-            // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.historysummary);
-            this.panel9.Controls.Add(this.historydoctor);
-            this.panel9.Controls.Add(this.historydate);
-            this.panel9.Controls.Add(this.label16);
-            this.panel9.Controls.Add(this.label17);
-            this.panel9.Controls.Add(this.label18);
-            this.panel9.Location = new System.Drawing.Point(632, 310);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(524, 182);
-            this.panel9.TabIndex = 53;
             // 
             // Patients
             // 
@@ -1419,6 +1420,12 @@ namespace CIS2201_Assignment
             this.panel1.ResumeLayout(false);
             this.AddPat.ResumeLayout(false);
             this.AddPat.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.Appointment.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1426,21 +1433,15 @@ namespace CIS2201_Assignment
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.CalcBill.ResumeLayout(false);
-            this.Search.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.Search.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
             this.ResumeLayout(false);
 
         }

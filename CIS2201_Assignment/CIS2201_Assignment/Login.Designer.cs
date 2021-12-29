@@ -41,9 +41,11 @@ namespace CIS2201_Assignment
             this.logo = new System.Windows.Forms.PictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -51,7 +53,7 @@ namespace CIS2201_Assignment
             this.lblPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(499, 300);
+            this.lblPassword.Location = new System.Drawing.Point(68, 69);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(73, 17);
@@ -84,7 +86,7 @@ namespace CIS2201_Assignment
             this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Location = new System.Drawing.Point(467, 368);
+            this.btnLogin.Location = new System.Drawing.Point(49, 137);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(300, 31);
@@ -100,7 +102,7 @@ namespace CIS2201_Assignment
             this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.Location = new System.Drawing.Point(613, 254);
+            this.txtUsername.Location = new System.Drawing.Point(195, 23);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(132, 22);
@@ -154,6 +156,7 @@ namespace CIS2201_Assignment
             this.logo.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
             this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.logo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
             this.logo.Location = new System.Drawing.Point(546, 66);
             this.logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -169,7 +172,7 @@ namespace CIS2201_Assignment
             this.lblUsername.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(499, 256);
+            this.lblUsername.Location = new System.Drawing.Point(68, 25);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(77, 17);
@@ -183,7 +186,7 @@ namespace CIS2201_Assignment
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(613, 298);
+            this.txtPassword.Location = new System.Drawing.Point(195, 67);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -194,6 +197,19 @@ namespace CIS2201_Assignment
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(this.lblUsername);
+            this.panel2.Controls.Add(this.btnLogin);
+            this.panel2.Controls.Add(this.lblPassword);
+            this.panel2.Controls.Add(this.txtUsername);
+            this.panel2.Location = new System.Drawing.Point(417, 231);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(403, 190);
+            this.panel2.TabIndex = 10;
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
@@ -201,14 +217,10 @@ namespace CIS2201_Assignment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1270, 520);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.logo);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtUsername);
             this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
@@ -218,6 +230,8 @@ namespace CIS2201_Assignment
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +259,6 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.PictureBox hospitallogo;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Panel panel2;
     }
 }

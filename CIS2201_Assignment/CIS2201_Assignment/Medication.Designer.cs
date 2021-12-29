@@ -46,6 +46,8 @@ namespace CIS2201_Assignment
             this.bloodType = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.nameOfMed = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.TextBox();
             this.stock = new System.Windows.Forms.TextBox();
             this.checkbox = new System.Windows.Forms.CheckedListBox();
@@ -66,8 +68,7 @@ namespace CIS2201_Assignment
             this.issuebtn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.MedicationTabControl = new System.Windows.Forms.TabControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nameOfMed = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SearchMed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
             this.AddMed.SuspendLayout();
@@ -77,6 +78,7 @@ namespace CIS2201_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.MedicationTabControl.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Title
@@ -99,30 +101,27 @@ namespace CIS2201_Assignment
             // SearchMed
             // 
             this.SearchMed.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.SearchMed.Controls.Add(this.panel2);
             this.SearchMed.Controls.Add(this.searchMedBackBtn);
             this.SearchMed.Controls.Add(this.searchstaffbackbtn);
-            this.SearchMed.Controls.Add(this.labelSeachMed);
-            this.SearchMed.Controls.Add(this.type);
-            this.SearchMed.Controls.Add(this.searchTypeofMed);
-            this.SearchMed.Controls.Add(this.patientdgv);
-            this.SearchMed.Controls.Add(this.label22);
             this.SearchMed.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.SearchMed.Location = new System.Drawing.Point(4, 29);
             this.SearchMed.Name = "SearchMed";
             this.SearchMed.Padding = new System.Windows.Forms.Padding(3);
-            this.SearchMed.Size = new System.Drawing.Size(1047, 489);
+            this.SearchMed.Size = new System.Drawing.Size(1057, 489);
             this.SearchMed.TabIndex = 3;
             this.SearchMed.Text = "Search";
             this.SearchMed.UseVisualStyleBackColor = true;
+            this.SearchMed.Click += new System.EventHandler(this.SearchMed_Click);
             // 
             // searchMedBackBtn
             // 
             this.searchMedBackBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.searchMedBackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchMedBackBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchMedBackBtn.Location = new System.Drawing.Point(8, 458);
+            this.searchMedBackBtn.Location = new System.Drawing.Point(8, 454);
             this.searchMedBackBtn.Name = "searchMedBackBtn";
-            this.searchMedBackBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchMedBackBtn.Size = new System.Drawing.Size(75, 27);
             this.searchMedBackBtn.TabIndex = 71;
             this.searchMedBackBtn.Text = "Back";
             this.searchMedBackBtn.UseVisualStyleBackColor = false;
@@ -149,7 +148,7 @@ namespace CIS2201_Assignment
             this.labelSeachMed.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSeachMed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelSeachMed.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelSeachMed.Location = new System.Drawing.Point(22, 22);
+            this.labelSeachMed.Location = new System.Drawing.Point(14, 12);
             this.labelSeachMed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSeachMed.Name = "labelSeachMed";
             this.labelSeachMed.Size = new System.Drawing.Size(304, 44);
@@ -159,7 +158,7 @@ namespace CIS2201_Assignment
             // 
             // type
             // 
-            this.type.Location = new System.Drawing.Point(404, 87);
+            this.type.Location = new System.Drawing.Point(387, 77);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(100, 27);
             this.type.TabIndex = 1;
@@ -169,29 +168,28 @@ namespace CIS2201_Assignment
             this.searchTypeofMed.BackColor = System.Drawing.Color.DodgerBlue;
             this.searchTypeofMed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchTypeofMed.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTypeofMed.Location = new System.Drawing.Point(531, 87);
+            this.searchTypeofMed.Location = new System.Drawing.Point(514, 77);
             this.searchTypeofMed.Name = "searchTypeofMed";
             this.searchTypeofMed.Size = new System.Drawing.Size(72, 27);
             this.searchTypeofMed.TabIndex = 3;
             this.searchTypeofMed.Text = "Search";
             this.searchTypeofMed.UseVisualStyleBackColor = false;
-            //this.searchTypeofMed.Click += new System.EventHandler(this.searchTypeofID_Click);
             // 
             // patientdgv
             // 
             this.patientdgv.AccessibleName = "medicationdgv";
             this.patientdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientdgv.Location = new System.Drawing.Point(25, 133);
+            this.patientdgv.Location = new System.Drawing.Point(18, 123);
             this.patientdgv.Name = "patientdgv";
             this.patientdgv.RowHeadersWidth = 51;
-            this.patientdgv.Size = new System.Drawing.Size(996, 207);
+            this.patientdgv.Size = new System.Drawing.Size(985, 207);
             this.patientdgv.TabIndex = 2;
             this.patientdgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientdgv_CellContentClick);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(22, 90);
+            this.label22.Location = new System.Drawing.Point(14, 80);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(367, 19);
             this.label22.TabIndex = 0;
@@ -213,7 +211,7 @@ namespace CIS2201_Assignment
             this.AddMed.Location = new System.Drawing.Point(4, 29);
             this.AddMed.Name = "AddMed";
             this.AddMed.Padding = new System.Windows.Forms.Padding(3);
-            this.AddMed.Size = new System.Drawing.Size(1047, 489);
+            this.AddMed.Size = new System.Drawing.Size(1057, 489);
             this.AddMed.TabIndex = 1;
             this.AddMed.Text = "Add Medication";
             // 
@@ -304,6 +302,22 @@ namespace CIS2201_Assignment
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(495, 256);
             this.panel4.TabIndex = 67;
+            // 
+            // nameOfMed
+            // 
+            this.nameOfMed.Location = new System.Drawing.Point(267, 103);
+            this.nameOfMed.Name = "nameOfMed";
+            this.nameOfMed.Size = new System.Drawing.Size(165, 27);
+            this.nameOfMed.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(78, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 19);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Name of Medication:";
             // 
             // price
             // 
@@ -449,7 +463,7 @@ namespace CIS2201_Assignment
             this.Home.Location = new System.Drawing.Point(4, 29);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(1047, 489);
+            this.Home.Size = new System.Drawing.Size(1057, 489);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             // 
@@ -491,7 +505,7 @@ namespace CIS2201_Assignment
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1041, 115);
+            this.panel1.Size = new System.Drawing.Size(1051, 115);
             this.panel1.TabIndex = 1;
             // 
             // richTextBox1
@@ -502,7 +516,7 @@ namespace CIS2201_Assignment
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.HideSelection = false;
-            this.richTextBox1.Location = new System.Drawing.Point(-80, 52);
+            this.richTextBox1.Location = new System.Drawing.Point(-75, 52);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ShowSelectionMargin = true;
             this.richTextBox1.Size = new System.Drawing.Size(834, 61);
@@ -516,7 +530,7 @@ namespace CIS2201_Assignment
             this.issuebtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.issuebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.issuebtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.issuebtn.Location = new System.Drawing.Point(826, 64);
+            this.issuebtn.Location = new System.Drawing.Point(831, 64);
             this.issuebtn.Name = "issuebtn";
             this.issuebtn.Size = new System.Drawing.Size(202, 39);
             this.issuebtn.TabIndex = 4;
@@ -527,7 +541,7 @@ namespace CIS2201_Assignment
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label14.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(-73, 0);
+            this.label14.Location = new System.Drawing.Point(-68, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(1179, 49);
             this.label14.TabIndex = 0;
@@ -545,37 +559,33 @@ namespace CIS2201_Assignment
             this.MedicationTabControl.Name = "MedicationTabControl";
             this.MedicationTabControl.Padding = new System.Drawing.Point(15, 5);
             this.MedicationTabControl.SelectedIndex = 0;
-            this.MedicationTabControl.Size = new System.Drawing.Size(1055, 522);
+            this.MedicationTabControl.Size = new System.Drawing.Size(1065, 522);
             this.MedicationTabControl.TabIndex = 13;
             // 
-            // label2
+            // panel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 19);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Name of Medication:";
-            // 
-            // nameOfMed
-            // 
-            this.nameOfMed.Location = new System.Drawing.Point(267, 103);
-            this.nameOfMed.Name = "nameOfMed";
-            this.nameOfMed.Size = new System.Drawing.Size(165, 27);
-            this.nameOfMed.TabIndex = 71;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.labelSeachMed);
+            this.panel2.Controls.Add(this.type);
+            this.panel2.Controls.Add(this.searchTypeofMed);
+            this.panel2.Controls.Add(this.patientdgv);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Location = new System.Drawing.Point(17, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1022, 365);
+            this.panel2.TabIndex = 72;
             // 
             // Medication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 522);
+            this.ClientSize = new System.Drawing.Size(1065, 522);
             this.Controls.Add(this.MedicationTabControl);
             this.Controls.Add(this.Title);
             this.Name = "Medication";
             this.Text = "Medication";
             this.Load += new System.EventHandler(this.Medication_Load);
             this.SearchMed.ResumeLayout(false);
-            this.SearchMed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
             this.AddMed.ResumeLayout(false);
             this.AddMed.PerformLayout();
@@ -587,6 +597,8 @@ namespace CIS2201_Assignment
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.MedicationTabControl.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -632,5 +644,6 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.Button searchMedBackBtn;
         private System.Windows.Forms.TextBox nameOfMed;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -262,5 +262,10 @@ namespace CIS2201_Assignment
         {
 
         }
+
+        private void SearchMed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
