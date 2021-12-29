@@ -175,7 +175,7 @@ namespace CIS2201_Assignment
             this.searchTypeofMed.TabIndex = 3;
             this.searchTypeofMed.Text = "Search";
             this.searchTypeofMed.UseVisualStyleBackColor = false;
-            this.searchTypeofMed.Click += new System.EventHandler(this.searchTypeofID_Click);
+            //this.searchTypeofMed.Click += new System.EventHandler(this.searchTypeofID_Click);
             // 
             // patientdgv
             // 
