@@ -77,18 +77,19 @@ namespace CIS2201_Assignment
         {
 
         }
+
         private bool IsTypeValid()
         {
-        if (string.IsNullOrEmpty(typeOfMed.Text))
-{
-    MessageBox.Show("No Item is Selected"); 
-                return false;
-}
-else
-{
-    MessageBox.Show("Item Selected is:" + typeOfMed.Text);
-                return true;
-}
+            if (string.IsNullOrEmpty(typeOfMed.Text))
+                {
+                    MessageBox.Show("No Item is Selected"); 
+                                return false;
+                }
+                else
+                {
+                    MessageBox.Show("Item Selected is:" + typeOfMed.Text);
+                                return true;
+                }
         }
 
         private bool IfTypeBloodSamples()
@@ -152,7 +153,7 @@ else
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IsTypeValid())
+            if (IsTypeValid() && IsStockValid() && IsPriceValid())
             {
                 // Create the connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
