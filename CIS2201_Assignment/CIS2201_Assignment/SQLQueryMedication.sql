@@ -1,5 +1,7 @@
 ﻿CREATE SCHEMA [Hospital]  
     AUTHORIZATION [dbo];  
+    GO  
+PRINT N'Creating Public.Medication...';  
 GO  
 CREATE TABLE [Hospital].[Medication] (
     [TypeOfMed]          NVARCHAR (40) NOT NULL,
@@ -7,7 +9,7 @@ CREATE TABLE [Hospital].[Medication] (
     [bloodType]          NVARCHAR (40) NULL,
     [stockAmount]        NVARCHAR (40) NOT NULL,
     [price]              NVARCHAR (40) NOT NULL,
-    [requireMaintenance] NVARCHAR(40)  NOT NULL
+    [requireMaintenance] VARCHAR(40)  NOT NULL
 );
   
 
@@ -18,7 +20,14 @@ INSERT INTO [Hospital].[Medication] (TypeOfMed, NameOfMed, bloodType, stockAmoun
 VALUES('Blood Samples', NULL ,'B', '50', '6',  'yes' );
 
 GO
-SELECT * FROM [Hospital].[Medication]; 
-
+CREATE PROCEDURE [Hospital].[addMedication]
+	@TypeOfMed NVARCHAR(40), @NameOfMed NVARCHAR(40), @bloodType NVARCHAR(40), @stockAmount NVARCHAR(40), @price NVARCHAR(40), @requireMaintenance VARCHAR(40)
+AS
+BEGIN
+BEGIN TRANSACTION  
+INSERT INTO [Hospital].[Medication] (TypeOfMed, NameOfMed,bloodType, stockAmount,  price, requireMaintenance)   
+     VALUES (@TypeOfMed, @NameOfMed, @stockAmount,@bloodType, @price, @requireMaintenance);
+COMMIT TRANSACTION
+END
 
 
