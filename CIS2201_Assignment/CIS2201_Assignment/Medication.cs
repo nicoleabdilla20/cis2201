@@ -126,6 +126,19 @@ namespace CIS2201_Assignment
             }
         }
 
+        private bool IsNameValid()
+        {
+            if (nameOfMed.Text == "")
+            {
+                MessageBox.Show("Please make sure that you have entered the name of the medication!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private bool IsPriceValid()
         {
             if (price.Text == "")
@@ -140,7 +153,7 @@ namespace CIS2201_Assignment
         }
         private bool IsMaintenanceValid()
         {
-            if (checkbox.Items == null)
+            if (maintenancetxt.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered if maintenance is required or not!");
                 return false;
@@ -153,7 +166,7 @@ namespace CIS2201_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IsTypeValid() && IsStockValid() && IsPriceValid())
+            if (IsTypeValid() && IsNameValid() && IsStockValid() && IsPriceValid() && IsMaintenanceValid())
             {
                 // Create the connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -179,7 +192,7 @@ namespace CIS2201_Assignment
                         sqlCommand.Parameters["@price"].Value = price.Text;
 
                         sqlCommand.Parameters.Add(new SqlParameter("@requireMaintenance", SqlDbType.VarChar, 40));
-                        sqlCommand.Parameters["@requireMaintenance"].Value = checkbox.Text;
+                        sqlCommand.Parameters["@requireMaintenance"].Value = maintenancetxt.Text;
 
                         try
                         {
@@ -208,6 +221,7 @@ namespace CIS2201_Assignment
              }
         }
 
+        /*
         private void searchMedID_Click(object sender, EventArgs e)
         {
             if (IsTypeValid())
@@ -233,7 +247,7 @@ namespace CIS2201_Assignment
                 }
             }
         }
-
+        */
         private void searchMedBackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -266,6 +280,74 @@ namespace CIS2201_Assignment
         private void SearchMed_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public bool IsSeachValid()
+        {
+            if(medSearch.Text == "")
+            {
+                MessageBox.Show("Please Enter a medication name to search!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private List<medications> getMedList()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[Medication] WHERE NameOfMed = @NameOfMed";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@NameOfMed", SqlDbType.VarChar, 10));
+                    comm.Parameters["@NameOfMed"].Value = medSearch.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<medications> medList = new List<medications>();
+
+
+                    while (read.Read())
+                    {
+
+                        medications p = new medications(read["TypeOfMed"].ToString(), read["NameOfMed"].ToString(), read["bloodType"].ToString(), read["stockAmount"].ToString(), read["price"].ToString(), read["requireMaintenance"].ToString());
+                        medList.Add(p);
+                    }
+                    return medList;
+                    
+                }
+            }
+        }
+
+        private void searchTypeofMed_Click(object sender, EventArgs e)
+        {
+                if (IsSeachValid())
+                {
+                    using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                    {
+                        connection.Open();
+
+                        try
+                        {
+                            meddgv.DataSource = getMedList();
+                        }
+                        catch (System.Data.SqlClient.SqlException sqlException)
+                        {
+                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+
+                    }
+                }
+            
         }
     }
 }
