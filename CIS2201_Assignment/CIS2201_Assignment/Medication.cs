@@ -80,18 +80,19 @@ namespace CIS2201_Assignment
 
         private bool IsTypeValid() //not working
         {
-        {
-            if (typeOfMed.SelectedItem == "")
+            {
+                if (typeOfMed.SelectedItem == "")
                 {
-                    MessageBox.Show("No Item is Selected"); 
-                                return false;
+                    MessageBox.Show("No Item is Selected");
+                    return false;
 
                 }
-             else
+                else
                 {
-                                return true;
+                    return true;
 
                 }
+            }
         }
 
         private bool IfTypeBloodSamples() //not working
