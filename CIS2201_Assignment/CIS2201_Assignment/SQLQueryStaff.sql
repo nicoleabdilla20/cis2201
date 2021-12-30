@@ -44,13 +44,16 @@ CREATE TABLE [Hospital].[staffDetails] (
     [TypeOfContract]        VARCHAR (40) NOT NULL,
     [NumberOfHours]         INT NOT NULL,
     [Bonus]                 VARCHAR (100) NOT NULL,
+
 ); 
 GO
 ALTER TABLE [Hospital].[staffDetails]
 ALTER COLUMN [StaffID] VARCHAR(10) NOT NULL;
 GO
 INSERT INTO [Hospital].[staffDetails](StaffID, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
-VALUES( '1234', '27.OCT.1981', '01.SEP.2023', 'Definite', 20, '200');
+VALUES( '12341', '27.OCT.1981', '01.SEP.2023', 'Definite', 20, '200');
+INSERT INTO [Hospital].[staffDetails](StaffID, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '4685', '27.OCT.2010', '01.SEP.2025', 'Indefinite', 40, '500');
 
 SELECT * FROM [Hospital].[staffDetails];
 
@@ -64,6 +67,7 @@ INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGende
      VALUES (@StaffID, @StaffName, @StaffSurnameName, @StaffGender, @StaffDateOfBirth, @StaffAddress, @StaffEmail, @StaffPhoneNumber, @StaffBloodType, @StaffInsurance, @StaffRole);
 COMMIT TRANSACTION
 END
+
 GO
 CREATE PROCEDURE [Hospital].[addStaffDetails]  
 @StaffID VARCHAR(10), @StartOfContract  DATE, @EndOfContract DATE, @TypeOfContract VARCHAR(40), @NumberOfHours INT, @Bonus VARCHAR(10)
@@ -74,3 +78,5 @@ INSERT INTO [Hospital].[staffDetails] (StaffID, StartOfContract, EndOfContract, 
      VALUES (@StaffID, @StartOfContract,@EndOfContract, @TypeOfContract,@NumberOfHours, @Bonus);
 COMMIT TRANSACTION
 END
+
+

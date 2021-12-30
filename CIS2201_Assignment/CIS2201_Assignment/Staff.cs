@@ -317,6 +317,19 @@ namespace CIS2201_Assignment
         }
         */
 
+        ///Calculate payroll attempt (tried to use interface and split each role in a pay Scale)
+        /*
+         * 
+            Scale1:
+            Doctor, specialist, Pharmacist
+
+            Scale 2:
+            Nurse, Therapist
+
+            scale 3:
+            Phsician, Interpreter, Social worker
+        */
+
         private void button1_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
