@@ -188,7 +188,7 @@ namespace CIS2201_Assignment
                     sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
 
                     sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
-                    sqlCommand.Parameters["@PatientsSurnameName"].Value = surnametxt.Text;
+                    sqlCommand.Parameters["@PatientsSurname"].Value = surnametxt.Text;
 
                     sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
                     sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
@@ -210,8 +210,10 @@ namespace CIS2201_Assignment
                     try
                     {
                         connection.Open();
-
                         sqlCommand.ExecuteNonQuery();
+                        string message = "Successfully added";
+                        MessageBox.Show(message);
+
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
                     {
