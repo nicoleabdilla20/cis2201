@@ -554,6 +554,12 @@ namespace CIS2201_Assignment
 
         }
 
+         private void issuebtn_Click(object sender, EventArgs e)
+        {
+            ReportIssue ReportIssue = new ReportIssue();
+            ReportIssue.ShowDialog();
+        }
+
         private void patHomebackbtn_Click(object sender, EventArgs e)
         {
             this.Hide();

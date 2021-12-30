@@ -286,6 +286,8 @@ namespace CIS2201_Assignment
             this.issuebtn.TabIndex = 4;
             this.issuebtn.Text = "Report an Issue";
             this.issuebtn.UseVisualStyleBackColor = false;
+            this.issuebtn.Click += new System.EventHandler(this.issuebtn_Click);
+
             // 
             // label36
             // 
