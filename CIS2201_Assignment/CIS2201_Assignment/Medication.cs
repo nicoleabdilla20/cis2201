@@ -78,38 +78,38 @@ namespace CIS2201_Assignment
 
         }
 
-        private bool IsTypeValid()
+        private bool IsTypeValid() //not working
         {
-            if (string.IsNullOrEmpty(typeOfMed.Text))
+        {
+            if (typeOfMed.SelectedItem == "")
                 {
                     MessageBox.Show("No Item is Selected"); 
                                 return false;
+
                 }
-                else
+             else
                 {
-                    MessageBox.Show("Item Selected is:" + typeOfMed.Text);
                                 return true;
+
                 }
         }
 
-        private bool IfTypeBloodSamples()
+        private bool IfTypeBloodSamples() //not working
         {
             //if blood samples was chosen in type of medication, make sure blood type is filled in
-            if (typeOfMed.Items.Equals("Blood Samples"))
+            if (typeOfMed.SelectedItem = "Blood Samples" )
             {
-                if (bloodType.Items == null)
-                {
-                    MessageBox.Show("Please make sure that you have entered the blood type!");
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
+                if(bloodType.SelectedItem == "") { 
+                
+                MessageBox.Show("Please make sure that you have entered the blood type!");
+                    }
+                                return false;
+
             }
             else
             {
-                return false;
+                                return true;
+
             }
         }
 
@@ -166,7 +166,7 @@ namespace CIS2201_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IsTypeValid() && IsNameValid() && IsStockValid() && IsPriceValid() && IsMaintenanceValid())
+            if (IsStockValid() && IsNameValid() && IsPriceValid() && IsMaintenanceValid())
             {
                 // Create the connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))

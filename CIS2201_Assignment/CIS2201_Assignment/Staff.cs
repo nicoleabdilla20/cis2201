@@ -73,7 +73,7 @@ namespace CIS2201_Assignment
         //attach your connection here or use : using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString)) according to how you set DB
         private void submit_Click(object sender, EventArgs e)
         {
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my databse conenction
+            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my databse conenction
 
             if (IsStaffValid() && IsStaffIDValid() && isAddressValid())
             {
@@ -172,7 +172,7 @@ namespace CIS2201_Assignment
         //button to save all data into database
         private void detailsubmit_Click(object sender, EventArgs e)
         {
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my database conenction
+            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my database conenction
 
             if (IsStaffIDWorkValid() && IsStaffNoOfHrsValid())
             {
@@ -183,9 +183,14 @@ namespace CIS2201_Assignment
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
 
-
                         sqlCommand.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
                         sqlCommand.Parameters["@StaffID"].Value = idwork.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@StaffName", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@StaffName"].Value = nametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@StaffSurname", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@StaffSurname"].Value = surnametxt.Text;
 
                         sqlCommand.Parameters.Add(new SqlParameter("@StartOfContract", SqlDbType.Date));
                         sqlCommand.Parameters["@StartOfContract"].Value = soc.Text;
