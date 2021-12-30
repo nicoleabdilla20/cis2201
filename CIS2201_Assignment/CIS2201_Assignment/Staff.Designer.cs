@@ -103,14 +103,14 @@ namespace CIS2201_Assignment
             this.Search = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.visitdgv = new System.Windows.Forms.DataGridView();
+            this.detailsdgv = new System.Windows.Forms.DataGridView();
             this.searchRole = new System.Windows.Forms.Button();
             this.staffRole = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.searchStaffID = new System.Windows.Forms.Button();
-            this.patientdgv = new System.Windows.Forms.DataGridView();
+            this.staffdgv = new System.Windows.Forms.DataGridView();
             this.staffID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.searchstaffbackbtn = new System.Windows.Forms.Button();
@@ -130,9 +130,9 @@ namespace CIS2201_Assignment
             this.panel8.SuspendLayout();
             this.Search.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsdgv)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1198,7 +1198,7 @@ namespace CIS2201_Assignment
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label25);
-            this.panel5.Controls.Add(this.visitdgv);
+            this.panel5.Controls.Add(this.detailsdgv);
             this.panel5.Controls.Add(this.searchRole);
             this.panel5.Controls.Add(this.staffRole);
             this.panel5.Controls.Add(this.label23);
@@ -1224,14 +1224,14 @@ namespace CIS2201_Assignment
             this.label25.Text = "Search staff members by role";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // visitdgv
+            // detailsdgv
             // 
-            this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.visitdgv.Location = new System.Drawing.Point(25, 127);
-            this.visitdgv.Name = "visitdgv";
-            this.visitdgv.RowHeadersWidth = 51;
-            this.visitdgv.Size = new System.Drawing.Size(1105, 131);
-            this.visitdgv.TabIndex = 7;
+            this.detailsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detailsdgv.Location = new System.Drawing.Point(25, 127);
+            this.detailsdgv.Name = "detailsdgv";
+            this.detailsdgv.RowHeadersWidth = 51;
+            this.detailsdgv.Size = new System.Drawing.Size(1105, 131);
+            this.detailsdgv.TabIndex = 7;
             // 
             // searchRole
             // 
@@ -1244,6 +1244,8 @@ namespace CIS2201_Assignment
             this.searchRole.TabIndex = 6;
             this.searchRole.Text = "Search";
             this.searchRole.UseVisualStyleBackColor = false;
+            this.searchRole.Click += new System.EventHandler(this.searchRole_Click);
+
             // 
             // staffRole
             // 
@@ -1266,7 +1268,7 @@ namespace CIS2201_Assignment
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label24);
             this.panel4.Controls.Add(this.searchStaffID);
-            this.panel4.Controls.Add(this.patientdgv);
+            this.panel4.Controls.Add(this.staffdgv);
             this.panel4.Controls.Add(this.staffID);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Location = new System.Drawing.Point(25, 20);
@@ -1303,15 +1305,17 @@ namespace CIS2201_Assignment
             this.searchStaffID.TabIndex = 3;
             this.searchStaffID.Text = "Search";
             this.searchStaffID.UseVisualStyleBackColor = false;
+                        this.searchStaffID.Click += new System.EventHandler(this.searchStaffID_Click);
+
             // 
-            // patientdgv
+            // staffdgv
             // 
-            this.patientdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patientdgv.Location = new System.Drawing.Point(25, 118);
-            this.patientdgv.Name = "patientdgv";
-            this.patientdgv.RowHeadersWidth = 51;
-            this.patientdgv.Size = new System.Drawing.Size(1105, 119);
-            this.patientdgv.TabIndex = 2;
+            this.staffdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.staffdgv.Location = new System.Drawing.Point(25, 118);
+            this.staffdgv.Name = "staffdgv";
+            this.staffdgv.RowHeadersWidth = 51;
+            this.staffdgv.Size = new System.Drawing.Size(1105, 119);
+            this.staffdgv.TabIndex = 2;
             // 
             // staffID
             // 
@@ -1382,10 +1386,10 @@ namespace CIS2201_Assignment
             this.Search.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visitdgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsdgv)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientdgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffdgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -1429,12 +1433,12 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.TabPage Search;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DataGridView visitdgv;
+        private System.Windows.Forms.DataGridView detailsdgv;
         private System.Windows.Forms.Button searchRole;
         private System.Windows.Forms.TextBox staffRole;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button searchStaffID;
-        private System.Windows.Forms.DataGridView patientdgv;
+        private System.Windows.Forms.DataGridView staffdgv;
         private System.Windows.Forms.TextBox staffID;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox emailtxt;

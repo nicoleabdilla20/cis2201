@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dapper;
 
-
 namespace CIS2201_Assignment
 {
     public partial class Staff : Form
@@ -73,18 +72,15 @@ namespace CIS2201_Assignment
         //attach your connection here or use : using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString)) according to how you set DB
         private void submit_Click(object sender, EventArgs e)
         {
-                    string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my databse conenction
-
             if (IsStaffValid() && IsStaffIDValid() && isAddressValid())
             {
-                // Create the connection.
-                using (SqlConnection connection = new SqlConnection(cs))
+             // Create the connection.
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     // Create a SqlCommand, and identify it as a stored procedure.
-                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaff", connection))
+                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatient", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
-
                         sqlCommand.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
                         sqlCommand.Parameters["@StaffID"].Value = IDtxt.Text;
 
@@ -172,17 +168,16 @@ namespace CIS2201_Assignment
         //button to save all data into database
         private void detailsubmit_Click(object sender, EventArgs e)
         {
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my database conenction
 
             if (IsStaffIDWorkValid() && IsStaffNoOfHrsValid())
             {
-                using (SqlConnection connection = new SqlConnection(cs))
+                 // Create the connection.
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     // Create a SqlCommand, and identify it as a stored procedure.
-                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaffDetails", connection))
+                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaff", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
-
 
                         sqlCommand.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
                         sqlCommand.Parameters["@StaffID"].Value = idwork.Text;
@@ -224,6 +219,154 @@ namespace CIS2201_Assignment
             }
         }
         
+        //------------------------------SEARCH TAB PAGE --------------------------------
+
+         private List<staffInformation> getStaffList()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@StaffID"].Value = ssearchID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<staffInformation> patientsList = new List<staffInformation>();
+
+                    while (read.Read())
+                    {
+                        patientInformation pa = new patientInformation(read["StaffID"].ToString(), read["StaffName"].ToString(), read["StaffSurnameName"].ToString(), read["StaffGender"].ToString(), read["StaffDateOfBirth"].ToString(), read["StaffAge"].ToString(), read["StaffAddress"].ToString(), read["StaffEmail"].ToString(), read["StaffPhoneNumber"].ToString(), read["StaffBloodType"].ToString(),  read["PatientsInsurance"].ToString(), read["StaffRole"].ToString());
+                        patientsList.Add(pa);
+                    }
+                    return patientsList;
+                }
+            }
+        }
+
+
+        
+
+         private List<staffD> getStaffDetailsList()
+         {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                String selectedItem = (string)Filtercbx.SelectedItem;
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[staffDetails] WHERE StaffID = @StaffID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@StaffID"].Value = pvisitID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<staffD> staffList = new List<staffD>();
+
+
+                    while (read.Read())
+                    {
+
+                        staffD p = new staffD(read["StaffID"].ToString(), read["StartOfContract"].ToString(), read["EndOfContract"].ToString(), read["TypeOfContract"].ToString(), read["NumberOfHours"].ToString(), read["Bonus"].ToString());
+                        staffList.Add(p);
+                    }
+
+                    if (selectedItem == "Date: Newest First")
+                    {
+                        var datenew =
+                        from item in staffList
+                        let date = item.StartOfContract
+                        let id = item.ID
+                        orderby date descending
+                        select item;
+
+                        List<staffD> lst = datenew.ToList();
+                        return lst;
+                    }
+                    else
+                    {
+                        var datenew =
+                        from item in staffList
+                        let date = item.StartOfContract
+                        let id = item.ID
+                        orderby date ascending
+                        select item;
+
+                        List<staffD> lst = datenew.ToList();
+                        return lst;
+                    }
+                }
+            }
+        } 
+
+
+        /// <summary>
+        /// source for searching a staff: "https://www.codesd.com/item/i-get-this-error-a-sqlparameter-with-parametername-firstname-is-not-contained-by-this-sqlparametercollection.html"
+        /// </summary>
+        private void searchStaffID_Click(object sender, EventArgs e)
+        {
+            if (IsStaffIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        staffdgv.DataSource = getStaffList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+               
+            } else
+                {
+                    MessageBox.Show("Error");
+                }
+        }
+
+        private void searchRole_Click(object sender, EventArgs e)
+        {
+            if (IsStaffIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        detailsdgv.DataSource = getPatientsVisitList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                
+            }else
+                {
+                   MessageBox.Show("Error");
+
+                }
+        }
+
+        
+        //used in Home tab apge
         private void issuebtn_Click(object sender, EventArgs e)
         {
             ReportIssue ReportIssue = new ReportIssue();
