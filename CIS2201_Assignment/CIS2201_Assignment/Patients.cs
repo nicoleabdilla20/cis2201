@@ -175,56 +175,59 @@ namespace CIS2201_Assignment
 
         private void visitsubmit_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            if (IsPatientValid() && IsPatientIDValid())
             {
-                using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatientVisit", connection))
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
-                    sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 10));
-                    sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
-                    sqlCommand.Parameters["@PatientsSurname"].Value = surnametxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
-                    sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDoctor", SqlDbType.VarChar, 40));
-                    sqlCommand.Parameters["@RecentVisitDoctor"].Value = doctortxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitSummary", SqlDbType.VarChar, 100));
-                    sqlCommand.Parameters["@RecentVisitSummary"].Value = summarytxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDate", SqlDbType.Date));
-                    sqlCommand.Parameters["@OtherVisitDate"].Value = historydate.Value;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDoctor", SqlDbType.VarChar, 40));
-                    sqlCommand.Parameters["@OtherVisitDoctor"].Value = historydoctor.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitSummary", SqlDbType.VarChar, 100));
-                    sqlCommand.Parameters["@OtherVisitSummary"].Value = historysummary.Text;
-                    try
+                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatientVisit", connection))
                     {
-                        connection.Open();
-                        sqlCommand.ExecuteNonQuery();
-                        string message = "Successfully added";
-                        MessageBox.Show(message);
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
 
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 10));
+                        sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
+                        sqlCommand.Parameters["@PatientsSurname"].Value = surnametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
+                        sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDoctor", SqlDbType.VarChar, 40));
+                        sqlCommand.Parameters["@RecentVisitDoctor"].Value = doctortxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitSummary", SqlDbType.VarChar, 100));
+                        sqlCommand.Parameters["@RecentVisitSummary"].Value = summarytxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDate", SqlDbType.Date));
+                        sqlCommand.Parameters["@OtherVisitDate"].Value = historydate.Value;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDoctor", SqlDbType.VarChar, 40));
+                        sqlCommand.Parameters["@OtherVisitDoctor"].Value = historydoctor.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitSummary", SqlDbType.VarChar, 100));
+                        sqlCommand.Parameters["@OtherVisitSummary"].Value = historysummary.Text;
+                        try
+                        {
+                            connection.Open();
+                            sqlCommand.ExecuteNonQuery();
+                            string message = "Successfully added";
+                            MessageBox.Show(message);
+
+                        }
+                        catch (System.Data.SqlClient.SqlException sqlException)
+                        {
+                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
                     }
-                    catch (System.Data.SqlClient.SqlException sqlException)
-                    {
-                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
+
                 }
-
             }
         }
 
