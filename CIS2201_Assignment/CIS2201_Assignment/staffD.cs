@@ -14,7 +14,7 @@ namespace CIS2201_Assignment
         public string TypeOfContract { get; set; }
         public string NumberOfHours { get; set; }
         public string Bonus { get; set; }
-        public staffD(string id,  string startofcontract, string endofcontract, string typeofcontract, string numberofhours, string bonus) : base(id)
+        public staffD(string id,  string name, string surname, string startofcontract, string endofcontract, string typeofcontract, string numberofhours, string bonus) : base(id, name, surname)
         {
             StartOfContract = startofcontract;
             EndOfContract = endofcontract;

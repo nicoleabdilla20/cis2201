@@ -38,7 +38,9 @@ GO
 SELECT * FROM [Hospital].[staff];
 GO
 CREATE TABLE [Hospital].[staffDetails] (  
-    [StaffID]               VARCHAR(10) PRIMARY KEY NOT NULL,  
+    [StaffID]               VARCHAR(10) NOT NULL,  
+    [StaffName]             VARCHAR(10) NOT NULL,
+    [StaffSurname]          VARCHAR(10) NOT NULL,
     [StartOfContract]       DATE NOT NULL,
     [EndOfContract]         DATE NOT NULL,
     [TypeOfContract]        VARCHAR (40) NOT NULL,
@@ -50,10 +52,10 @@ GO
 ALTER TABLE [Hospital].[staffDetails]
 ALTER COLUMN [StaffID] VARCHAR(10) NOT NULL;
 GO
-INSERT INTO [Hospital].[staffDetails](StaffID, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
-VALUES( '12341', '27.OCT.1981', '01.SEP.2023', 'Definite', 20, '200');
-INSERT INTO [Hospital].[staffDetails](StaffID, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
-VALUES( '4685', '27.OCT.2010', '01.SEP.2025', 'Indefinite', 40, '500');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '12431', 'Ronald', 'Abela', '27.OCT.1981', '01.SEP.2023', 'Definite', 20, '200');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '4685','David', 'Brown', '27.OCT.2010', '01.SEP.2025', 'Indefinite', 40, '500');
 
 SELECT * FROM [Hospital].[staffDetails];
 
@@ -63,7 +65,7 @@ CREATE PROCEDURE [Hospital].[addStaff]
 AS  
 BEGIN
 BEGIN TRANSACTION  
-INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGender,   StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)   
+INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGender,  StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)   
      VALUES (@StaffID, @StaffName, @StaffSurnameName, @StaffGender, @StaffDateOfBirth, @StaffAddress, @StaffEmail, @StaffPhoneNumber, @StaffBloodType, @StaffInsurance, @StaffRole);
 COMMIT TRANSACTION
 END

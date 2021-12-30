@@ -328,7 +328,7 @@ namespace CIS2201_Assignment
 
             scale 3:
             Phsician, Interpreter, Social worker
-        */
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -371,6 +371,136 @@ namespace CIS2201_Assignment
                     {
                         connection.Close();
                     }
+                }
+            }
+        }
+        */
+
+        public bool IsStaffIdValid()
+        {
+            if (staffID.Text == "")
+            {
+                MessageBox.Show("PLease enter an Id to search");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public bool IsStaffIdDetailValid()
+        {
+            if (staffDetailstxt.Text == "")
+            {
+                MessageBox.Show("PLease enter an Id to search");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private List<staffInformation> getStaffList()
+        {
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                { 
+                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@StaffID"].Value = staffID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<staffInformation> staffList = new List<staffInformation>();
+
+
+                    while (read.Read())
+                    {
+
+                        staffInformation p = new staffInformation(read["StaffID"].ToString(), read["StaffName"].ToString(), read["StaffSurnameName"].ToString(), read["StaffGender"].ToString(), read["StaffDateOfBirth"].ToString(), read["StaffAge"].ToString(), read["StaffAddress"].ToString(), read["StaffEmail"].ToString(), read["StaffPhoneNumber"].ToString(), read["StaffBloodType"].ToString(), read["StaffInsurance"].ToString(), read["StaffRole"].ToString());
+                        staffList.Add(p);
+                    }
+                    return staffList;
+                }
+            }
+        }
+
+        private List<staffD> getStaffDetailList()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[staffDetails] WHERE StaffID = @StaffID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@StaffID"].Value = staffDetailstxt.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    List<staffD> staffDetailList = new List<staffD>();
+
+
+                    while (read.Read())
+                    {
+
+                        staffD p = new staffD(read["StaffID"].ToString(), read["StaffName"].ToString(), read["StaffSurname"].ToString(), read["StartOfContract"].ToString(), read["EndOfContract"].ToString(), read["TypeOfContract"].ToString(), read["NumberOfHours"].ToString(), read["Bonus"].ToString());
+                        staffDetailList.Add(p);
+                    }
+                    return staffDetailList;
+                }
+            }
+        }
+        private void searchStaffID_Click(object sender, EventArgs e)
+        {
+            if (IsStaffIdValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        staffdgv.DataSource = getStaffList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+        }
+
+        private void searchRole_Click_1(object sender, EventArgs e)
+        {
+            if (IsStaffIdDetailValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        detailsdgv.DataSource = getStaffDetailList();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
                 }
             }
         }

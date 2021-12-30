@@ -13,18 +13,21 @@ namespace CIS2201_Assignment
         public string DateofBirth { get; set; }
         public string Age { get; set; }
         public string Address { get; set; }
+        public string Telephone { get; set; }
         public string PhoneNumber { get; set; }
+        public string Email { get; set; }
         public string BloodType { get; set; }
         public string Insurance { get; set; }
         public string Role { get; set; }
 
-        public staffInformation(string id, string name, string surname, string gender, string dateofbirth, string age, string address, string phonenumber, string bloodtype,  string insurance, string role) : base(id, name, surname)
+        public staffInformation(string id, string name, string surname, string gender, string dateofbirth, string age, string address, string email, string phonenumber, string bloodtype,  string insurance, string role) : base(id, name, surname)
         {
             Gender = gender;
             DateofBirth = dateofbirth;
             Age = age;
             Address = address;
             Telephone = phonenumber;
+            Email = email;
             BloodType = bloodtype;
             Insurance = insurance;
             Role = role;
