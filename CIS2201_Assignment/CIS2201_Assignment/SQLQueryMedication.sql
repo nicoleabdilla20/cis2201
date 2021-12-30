@@ -43,3 +43,5 @@ GO
 
 
 SELECT * FROM [Hospital].[Medication];
+
+SELECT * FROM [Hospital].[Staff];
