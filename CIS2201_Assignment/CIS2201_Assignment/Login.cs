@@ -137,6 +137,11 @@ namespace CIS2201_Assignment
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

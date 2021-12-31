@@ -131,3 +131,58 @@ C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assi
 C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
 C:\Users\phili\OneDrive\Desktop\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Medication.resources
 C:\Users\abdil\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.AssemblyReference.cache
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.AssemblyReference.cache
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Login.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Medication.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Patients.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.ReportIssue.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Staff.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Navigation.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Properties.Resources.resources
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.GenerateResource.cache
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
+C:\Users\abdil\OneDrive\Desktop\Git\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.AssemblyReference.cache
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.SuggestedBindingRedirects.cache
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Login.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Medication.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Patients.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.ReportIssue.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Staff.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Navigation.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Properties.Resources.resources
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.GenerateResource.cache
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csprojAssemblyReference.cache
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Login.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Medication.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Patients.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.ReportIssue.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Staff.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Navigation.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.Properties.Resources.resources
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.GenerateResource.cache
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
+C:\Users\Nicole Bezzina\source\repos\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb

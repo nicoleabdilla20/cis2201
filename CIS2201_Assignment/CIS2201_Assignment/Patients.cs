@@ -175,54 +175,59 @@ namespace CIS2201_Assignment
 
         private void visitsubmit_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            if (IsPatientValid() && IsPatientIDValid())
             {
-                using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatientVisit", connection))
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
-                    sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 10));
-                    sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
-                    sqlCommand.Parameters["@PatientsSurnameName"].Value = surnametxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
-                    sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDoctor", SqlDbType.VarChar, 40));
-                    sqlCommand.Parameters["@RecentVisitDoctor"].Value = doctortxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitSummary", SqlDbType.VarChar, 100));
-                    sqlCommand.Parameters["@RecentVisitSummary"].Value = summarytxt.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDate", SqlDbType.Date));
-                    sqlCommand.Parameters["@OtherVisitDate"].Value = historydate.Value;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDoctor", SqlDbType.VarChar, 40));
-                    sqlCommand.Parameters["@OtherVisitDoctor"].Value = historydoctor.Text;
-
-                    sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitSummary", SqlDbType.VarChar, 100));
-                    sqlCommand.Parameters["@OtherVisitSummary"].Value = historysummary.Text;
-                    try
+                    using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatientVisit", connection))
                     {
-                        connection.Open();
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@PatientsID"].Value = IDtxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsName", SqlDbType.NVarChar, 10));
+                        sqlCommand.Parameters["@PatientsName"].Value = nametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@PatientsSurname", SqlDbType.NVarChar, 10));
+                        sqlCommand.Parameters["@PatientsSurname"].Value = surnametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDate", SqlDbType.Date));
+                        sqlCommand.Parameters["@RecentVisitDate"].Value = visitdate.Value;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitDoctor", SqlDbType.VarChar, 40));
+                        sqlCommand.Parameters["@RecentVisitDoctor"].Value = doctortxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@RecentVisitSummary", SqlDbType.VarChar, 100));
+                        sqlCommand.Parameters["@RecentVisitSummary"].Value = summarytxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDate", SqlDbType.Date));
+                        sqlCommand.Parameters["@OtherVisitDate"].Value = historydate.Value;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitDoctor", SqlDbType.VarChar, 40));
+                        sqlCommand.Parameters["@OtherVisitDoctor"].Value = historydoctor.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@OtherVisitSummary", SqlDbType.VarChar, 100));
+                        sqlCommand.Parameters["@OtherVisitSummary"].Value = historysummary.Text;
+                        try
+                        {
+                            connection.Open();
+                            sqlCommand.ExecuteNonQuery();
+                            string message = "Successfully added";
+                            MessageBox.Show(message);
+
+                        }
+                        catch (System.Data.SqlClient.SqlException sqlException)
+                        {
+                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
                     }
-                    catch (System.Data.SqlClient.SqlException sqlException)
-                    {
-                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
+
                 }
-
             }
         }
 
@@ -554,6 +559,12 @@ namespace CIS2201_Assignment
 
         }
 
+         private void issuebtn_Click(object sender, EventArgs e)
+        {
+            ReportIssue ReportIssue = new ReportIssue();
+            ReportIssue.ShowDialog();
+        }
+
         private void patHomebackbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -719,6 +730,7 @@ namespace CIS2201_Assignment
             expenseTotal = 100;
         }
 
+        //calculate bill button
         private void button1_Click(object sender, EventArgs e)
         {            
             if (IsPatientPlanIDValid())
@@ -760,6 +772,121 @@ namespace CIS2201_Assignment
         }
 
         private void label39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void surnametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gendertxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agetxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dob_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IDtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addresstxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telephonetxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddPat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visitdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }

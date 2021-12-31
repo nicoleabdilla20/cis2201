@@ -146,18 +146,20 @@ namespace CIS2201_Assignment
             // Title
             // 
             this.Title.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Title.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Title.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Title.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Title.Location = new System.Drawing.Point(0, 0);
             this.Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(1047, 46);
+            this.Title.Size = new System.Drawing.Size(1212, 46);
             this.Title.TabIndex = 6;
             this.Title.Text = "Manage Patients";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Title.Click += new System.EventHandler(this.Title_Click);
             // 
             // BlueBack
             // 
@@ -167,7 +169,7 @@ namespace CIS2201_Assignment
             this.BlueBack.Dock = System.Windows.Forms.DockStyle.Top;
             this.BlueBack.Location = new System.Drawing.Point(0, 0);
             this.BlueBack.Name = "BlueBack";
-            this.BlueBack.Size = new System.Drawing.Size(1212, 47);
+            this.BlueBack.Size = new System.Drawing.Size(1212, 42);
             this.BlueBack.TabIndex = 7;
             // 
             // hospitallogo
@@ -176,7 +178,7 @@ namespace CIS2201_Assignment
             this.hospitallogo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
             this.hospitallogo.Location = new System.Drawing.Point(0, 0);
             this.hospitallogo.Name = "hospitallogo";
-            this.hospitallogo.Size = new System.Drawing.Size(45, 47);
+            this.hospitallogo.Size = new System.Drawing.Size(45, 42);
             this.hospitallogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.hospitallogo.TabIndex = 10;
             this.hospitallogo.TabStop = false;
@@ -190,11 +192,11 @@ namespace CIS2201_Assignment
             this.PatientsTabControl.Controls.Add(this.Search);
             this.PatientsTabControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PatientsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PatientsTabControl.Location = new System.Drawing.Point(0, 47);
+            this.PatientsTabControl.Location = new System.Drawing.Point(0, 42);
             this.PatientsTabControl.Name = "PatientsTabControl";
             this.PatientsTabControl.Padding = new System.Drawing.Point(15, 5);
             this.PatientsTabControl.SelectedIndex = 0;
-            this.PatientsTabControl.Size = new System.Drawing.Size(1212, 666);
+            this.PatientsTabControl.Size = new System.Drawing.Size(1212, 671);
             this.PatientsTabControl.TabIndex = 10;
             // 
             // Home
@@ -211,16 +213,17 @@ namespace CIS2201_Assignment
             this.Home.Location = new System.Drawing.Point(4, 29);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(1204, 633);
+            this.Home.Size = new System.Drawing.Size(1204, 638);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             // 
             // patHomebackbtn
             // 
+            this.patHomebackbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.patHomebackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.patHomebackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.patHomebackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patHomebackbtn.Location = new System.Drawing.Point(6, 598);
+            this.patHomebackbtn.Location = new System.Drawing.Point(6, 603);
             this.patHomebackbtn.Name = "patHomebackbtn";
             this.patHomebackbtn.Size = new System.Drawing.Size(75, 27);
             this.patHomebackbtn.TabIndex = 52;
@@ -231,18 +234,20 @@ namespace CIS2201_Assignment
             // pictureBox1
             // 
             this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::CIS2201_Assignment.Properties.Resources._2008_i504_005__isometric_hospital_infographics;
             this.pictureBox1.Location = new System.Drawing.Point(0, 113);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1208, 520);
+            this.pictureBox1.Size = new System.Drawing.Size(1208, 525);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
@@ -261,7 +266,6 @@ namespace CIS2201_Assignment
             // richTextBox2
             // 
             this.richTextBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,7 +280,7 @@ namespace CIS2201_Assignment
             // 
             // issuebtn
             // 
-            this.issuebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.issuebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.issuebtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.issuebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.issuebtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
@@ -286,10 +290,11 @@ namespace CIS2201_Assignment
             this.issuebtn.TabIndex = 4;
             this.issuebtn.Text = "Report an Issue";
             this.issuebtn.UseVisualStyleBackColor = false;
+            this.issuebtn.Click += new System.EventHandler(this.issuebtn_Click);
             // 
             // label36
             // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(6, 0);
             this.label36.Name = "label36";
@@ -310,7 +315,7 @@ namespace CIS2201_Assignment
             this.richTextBox1.Location = new System.Drawing.Point(13, 68);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ShowSelectionMargin = true;
-            this.richTextBox1.Size = new System.Drawing.Size(834, 119);
+            this.richTextBox1.Size = new System.Drawing.Size(834, 124);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "Thank you for your service. If you ever encounter any issues with the system. Ple" +
     "ase inform us on the following number +356 77657333 or send us an issue!";
@@ -335,12 +340,14 @@ namespace CIS2201_Assignment
             this.AddPat.Location = new System.Drawing.Point(4, 29);
             this.AddPat.Name = "AddPat";
             this.AddPat.Padding = new System.Windows.Forms.Padding(3);
-            this.AddPat.Size = new System.Drawing.Size(1204, 633);
+            this.AddPat.Size = new System.Drawing.Size(1204, 638);
             this.AddPat.TabIndex = 1;
             this.AddPat.Text = "Add Patient";
+            this.AddPat.Click += new System.EventHandler(this.AddPat_Click);
             // 
             // panel9
             // 
+            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.historysummary);
             this.panel9.Controls.Add(this.historydoctor);
@@ -348,13 +355,14 @@ namespace CIS2201_Assignment
             this.panel9.Controls.Add(this.label16);
             this.panel9.Controls.Add(this.label17);
             this.panel9.Controls.Add(this.label18);
-            this.panel9.Location = new System.Drawing.Point(632, 310);
+            this.panel9.Location = new System.Drawing.Point(632, 313);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(524, 182);
             this.panel9.TabIndex = 53;
             // 
             // historysummary
             // 
+            this.historysummary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.historysummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.historysummary.Location = new System.Drawing.Point(164, 96);
             this.historysummary.Name = "historysummary";
@@ -364,6 +372,7 @@ namespace CIS2201_Assignment
             // 
             // historydoctor
             // 
+            this.historydoctor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.historydoctor.Location = new System.Drawing.Point(75, 46);
             this.historydoctor.Name = "historydoctor";
             this.historydoctor.Size = new System.Drawing.Size(200, 27);
@@ -371,6 +380,7 @@ namespace CIS2201_Assignment
             // 
             // historydate
             // 
+            this.historydate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.historydate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.historydate.Location = new System.Drawing.Point(75, 11);
             this.historydate.Name = "historydate";
@@ -379,6 +389,7 @@ namespace CIS2201_Assignment
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(9, 98);
             this.label16.Name = "label16";
@@ -388,6 +399,7 @@ namespace CIS2201_Assignment
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(9, 49);
             this.label17.Name = "label17";
@@ -397,6 +409,7 @@ namespace CIS2201_Assignment
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(9, 17);
             this.label18.Name = "label18";
@@ -406,6 +419,7 @@ namespace CIS2201_Assignment
             // 
             // panel8
             // 
+            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.summarytxt);
             this.panel8.Controls.Add(this.doctortxt);
@@ -413,13 +427,14 @@ namespace CIS2201_Assignment
             this.panel8.Controls.Add(this.label15);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Controls.Add(this.label13);
-            this.panel8.Location = new System.Drawing.Point(632, 71);
+            this.panel8.Location = new System.Drawing.Point(632, 74);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(524, 177);
             this.panel8.TabIndex = 52;
             // 
             // summarytxt
             // 
+            this.summarytxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.summarytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.summarytxt.Location = new System.Drawing.Point(164, 89);
             this.summarytxt.Name = "summarytxt";
@@ -429,6 +444,7 @@ namespace CIS2201_Assignment
             // 
             // doctortxt
             // 
+            this.doctortxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.doctortxt.Location = new System.Drawing.Point(75, 45);
             this.doctortxt.Name = "doctortxt";
             this.doctortxt.Size = new System.Drawing.Size(200, 27);
@@ -436,6 +452,7 @@ namespace CIS2201_Assignment
             // 
             // visitdate
             // 
+            this.visitdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.visitdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.visitdate.Location = new System.Drawing.Point(75, 10);
             this.visitdate.Name = "visitdate";
@@ -444,6 +461,7 @@ namespace CIS2201_Assignment
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(9, 91);
             this.label15.Name = "label15";
@@ -453,6 +471,7 @@ namespace CIS2201_Assignment
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(9, 48);
             this.label14.Name = "label14";
@@ -462,6 +481,7 @@ namespace CIS2201_Assignment
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(9, 16);
             this.label13.Name = "label13";
@@ -471,6 +491,7 @@ namespace CIS2201_Assignment
             // 
             // panel7
             // 
+            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.insurancetxt);
             this.panel7.Controls.Add(this.label21);
@@ -494,13 +515,14 @@ namespace CIS2201_Assignment
             this.panel7.Controls.Add(this.dob);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label2);
-            this.panel7.Location = new System.Drawing.Point(51, 135);
+            this.panel7.Location = new System.Drawing.Point(51, 138);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(459, 364);
             this.panel7.TabIndex = 51;
             // 
             // insurancetxt
             // 
+            this.insurancetxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.insurancetxt.FormattingEnabled = true;
             this.insurancetxt.Items.AddRange(new object[] {
             "X - pay 100% of the bill out of pocket",
@@ -513,6 +535,7 @@ namespace CIS2201_Assignment
             // 
             // label21
             // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(18, 321);
             this.label21.Name = "label21";
@@ -522,52 +545,65 @@ namespace CIS2201_Assignment
             // 
             // label20
             // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(305, 97);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(39, 19);
             this.label20.TabIndex = 46;
             this.label20.Text = "Age:";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // IDtxt
             // 
+            this.IDtxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.IDtxt.Location = new System.Drawing.Point(80, 55);
             this.IDtxt.Name = "IDtxt";
             this.IDtxt.Size = new System.Drawing.Size(136, 27);
             this.IDtxt.TabIndex = 45;
+            this.IDtxt.TextChanged += new System.EventHandler(this.IDtxt_TextChanged);
             // 
             // agetxt
             // 
+            this.agetxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.agetxt.Location = new System.Drawing.Point(350, 94);
             this.agetxt.Name = "agetxt";
             this.agetxt.Size = new System.Drawing.Size(86, 27);
             this.agetxt.TabIndex = 44;
+            this.agetxt.TextChanged += new System.EventHandler(this.agetxt_TextChanged);
             // 
             // surnametxt
             // 
+            this.surnametxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.surnametxt.Location = new System.Drawing.Point(312, 15);
             this.surnametxt.Name = "surnametxt";
             this.surnametxt.Size = new System.Drawing.Size(125, 27);
             this.surnametxt.TabIndex = 42;
+            this.surnametxt.TextChanged += new System.EventHandler(this.surnametxt_TextChanged);
             // 
             // gendertxt
             // 
+            this.gendertxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.gendertxt.Location = new System.Drawing.Point(312, 55);
             this.gendertxt.Name = "gendertxt";
             this.gendertxt.Size = new System.Drawing.Size(125, 27);
             this.gendertxt.TabIndex = 41;
+            this.gendertxt.TextChanged += new System.EventHandler(this.gendertxt_TextChanged);
             // 
             // label19
             // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(238, 58);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(60, 19);
             this.label19.TabIndex = 40;
             this.label19.Text = "Gender:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // allergiesopts
             // 
+            this.allergiesopts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.allergiesopts.FormattingEnabled = true;
             this.allergiesopts.Items.AddRange(new object[] {
             "Food",
@@ -583,27 +619,34 @@ namespace CIS2201_Assignment
             // 
             // addresstxt
             // 
+            this.addresstxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.addresstxt.Location = new System.Drawing.Point(102, 137);
             this.addresstxt.Name = "addresstxt";
             this.addresstxt.Size = new System.Drawing.Size(334, 27);
             this.addresstxt.TabIndex = 31;
+            this.addresstxt.TextChanged += new System.EventHandler(this.addresstxt_TextChanged);
             // 
             // telephonetxt
             // 
+            this.telephonetxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.telephonetxt.Location = new System.Drawing.Point(103, 178);
             this.telephonetxt.Name = "telephonetxt";
             this.telephonetxt.Size = new System.Drawing.Size(121, 27);
             this.telephonetxt.TabIndex = 30;
+            this.telephonetxt.TextChanged += new System.EventHandler(this.telephonetxt_TextChanged);
             // 
             // nametxt
             // 
+            this.nametxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.nametxt.Location = new System.Drawing.Point(80, 12);
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(136, 27);
             this.nametxt.TabIndex = 27;
+            this.nametxt.TextChanged += new System.EventHandler(this.nametxt_TextChanged);
             // 
             // bloodopts
             // 
+            this.bloodopts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.bloodopts.FormattingEnabled = true;
             this.bloodopts.Items.AddRange(new object[] {
             "A",
@@ -617,6 +660,7 @@ namespace CIS2201_Assignment
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(13, 276);
             this.label12.Name = "label12";
@@ -626,6 +670,7 @@ namespace CIS2201_Assignment
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(13, 227);
             this.label8.Name = "label8";
@@ -635,72 +680,87 @@ namespace CIS2201_Assignment
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(13, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 19);
             this.label7.TabIndex = 14;
             this.label7.Text = "Telphone:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(18, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 19);
             this.label6.TabIndex = 13;
             this.label6.Text = "Address: ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 19);
             this.label5.TabIndex = 12;
             this.label5.Text = "ID:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "Date Of Birth:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dob
             // 
+            this.dob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dob.Location = new System.Drawing.Point(116, 94);
             this.dob.Name = "dob";
             this.dob.Size = new System.Drawing.Size(182, 27);
             this.dob.TabIndex = 10;
+            this.dob.ValueChanged += new System.EventHandler(this.dob_ValueChanged);
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(238, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "Surname:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 19);
             this.label2.TabIndex = 8;
             this.label2.Text = "Name:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // addPatbackbtn
             // 
+            this.addPatbackbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.addPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPatbackbtn.Location = new System.Drawing.Point(8, 598);
+            this.addPatbackbtn.Location = new System.Drawing.Point(8, 603);
             this.addPatbackbtn.Name = "addPatbackbtn";
             this.addPatbackbtn.Size = new System.Drawing.Size(75, 27);
             this.addPatbackbtn.TabIndex = 50;
@@ -710,10 +770,11 @@ namespace CIS2201_Assignment
             // 
             // visitsubmit
             // 
+            this.visitsubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.visitsubmit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.visitsubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.visitsubmit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.visitsubmit.Location = new System.Drawing.Point(1000, 505);
+            this.visitsubmit.Location = new System.Drawing.Point(1000, 501);
             this.visitsubmit.Name = "visitsubmit";
             this.visitsubmit.Size = new System.Drawing.Size(156, 40);
             this.visitsubmit.TabIndex = 49;
@@ -723,11 +784,12 @@ namespace CIS2201_Assignment
             // 
             // submit
             // 
+            this.submit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.submit.AutoSize = true;
             this.submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.submit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Location = new System.Drawing.Point(354, 505);
+            this.submit.Location = new System.Drawing.Point(354, 508);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(156, 40);
             this.submit.TabIndex = 39;
@@ -738,13 +800,14 @@ namespace CIS2201_Assignment
             // label11
             // 
             this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label11.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label11.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label11.Location = new System.Drawing.Point(51, 88);
+            this.label11.Location = new System.Drawing.Point(51, 91);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(459, 44);
@@ -755,13 +818,14 @@ namespace CIS2201_Assignment
             // label10
             // 
             this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label10.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(632, 263);
+            this.label10.Location = new System.Drawing.Point(632, 266);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(524, 44);
@@ -772,13 +836,14 @@ namespace CIS2201_Assignment
             // label9
             // 
             this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Location = new System.Drawing.Point(632, 24);
+            this.label9.Location = new System.Drawing.Point(632, 27);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(524, 44);
@@ -789,12 +854,13 @@ namespace CIS2201_Assignment
             // label1
             // 
             this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.BackColor = System.Drawing.SystemColors.Menu;
             this.label1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(51, 22);
+            this.label1.Location = new System.Drawing.Point(51, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(459, 44);
@@ -810,17 +876,18 @@ namespace CIS2201_Assignment
             this.Appointment.Controls.Add(this.panel2);
             this.Appointment.Location = new System.Drawing.Point(4, 29);
             this.Appointment.Name = "Appointment";
-            this.Appointment.Size = new System.Drawing.Size(1204, 633);
+            this.Appointment.Size = new System.Drawing.Size(1204, 638);
             this.Appointment.TabIndex = 4;
             this.Appointment.Text = "Appointment";
             this.Appointment.Click += new System.EventHandler(this.Appointment_Click);
             // 
             // Appbackbtn
             // 
+            this.Appbackbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Appbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.Appbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Appbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Appbackbtn.Location = new System.Drawing.Point(8, 596);
+            this.Appbackbtn.Location = new System.Drawing.Point(8, 601);
             this.Appbackbtn.Name = "Appbackbtn";
             this.Appbackbtn.Size = new System.Drawing.Size(75, 29);
             this.Appbackbtn.TabIndex = 51;
@@ -830,6 +897,8 @@ namespace CIS2201_Assignment
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.AppFiltercbx);
             this.panel3.Controls.Add(this.Appsearchdgv);
@@ -837,13 +906,15 @@ namespace CIS2201_Assignment
             this.panel3.Controls.Add(this.AppsearchID);
             this.panel3.Controls.Add(this.label34);
             this.panel3.Controls.Add(this.label27);
-            this.panel3.Location = new System.Drawing.Point(35, 267);
+            this.panel3.Location = new System.Drawing.Point(35, 272);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1135, 297);
             this.panel3.TabIndex = 41;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // AppFiltercbx
             // 
+            this.AppFiltercbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AppFiltercbx.FormattingEnabled = true;
             this.AppFiltercbx.Items.AddRange(new object[] {
             "Sort by Date: Newest First",
@@ -856,6 +927,8 @@ namespace CIS2201_Assignment
             // 
             // Appsearchdgv
             // 
+            this.Appsearchdgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Appsearchdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Appsearchdgv.Location = new System.Drawing.Point(18, 129);
             this.Appsearchdgv.Name = "Appsearchdgv";
@@ -865,6 +938,7 @@ namespace CIS2201_Assignment
             // 
             // Appsearchbtn
             // 
+            this.Appsearchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Appsearchbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.Appsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Appsearchbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -878,6 +952,7 @@ namespace CIS2201_Assignment
             // 
             // AppsearchID
             // 
+            this.AppsearchID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AppsearchID.Location = new System.Drawing.Point(424, 88);
             this.AppsearchID.Name = "AppsearchID";
             this.AppsearchID.Size = new System.Drawing.Size(100, 22);
@@ -885,6 +960,7 @@ namespace CIS2201_Assignment
             // 
             // label34
             // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(15, 91);
             this.label34.Name = "label34";
@@ -895,6 +971,7 @@ namespace CIS2201_Assignment
             // label27
             // 
             this.label27.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label27.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label27.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -911,6 +988,8 @@ namespace CIS2201_Assignment
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.crtAppbtn);
             this.panel2.Controls.Add(this.label35);
@@ -933,6 +1012,7 @@ namespace CIS2201_Assignment
             // 
             // crtAppbtn
             // 
+            this.crtAppbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.crtAppbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.crtAppbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.crtAppbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -946,6 +1026,7 @@ namespace CIS2201_Assignment
             // 
             // label35
             // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(308, 121);
             this.label35.Name = "label35";
@@ -956,6 +1037,7 @@ namespace CIS2201_Assignment
             // 
             // Appsdate
             // 
+            this.Appsdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Appsdate.Location = new System.Drawing.Point(499, 116);
             this.Appsdate.Name = "Appsdate";
             this.Appsdate.Size = new System.Drawing.Size(200, 22);
@@ -964,6 +1046,7 @@ namespace CIS2201_Assignment
             // 
             // Appcdate
             // 
+            this.Appcdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Appcdate.Location = new System.Drawing.Point(499, 82);
             this.Appcdate.Name = "Appcdate";
             this.Appcdate.Size = new System.Drawing.Size(200, 22);
@@ -972,6 +1055,7 @@ namespace CIS2201_Assignment
             // 
             // label33
             // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(308, 87);
             this.label33.Name = "label33";
@@ -1077,12 +1161,13 @@ namespace CIS2201_Assignment
             this.CalcBill.Location = new System.Drawing.Point(4, 29);
             this.CalcBill.Name = "CalcBill";
             this.CalcBill.Padding = new System.Windows.Forms.Padding(3);
-            this.CalcBill.Size = new System.Drawing.Size(1204, 633);
+            this.CalcBill.Size = new System.Drawing.Size(1204, 638);
             this.CalcBill.TabIndex = 2;
             this.CalcBill.Text = "Calculate Bill";
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label41);
@@ -1096,13 +1181,14 @@ namespace CIS2201_Assignment
             this.panel4.Controls.Add(this.label38);
             this.panel4.Controls.Add(this.label37);
             this.panel4.Controls.Add(this.label32);
-            this.panel4.Location = new System.Drawing.Point(434, 40);
+            this.panel4.Location = new System.Drawing.Point(434, 43);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(358, 424);
             this.panel4.TabIndex = 66;
             // 
             // label41
             // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(26, 72);
             this.label41.Name = "label41";
@@ -1113,6 +1199,7 @@ namespace CIS2201_Assignment
             // label39
             // 
             this.label39.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label39.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label39.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label39.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -1130,6 +1217,7 @@ namespace CIS2201_Assignment
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(129, 236);
@@ -1142,6 +1230,7 @@ namespace CIS2201_Assignment
             // 
             // textBoxPay
             // 
+            this.textBoxPay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPay.Location = new System.Drawing.Point(205, 374);
             this.textBoxPay.Name = "textBoxPay";
             this.textBoxPay.Size = new System.Drawing.Size(125, 27);
@@ -1149,6 +1238,7 @@ namespace CIS2201_Assignment
             // 
             // textBoxExpenseTotal
             // 
+            this.textBoxExpenseTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxExpenseTotal.Location = new System.Drawing.Point(205, 310);
             this.textBoxExpenseTotal.Name = "textBoxExpenseTotal";
             this.textBoxExpenseTotal.Size = new System.Drawing.Size(125, 27);
@@ -1156,6 +1246,7 @@ namespace CIS2201_Assignment
             // 
             // textBoxNights
             // 
+            this.textBoxNights.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNights.Location = new System.Drawing.Point(205, 171);
             this.textBoxNights.Name = "textBoxNights";
             this.textBoxNights.Size = new System.Drawing.Size(125, 27);
@@ -1163,6 +1254,7 @@ namespace CIS2201_Assignment
             // 
             // textBoxID
             // 
+            this.textBoxID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxID.Location = new System.Drawing.Point(205, 109);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(125, 27);
@@ -1171,6 +1263,7 @@ namespace CIS2201_Assignment
             // 
             // label40
             // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(26, 377);
             this.label40.Name = "label40";
@@ -1180,6 +1273,7 @@ namespace CIS2201_Assignment
             // 
             // label38
             // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label38.AutoSize = true;
             this.label38.Location = new System.Drawing.Point(26, 313);
             this.label38.Name = "label38";
@@ -1189,6 +1283,7 @@ namespace CIS2201_Assignment
             // 
             // label37
             // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(26, 174);
             this.label37.Name = "label37";
@@ -1198,6 +1293,7 @@ namespace CIS2201_Assignment
             // 
             // label32
             // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(26, 112);
             this.label32.Name = "label32";
@@ -1207,10 +1303,11 @@ namespace CIS2201_Assignment
             // 
             // billBackbtn
             // 
+            this.billBackbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.billBackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.billBackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.billBackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billBackbtn.Location = new System.Drawing.Point(8, 595);
+            this.billBackbtn.Location = new System.Drawing.Point(8, 600);
             this.billBackbtn.Name = "billBackbtn";
             this.billBackbtn.Size = new System.Drawing.Size(75, 30);
             this.billBackbtn.TabIndex = 52;
@@ -1229,12 +1326,14 @@ namespace CIS2201_Assignment
             this.Search.Location = new System.Drawing.Point(4, 29);
             this.Search.Name = "Search";
             this.Search.Padding = new System.Windows.Forms.Padding(3);
-            this.Search.Size = new System.Drawing.Size(1204, 633);
+            this.Search.Size = new System.Drawing.Size(1204, 638);
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // panel6
             // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.Filtercbx);
             this.panel6.Controls.Add(this.visitsearch);
@@ -1244,16 +1343,17 @@ namespace CIS2201_Assignment
             this.panel6.Controls.Add(this.label23);
             this.panel6.Location = new System.Drawing.Point(21, 311);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1155, 272);
+            this.panel6.Size = new System.Drawing.Size(1155, 277);
             this.panel6.TabIndex = 54;
             // 
             // Filtercbx
             // 
+            this.Filtercbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Filtercbx.FormattingEnabled = true;
             this.Filtercbx.Items.AddRange(new object[] {
             "Date: Newest First",
             "Date: Oldest First"});
-            this.Filtercbx.Location = new System.Drawing.Point(1005, 77);
+            this.Filtercbx.Location = new System.Drawing.Point(1005, 82);
             this.Filtercbx.Name = "Filtercbx";
             this.Filtercbx.Size = new System.Drawing.Size(121, 27);
             this.Filtercbx.TabIndex = 22;
@@ -1261,10 +1361,11 @@ namespace CIS2201_Assignment
             // 
             // visitsearch
             // 
+            this.visitsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.visitsearch.BackColor = System.Drawing.Color.DodgerBlue;
             this.visitsearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.visitsearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visitsearch.Location = new System.Drawing.Point(532, 73);
+            this.visitsearch.Location = new System.Drawing.Point(532, 78);
             this.visitsearch.Name = "visitsearch";
             this.visitsearch.Size = new System.Drawing.Size(75, 26);
             this.visitsearch.TabIndex = 21;
@@ -1275,13 +1376,14 @@ namespace CIS2201_Assignment
             // label25
             // 
             this.label25.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label25.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label25.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label25.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label25.Location = new System.Drawing.Point(11, 14);
+            this.label25.Location = new System.Drawing.Point(11, 19);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(304, 44);
@@ -1291,24 +1393,28 @@ namespace CIS2201_Assignment
             // 
             // visitdgv
             // 
+            this.visitdgv.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.visitdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.visitdgv.Location = new System.Drawing.Point(15, 122);
+            this.visitdgv.Location = new System.Drawing.Point(16, 127);
             this.visitdgv.Name = "visitdgv";
             this.visitdgv.RowHeadersWidth = 51;
             this.visitdgv.Size = new System.Drawing.Size(1122, 131);
             this.visitdgv.TabIndex = 7;
+            this.visitdgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.visitdgv_CellContentClick);
             // 
             // pvisitID
             // 
-            this.pvisitID.Location = new System.Drawing.Point(411, 72);
+            this.pvisitID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pvisitID.Location = new System.Drawing.Point(411, 77);
             this.pvisitID.Name = "pvisitID";
             this.pvisitID.Size = new System.Drawing.Size(100, 27);
             this.pvisitID.TabIndex = 5;
             // 
             // label23
             // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(11, 77);
+            this.label23.Location = new System.Drawing.Point(11, 82);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(394, 19);
             this.label23.TabIndex = 4;
@@ -1316,6 +1422,7 @@ namespace CIS2201_Assignment
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.searchPatient);
@@ -1324,8 +1431,9 @@ namespace CIS2201_Assignment
             this.panel5.Controls.Add(this.label22);
             this.panel5.Location = new System.Drawing.Point(21, 23);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1155, 272);
+            this.panel5.Size = new System.Drawing.Size(1155, 277);
             this.panel5.TabIndex = 53;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label24
             // 
@@ -1359,6 +1467,7 @@ namespace CIS2201_Assignment
             // 
             // patientdgv
             // 
+            this.patientdgv.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.patientdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientdgv.Location = new System.Drawing.Point(16, 130);
             this.patientdgv.Name = "patientdgv";
@@ -1386,10 +1495,11 @@ namespace CIS2201_Assignment
             // 
             // searchPatbackbtn
             // 
+            this.searchPatbackbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.searchPatbackbtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.searchPatbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchPatbackbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 599);
+            this.searchPatbackbtn.Location = new System.Drawing.Point(6, 604);
             this.searchPatbackbtn.Name = "searchPatbackbtn";
             this.searchPatbackbtn.Size = new System.Drawing.Size(76, 29);
             this.searchPatbackbtn.TabIndex = 52;
@@ -1406,11 +1516,12 @@ namespace CIS2201_Assignment
             // 
             // Patients
             // 
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1212, 713);
             this.Controls.Add(this.PatientsTabControl);
             this.Controls.Add(this.BlueBack);
             this.Name = "Patients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Patients_Load);
             this.BlueBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.hospitallogo)).EndInit();

@@ -40,7 +40,7 @@ namespace CIS2201_Assignment
             // 
             // btnPatients
             // 
-            this.btnPatients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnPatients.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPatients.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnPatients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -56,7 +56,7 @@ namespace CIS2201_Assignment
             // 
             // btnStaff
             // 
-            this.btnStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnStaff.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStaff.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnStaff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -72,6 +72,7 @@ namespace CIS2201_Assignment
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -87,8 +88,8 @@ namespace CIS2201_Assignment
             // label2
             // 
             this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -100,6 +101,7 @@ namespace CIS2201_Assignment
             this.label2.TabIndex = 6;
             this.label2.Text = "Hospital Management System";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -114,7 +116,7 @@ namespace CIS2201_Assignment
             // 
             // btnMedication_Click
             // 
-            this.btnMedication_Click.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnMedication_Click.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMedication_Click.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnMedication_Click.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedication_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

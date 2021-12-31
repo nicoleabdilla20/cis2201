@@ -37,7 +37,7 @@ namespace CIS2201_Assignment
 
         private bool IsStaffIDValid()
         {
-            if (IDtxt.Text == "")
+            if (inputStaffID.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the Staff's ID!");
                 return false;
@@ -73,7 +73,7 @@ namespace CIS2201_Assignment
         //attach your connection here or use : using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString)) according to how you set DB
         private void submit_Click(object sender, EventArgs e)
         {
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my databse conenction
+            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my databse conenction
 
             if (IsStaffValid() && IsStaffIDValid() && isAddressValid())
             {
@@ -172,7 +172,7 @@ namespace CIS2201_Assignment
         //button to save all data into database
         private void detailsubmit_Click(object sender, EventArgs e)
         {
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my database conenction
+            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my database conenction
 
             if (IsStaffIDWorkValid() && IsStaffNoOfHrsValid())
             {
@@ -183,9 +183,14 @@ namespace CIS2201_Assignment
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
 
-
                         sqlCommand.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
                         sqlCommand.Parameters["@StaffID"].Value = idwork.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@StaffName", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@StaffName"].Value = nametxt.Text;
+
+                        sqlCommand.Parameters.Add(new SqlParameter("@StaffSurname", SqlDbType.VarChar, 10));
+                        sqlCommand.Parameters["@StaffSurname"].Value = surnametxt.Text;
 
                         sqlCommand.Parameters.Add(new SqlParameter("@StartOfContract", SqlDbType.Date));
                         sqlCommand.Parameters["@StartOfContract"].Value = soc.Text;
@@ -503,6 +508,274 @@ namespace CIS2201_Assignment
 
                 }
             }
+        }
+
+        //=====================================================CALCULATE STAFF PAY================================================
+        public class payroll
+        {
+            public virtual void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
+            {
+            }
+        }
+
+        //calculation on doctor pay rate
+        public class payDoctor : payroll
+        {
+           
+            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
+            {
+                int rate = 30;
+                pay = (rate * hours)+bonus;
+                tax = 0.25 * pay;
+                payfinal = 0.75 * pay;
+            }
+        }
+
+        public class payTherapist : payroll
+        {
+
+            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
+            {
+                int rate = 25;
+                pay = (rate * hours) + bonus;
+                tax = 0.25 * pay;
+                payfinal = 0.75 * pay;
+            }
+        }
+
+        public class payNurse : payroll
+        {
+
+            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
+            {
+                int rate = 15;
+                pay = (rate * hours) + bonus;
+                tax = 0.25 * pay;
+                payfinal = 0.75 * pay;
+            }
+        }
+
+        public class payPhysicians : payroll
+        {
+
+            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
+            {
+                int rate = 20;
+                pay = (rate * hours) + bonus;
+                tax = 0.25 * pay;
+                payfinal = 0.75 * pay;
+            }
+        }
+        private void getStaffBill()
+        {            
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+            {
+                //Using table Hospital.staff
+
+                List<string> roleInformation = new List<string>();
+                String roleStaff;
+                //String selectedItem = (string)Filtercbx.SelectedItem;
+                connection.Open();
+                String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
+                using (SqlCommand comm = new SqlCommand(sql, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@StaffID"].Value = inputStaffID.Text;
+                    SqlDataReader read;
+                    read = comm.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        String role = read["StaffRole"].ToString();
+                        roleInformation.Add(role.ToString());
+
+                    }
+                    read.Close();
+
+                    roleStaff = roleInformation[0].ToString();
+                }
+
+                //Using table Hospital.staffDetails
+
+                List<string> hoursStaff = new List<string>();
+                List<string> bonusStaff = new List<string>();
+
+                int hoursInt;
+                int bonusInt;
+
+                String sql2 = "SELECT * FROM [Hospital].[staffDetails] WHERE StaffID = @StaffID";
+                using (SqlCommand comm = new SqlCommand(sql2, connection))
+                {
+
+                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                    comm.Parameters["@StaffID"].Value = inputStaffID.Text;
+                    SqlDataReader reader;
+                    reader = comm.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        String fetchHours = reader["NumberOfHours"].ToString();
+                        String fetchBonus = reader["Bonus"].ToString();
+                        hoursStaff.Add(fetchHours.ToString());
+                        bonusStaff.Add(fetchBonus.ToString());
+
+                    }
+                    String hours = hoursStaff[0].ToString();
+                    String bonus = bonusStaff[0].ToString();
+                    
+                    hoursInt = Convert.ToInt32(hoursStaff[0]);
+                    bonusInt = Convert.ToInt32(bonusStaff[0]);
+
+                }
+                calculatePay(roleStaff, hoursInt, bonusInt);
+
+            }
+        }
+
+        private void calculatePay(String role, int hours, int bonus)
+        {
+            double tax=1;
+            double pay=1;
+            double payfinal=1;
+
+            if (role.Equals("Doctor"))
+            {
+                MessageBox.Show("Doctor Salary");
+                payroll payroll = new payDoctor();
+                payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
+
+                staffHrs.Text = hours.ToString();
+                staffPay.Text = pay.ToString();
+                staffTax.Text = tax.ToString();
+                staffTotalPay.Text = payfinal.ToString();
+            }
+
+            if (role.Equals("Physicians"))
+            {
+                MessageBox.Show("Physicians Salary");
+                payroll payroll = new payPhysicians();
+                payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
+
+                staffHrs.Text = hours.ToString();
+                staffPay.Text = pay.ToString();
+                staffTax.Text = tax.ToString();
+                staffTotalPay.Text = payfinal.ToString();
+            }
+
+            if (role.Equals("Therapist"))
+            {
+                MessageBox.Show("Therapist Salary");
+                payroll payroll = new payTherapist();
+                payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
+
+                staffHrs.Text = hours.ToString();
+                staffPay.Text = pay.ToString();
+                staffTax.Text = tax.ToString();
+                staffTotalPay.Text = payfinal.ToString();
+            }
+
+            if (role.Equals("Nurse"))
+            {
+                MessageBox.Show("Nurse Salary");
+                payroll payroll = new payNurse();
+                payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
+
+                staffHrs.Text = hours.ToString();
+                staffPay.Text = pay.ToString();
+                staffTax.Text = tax.ToString();
+                staffTotalPay.Text = payfinal.ToString();
+            }
+        }
+
+        private void calcStaffPay_Click(object sender, EventArgs e)
+        {
+            if (IsStaffIDValid())
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        getStaffBill();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void staffID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void staffDetailstxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StaffTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void detailsdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void staffdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staff_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
