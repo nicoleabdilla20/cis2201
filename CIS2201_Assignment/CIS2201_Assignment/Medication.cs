@@ -357,5 +357,17 @@ namespace CIS2201_Assignment
                 }
             
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void medHomebackbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Navigation fm = new Navigation();
+            fm.Show();
+        }
     }
 }

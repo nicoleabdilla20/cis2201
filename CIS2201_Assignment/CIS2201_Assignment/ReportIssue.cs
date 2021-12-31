@@ -78,5 +78,14 @@ namespace CIS2201_Assignment
             }
         }
 
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReportIssue_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }

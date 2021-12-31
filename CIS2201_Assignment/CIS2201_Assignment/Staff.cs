@@ -712,6 +712,71 @@ namespace CIS2201_Assignment
                 }
             }
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void staffID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void staffDetailstxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StaffTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void detailsdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void staffdgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

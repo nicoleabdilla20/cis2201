@@ -44,5 +44,10 @@ namespace CIS2201_Assignment
             Form frm = new Medication();
             frm.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

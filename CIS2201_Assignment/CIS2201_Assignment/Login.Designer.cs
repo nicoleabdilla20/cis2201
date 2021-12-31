@@ -51,7 +51,7 @@ namespace CIS2201_Assignment
             // lblPassword
             // 
             this.lblPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(68, 69);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -64,10 +64,11 @@ namespace CIS2201_Assignment
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Location = new System.Drawing.Point(0, 492);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
@@ -81,7 +82,7 @@ namespace CIS2201_Assignment
             // btnLogin
             // 
             this.btnLogin.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.AutoSize = true;
             this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -98,7 +99,7 @@ namespace CIS2201_Assignment
             // 
             // txtUsername
             // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -112,8 +113,8 @@ namespace CIS2201_Assignment
             // label2
             // 
             this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -125,6 +126,7 @@ namespace CIS2201_Assignment
             this.label2.TabIndex = 5;
             this.label2.Text = "Hospital Management System";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -154,7 +156,7 @@ namespace CIS2201_Assignment
             // logo
             // 
             this.logo.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.logo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.logo.Image = global::CIS2201_Assignment.Properties.Resources.hospital;
@@ -170,7 +172,7 @@ namespace CIS2201_Assignment
             // lblUsername
             // 
             this.lblUsername.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(68, 25);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -183,7 +185,7 @@ namespace CIS2201_Assignment
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(195, 67);
@@ -199,6 +201,7 @@ namespace CIS2201_Assignment
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.lblUsername);
@@ -224,6 +227,7 @@ namespace CIS2201_Assignment
             this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Login_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
