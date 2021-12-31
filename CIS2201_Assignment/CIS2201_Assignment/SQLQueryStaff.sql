@@ -56,6 +56,10 @@ INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfC
 VALUES( '12431', 'Ronald', 'Abela', '27.OCT.1981', '01.SEP.2023', 'Definite', 20, '200');
 INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
 VALUES( '4685','David', 'Brown', '27.OCT.2010', '01.SEP.2025', 'Indefinite', 40, '500');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '15343', 'George', 'Williams', '27.OCT.2009', '01.SEP.2030', 'Definite', 25, '155');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '31435','Elizabeth', 'Smith', '27.OCT.2000', '01.SEP.2051', 'Indefinite', 30, '150');
 
 SELECT * FROM [Hospital].[staffDetails];
 
