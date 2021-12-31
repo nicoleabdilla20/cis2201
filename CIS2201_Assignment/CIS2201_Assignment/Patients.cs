@@ -730,6 +730,7 @@ namespace CIS2201_Assignment
             expenseTotal = 100;
         }
 
+        //calculate bill button
         private void button1_Click(object sender, EventArgs e)
         {            
             if (IsPatientPlanIDValid())

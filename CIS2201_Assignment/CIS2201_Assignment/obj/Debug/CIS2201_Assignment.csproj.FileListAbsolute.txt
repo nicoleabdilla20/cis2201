@@ -162,3 +162,9 @@ C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\D
 C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.exe
 C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.pdb
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe.config
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.exe
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\CIS2201_Assignment.pdb
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.dll
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\bin\Debug\Dapper.xml
+C:\Users\neilb\Desktop\C# Assignment\CIS2201_Assignment\CIS2201_Assignment\obj\Debug\CIS2201_Assignment.csproj.CopyComplete

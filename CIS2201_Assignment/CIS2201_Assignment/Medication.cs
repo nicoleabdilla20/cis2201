@@ -95,7 +95,7 @@ namespace CIS2201_Assignment
             }
         }
 
-        private bool IfTypeBloodSamples() //not working
+        /* private bool IfTypeBloodSamples() //not working
         {
             //if blood samples was chosen in type of medication, make sure blood type is filled in
             if (typeOfMed.SelectedItem = "Blood Samples" )
@@ -112,7 +112,7 @@ namespace CIS2201_Assignment
                                 return true;
 
             }
-        }
+        } */
 
         private bool IsStockValid()
         {
