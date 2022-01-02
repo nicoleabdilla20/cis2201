@@ -78,12 +78,13 @@ namespace CIS2201_Assignment
 
         }
 
-        private bool IsTypeValid() //not working
+        //verification methods - checking whether all the fields were filled in or not
+        private bool IsTypeValid() 
         {
             {
-                if (typeOfMed.SelectedItem == "")
+                if (this.typeOfMed.SelectedIndex == -1)
                 {
-                    MessageBox.Show("No Item is Selected");
+                    MessageBox.Show("Please make sure that you have entered the type of medication!");
                     return false;
 
                 }
@@ -93,46 +94,42 @@ namespace CIS2201_Assignment
 
                 }
             }
-        }
+        } 
 
-        /* private bool IfTypeBloodSamples() //not working
+        private bool IsNameValid()
         {
-            //if blood samples was chosen in type of medication, make sure blood type is filled in
-            if (typeOfMed.SelectedItem = "Blood Samples" )
+            if (typeOfMed.Items.Contains("Medicine") || typeOfMed.Items.Contains("Vaccine") || typeOfMed.Items.Contains("Instruments"))
             {
-                if(bloodType.SelectedItem == "") { 
-                
-                MessageBox.Show("Please make sure that you have entered the blood type!");
-                    }
-                                return false;
-
+                if (nameOfMed.Text == "")
+                {
+                    MessageBox.Show("Please make sure that you have entered the name of the medication!");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else if (typeOfMed.Items.Contains("Blood Samples"))
+            {
+                if(this.bloodType.SelectedIndex == -1) 
+                { 
+                    MessageBox.Show("Please make sure that you have entered the blood type!");
+                }
+                return false;
             }
             else
             {
-                                return true;
-
+               return true;
             }
-        } */
+        } 
 
-        //verification methods - checking whether all the fields were filled in or not
+ 
         private bool IsStockValid()
         {
             if (stock.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the stock amount!");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool IsNameValid()
-        {
-            if (nameOfMed.Text == "")
-            {
-                MessageBox.Show("Please make sure that you have entered the name of the medication!");
                 return false;
             }
             else
@@ -155,7 +152,7 @@ namespace CIS2201_Assignment
         }
         private bool IsMaintenanceValid()
         {
-            if (maintenancetxt.Text == "")
+            if (this.maintenanceCmboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Please make sure that you have entered if maintenance is required or not!");
                 return false;
@@ -170,7 +167,7 @@ namespace CIS2201_Assignment
         private void button1_Click(object sender, EventArgs e)
         {
             //verification methods
-            if (IsStockValid() && IsNameValid() && IsPriceValid() && IsMaintenanceValid())
+            if (IsTypeValid() && IsNameValid() && IsStockValid() && IsPriceValid() && IsMaintenanceValid())
             {
                 //creating the connection
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -196,7 +193,7 @@ namespace CIS2201_Assignment
                         sqlCommand.Parameters["@price"].Value = price.Text;
 
                         sqlCommand.Parameters.Add(new SqlParameter("@requireMaintenance", SqlDbType.VarChar, 40));
-                        sqlCommand.Parameters["@requireMaintenance"].Value = maintenancetxt.Text;
+                        sqlCommand.Parameters["@requireMaintenance"].Value = maintenanceCmboBox.Text;
 
                         try
                         {
@@ -360,6 +357,16 @@ namespace CIS2201_Assignment
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stock_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

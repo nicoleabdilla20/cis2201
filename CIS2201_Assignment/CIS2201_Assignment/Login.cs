@@ -23,7 +23,7 @@ namespace CIS2201_Assignment
         {
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                MessageBox.Show("Please provide a valid UserName and Password.");
+                MessageBox.Show("Please provide a valid Username and Password!");
                 return false;
             }
             else

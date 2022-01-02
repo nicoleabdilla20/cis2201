@@ -9,7 +9,7 @@ CREATE TABLE [Hospital].[Medication] (
     [bloodType]          NVARCHAR (40) NULL,
     [stockAmount]        NVARCHAR (40) NOT NULL,
     [price]              NVARCHAR (40) NOT NULL,
-    [requireMaintenance] VARCHAR(40)  NOT NULL
+    [requireMaintenance] NVARCHAR (40) NOT NULL,
 );
   
 
@@ -44,4 +44,4 @@ GO
 
 SELECT * FROM [Hospital].[Medication];
 
-SELECT * FROM [Hospital].[Staff];
+

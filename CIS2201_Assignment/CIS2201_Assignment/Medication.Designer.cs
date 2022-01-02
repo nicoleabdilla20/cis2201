@@ -46,7 +46,7 @@ namespace CIS2201_Assignment
             this.bloodType = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.maintenancetxt = new System.Windows.Forms.TextBox();
+            this.maintenanceCmboBox = new System.Windows.Forms.ComboBox();
             this.nameOfMed = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.TextBox();
@@ -310,7 +310,7 @@ namespace CIS2201_Assignment
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.maintenancetxt);
+            this.panel4.Controls.Add(this.maintenanceCmboBox);
             this.panel4.Controls.Add(this.nameOfMed);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.price);
@@ -327,14 +327,17 @@ namespace CIS2201_Assignment
             this.panel4.Size = new System.Drawing.Size(495, 256);
             this.panel4.TabIndex = 67;
             // 
-            // maintenancetxt
+            // maintenanceCmboBox
             // 
-            this.maintenancetxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.maintenancetxt.Location = new System.Drawing.Point(339, 203);
-            this.maintenancetxt.Margin = new System.Windows.Forms.Padding(4);
-            this.maintenancetxt.Name = "maintenancetxt";
-            this.maintenancetxt.Size = new System.Drawing.Size(93, 27);
-            this.maintenancetxt.TabIndex = 72;
+            this.maintenanceCmboBox.FormattingEnabled = true;
+            this.maintenanceCmboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.maintenanceCmboBox.Location = new System.Drawing.Point(333, 204);
+            this.maintenanceCmboBox.Name = "maintenanceCmboBox";
+            this.maintenanceCmboBox.Size = new System.Drawing.Size(99, 27);
+            this.maintenanceCmboBox.TabIndex = 72;
+            this.maintenanceCmboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // nameOfMed
             // 
@@ -349,7 +352,7 @@ namespace CIS2201_Assignment
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 103);
+            this.label2.Location = new System.Drawing.Point(77, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 19);
             this.label2.TabIndex = 62;
@@ -372,6 +375,7 @@ namespace CIS2201_Assignment
             this.stock.Name = "stock";
             this.stock.Size = new System.Drawing.Size(165, 27);
             this.stock.TabIndex = 30;
+            this.stock.TextChanged += new System.EventHandler(this.stock_TextChanged);
             // 
             // label26
             // 
@@ -413,7 +417,7 @@ namespace CIS2201_Assignment
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 158);
+            this.label7.Location = new System.Drawing.Point(77, 170);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 19);
             this.label7.TabIndex = 14;
@@ -423,7 +427,7 @@ namespace CIS2201_Assignment
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(77, 130);
+            this.label6.Location = new System.Drawing.Point(77, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 19);
             this.label6.TabIndex = 13;
@@ -649,8 +653,8 @@ namespace CIS2201_Assignment
         private System.Windows.Forms.TextBox nameOfMed;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox maintenancetxt;
         private System.Windows.Forms.Button medHomebackbtn;
         private System.Windows.Forms.PictureBox hospitallogo;
+        private System.Windows.Forms.ComboBox maintenanceCmboBox;
     }
 }

@@ -145,6 +145,13 @@ namespace CIS2201_Assignment
                 }
 
             }
+            
+             else 
+                     {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
         }
 
         //more verification methods
@@ -234,6 +241,13 @@ namespace CIS2201_Assignment
                 }
 
             }
+            
+             else 
+                     {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
         }
 
         private void issuebtn_Click(object sender, EventArgs e)
@@ -298,100 +312,6 @@ namespace CIS2201_Assignment
         {
 
         }
-
-        /*
-        public void getStaffPay()
-        {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
-            {
-                connection.Open();
-                String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
-                using (SqlCommand comm = new SqlCommand(sql, connection))
-                {
-
-                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
-                    comm.Parameters["@StaffID"].Value = payStaffId.Text;
-                    SqlDataReader read;
-                    read = comm.ExecuteReader();
-
-                    while (read.Read())
-                    {
-                        
-                        var hours = Convert.ToInt32(read["StaffHours"]);
-                        var role = Convert.ToString(read["StaffRole"]);
-
-                        switch(role)
-                        {
-                            case "Doctor":
-                                firstScale f = new firstScale(hours, role);
-                                hrsdgv.DataSource = hours;
-                                payrolldgv.DataSource = f.GetStaffPayroll();
-                                break;
-                        }
-                    }
-                }
-            }
-        }
-        */
-
-        ///Calculate payroll attempt (tried to use interface and split each role in a pay Scale)
-        /*
-         * 
-            Scale1:
-            Doctor, specialist, Pharmacist
-
-            Scale 2:
-            Nurse, Therapist
-
-            scale 3:
-            Phsician, Interpreter, Social worker
-        
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
-            {
-                connection.Open();
-                String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
-                using (SqlCommand comm = new SqlCommand(sql, connection))
-                {
-
-                    comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
-                    comm.Parameters["@StaffID"].Value = payStaffId.Text;
-                    SqlDataReader read;
-                    read = comm.ExecuteReader();
-
-                    try
-                    {
-                        while (read.NextResult())
-                        {
-
-                            var hours = Convert.ToInt32(read["StaffHours"]);
-                            var role = read["StaffRole"].ToString();
-
-
-                            if (role == "Doctor")
-                            {
-                                firstScale f = new firstScale(hours, role);
-                                hrsdgv.DataSource = hours;
-                                payrolldgv.DataSource = f.GetStaffPayroll();
-                                break;
-                            }
-                            
-                        }
-                    }
-                    catch (System.Data.SqlClient.SqlException sqlException)
-                    {
-                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-                }
-            }
-        }
-        */
 
         //verification methods
         public bool IsStaffIdValid()
@@ -500,6 +420,13 @@ namespace CIS2201_Assignment
 
                 }
             }
+            
+             else 
+                     {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
         }
 
         //getting staff member's details list
@@ -526,6 +453,13 @@ namespace CIS2201_Assignment
 
                 }
             }
+            
+             else 
+                     {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
         }
 
         //=====================================================CALCULATE STAFF PAY================================================
