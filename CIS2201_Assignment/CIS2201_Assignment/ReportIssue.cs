@@ -20,6 +20,7 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
+        //verification method
         private bool IsStaffIDWorkValid()
         {
             if (idtxt.Text == "")
@@ -32,16 +33,17 @@ namespace CIS2201_Assignment
                 return true;
             }
         }
-
+        //adding a new issue that was reported and storing it into the database
         private void issuebtn_Click(object sender, EventArgs e)
         {
+            //connection string
             string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my database conenction
 
             if (IsStaffIDWorkValid())
             {
                 using (SqlConnection connection = new SqlConnection(cs))
                 {
-                    // Create a SqlCommand, and identify it as a stored procedure.
+                    //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addIssue", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -58,6 +60,7 @@ namespace CIS2201_Assignment
 
                         try
                         {
+                            //opening connection
                             connection.Open();
                             sqlCommand.ExecuteNonQuery();
                             string message = "Successfully added";
@@ -70,6 +73,7 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
                     }

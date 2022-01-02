@@ -21,7 +21,7 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
-        // Methods to validate add staff input fields
+        //verification methods - checking whether all the fields were filled in or not
         private bool IsStaffValid()
         {
             if (nametxt.Text == "" || surnametxt.Text == "")
@@ -70,17 +70,19 @@ namespace CIS2201_Assignment
         }
 
 
-        //attach your connection here or use : using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString)) according to how you set DB
+        //adding a new staff member and storing it into the database
         private void submit_Click(object sender, EventArgs e)
         {
+            //connection string
             string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my databse conenction
 
+            //verification methods
             if (IsStaffValid() && IsStaffIDValid() && isAddressValid())
             {
-                // Create the connection.
+                //creating the connection
                 using (SqlConnection connection = new SqlConnection(cs))
                 {
-                    // Create a SqlCommand, and identify it as a stored procedure.
+                   //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaff", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -123,6 +125,7 @@ namespace CIS2201_Assignment
 
                         try
                         {
+                            //opening conneciton
                             connection.Open();
 
                             sqlCommand.ExecuteNonQuery();
@@ -135,6 +138,7 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
                     }
@@ -143,6 +147,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //more verification methods
         private bool IsStaffIDWorkValid()
         {
             if (idwork.Text == "")
@@ -169,16 +174,17 @@ namespace CIS2201_Assignment
             }
         }
 
-        //button to save all data into database
+        //adding a new staff member's details and storing it into the database
         private void detailsubmit_Click(object sender, EventArgs e)
         {
+            //connection string
             string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my database conenction
 
             if (IsStaffIDWorkValid() && IsStaffNoOfHrsValid())
             {
                 using (SqlConnection connection = new SqlConnection(cs))
                 {
-                    // Create a SqlCommand, and identify it as a stored procedure.
+                    //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaffDetails", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -208,6 +214,7 @@ namespace CIS2201_Assignment
                         sqlCommand.Parameters["@Bonus"].Value = checkbox.Text;
                         try
                         {
+                            //opening connection
                             connection.Open();
                             sqlCommand.ExecuteNonQuery();
                             string message = "Successfully added";
@@ -220,6 +227,7 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
                     }
@@ -230,6 +238,7 @@ namespace CIS2201_Assignment
 
         private void issuebtn_Click(object sender, EventArgs e)
         {
+            //opens Report Issue form
             ReportIssue ReportIssue = new ReportIssue();
             ReportIssue.ShowDialog();
         }
@@ -251,6 +260,7 @@ namespace CIS2201_Assignment
 
         private void searchstaffbackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -258,6 +268,7 @@ namespace CIS2201_Assignment
 
         private void payrollBackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -272,6 +283,7 @@ namespace CIS2201_Assignment
 
         private void staffHomebackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -381,6 +393,7 @@ namespace CIS2201_Assignment
         }
         */
 
+        //verification methods
         public bool IsStaffIdValid()
         {
             if (staffID.Text == "")
@@ -406,6 +419,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //searching a staff member with staff ID from database
         private List<staffInformation> getStaffList()
         {
 
@@ -434,6 +448,7 @@ namespace CIS2201_Assignment
             }
         }
 
+         //searching a staff member's detaiols with staff ID from database
         private List<staffD> getStaffDetailList()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -460,6 +475,8 @@ namespace CIS2201_Assignment
                 }
             }
         }
+
+        //getting staff member list
         private void searchStaffID_Click(object sender, EventArgs e)
         {
             if (IsStaffIdValid())
@@ -485,6 +502,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //getting staff member's details list
         private void searchRole_Click_1(object sender, EventArgs e)
         {
             if (IsStaffIdDetailValid())
@@ -518,7 +536,7 @@ namespace CIS2201_Assignment
             }
         }
 
-        //calculation on doctor pay rate
+        //doctor pay rate calculation 
         public class payDoctor : payroll
         {
            
@@ -531,6 +549,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //therapist pay rate calculation 
         public class payTherapist : payroll
         {
 
@@ -543,6 +562,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //nurse pay rate calculation 
         public class payNurse : payroll
         {
 
@@ -555,6 +575,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //physician pay rate calculation 
         public class payPhysicians : payroll
         {
 
@@ -566,6 +587,8 @@ namespace CIS2201_Assignment
                 payfinal = 0.75 * pay;
             }
         }
+
+        //retrieving staff member's role and ID to calculate his/her pay roll
         private void getStaffBill()
         {            
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -574,8 +597,8 @@ namespace CIS2201_Assignment
 
                 List<string> roleInformation = new List<string>();
                 String roleStaff;
-                //String selectedItem = (string)Filtercbx.SelectedItem;
                 connection.Open();
+                //using Hospital.staff table
                 String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
                 using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
@@ -596,8 +619,7 @@ namespace CIS2201_Assignment
                     roleStaff = roleInformation[0].ToString();
                 }
 
-                //Using table Hospital.staffDetails
-
+                //using Hospital.staffDetails table
                 List<string> hoursStaff = new List<string>();
                 List<string> bonusStaff = new List<string>();
 
@@ -688,6 +710,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //button to clculate payroll and display the amount
         private void calcStaffPay_Click(object sender, EventArgs e)
         {
             if (IsStaffIDValid())
