@@ -19,7 +19,8 @@ namespace CIS2201_Assignment
         {
             InitializeComponent();
         }
-        
+
+        //verification methods - checking whether all the fields were filled in or not
         private bool IsPatientValid()
         {
             if (nametxt.Text == "" || surnametxt.Text == "")
@@ -106,14 +107,16 @@ namespace CIS2201_Assignment
             }
         }
 
+        //adding a new patient and storing it into the database
         private void submit_Click(object sender, EventArgs e)
         {
+            //verification methods
             if (IsPatientValid() && IsPatientIDValid() && isAddressValid())
             {
-                // Create the connection.
+                //creating the connection
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
-                    // Create a SqlCommand, and identify it as a stored procedure.
+                    //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatient", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -153,6 +156,7 @@ namespace CIS2201_Assignment
 
                         try
                         {
+                            //opening connection
                             connection.Open();
 
                             sqlCommand.ExecuteNonQuery();
@@ -165,20 +169,31 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
                     }
                 }
 
             }
+             else 
+                     {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
         }
 
+        //adding a new patient visit and storing it into the database
         private void visitsubmit_Click(object sender, EventArgs e)
         {
+            //verification methods
             if (IsPatientValid() && IsPatientIDValid())
             {
+                //creating the connection
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
+                    //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addPatientVisit", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -211,6 +226,7 @@ namespace CIS2201_Assignment
                         sqlCommand.Parameters["@OtherVisitSummary"].Value = historysummary.Text;
                         try
                         {
+                            //opening connection
                             connection.Open();
                             sqlCommand.ExecuteNonQuery();
                             string message = "Successfully added";
@@ -223,12 +239,19 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
                     }
 
                 }
             }
+             else 
+                     {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
         }
 
         private List<patientInformation> getPatientsList()
@@ -314,9 +337,6 @@ namespace CIS2201_Assignment
         } 
 
 
-        /// <summary>
-        /// source for searching a patient: "https://www.codesd.com/item/i-get-this-error-a-sqlparameter-with-parametername-firstname-is-not-contained-by-this-sqlparametercollection.html"
-        /// </summary>
         private void searchPatient_Click(object sender, EventArgs e)
         {
             if (IsPatientInfoIDValid())
@@ -366,10 +386,13 @@ namespace CIS2201_Assignment
             }
         }
 
+        //adding a new appointment and storing it into the database
         private void crtAppbtn_Click(object sender, EventArgs e)
         {
+            //creating the connection
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //creating a SqlCommand, and identifying it as a stored procedure
                 using (SqlCommand sqlCommand = new SqlCommand("Hospital.addAppointment", connection))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -393,6 +416,7 @@ namespace CIS2201_Assignment
                     sqlCommand.Parameters["@ScheduledDate"].Value = Appsdate.Value;
                     try
                     {
+                        //opening conneciton
                         connection.Open();
 
                         sqlCommand.ExecuteNonQuery();
@@ -403,6 +427,7 @@ namespace CIS2201_Assignment
                     }
                     finally
                     {
+                        //closing connection
                         connection.Close();
                     }
                 }
@@ -410,8 +435,10 @@ namespace CIS2201_Assignment
             }
         }
 
+        //retrieving an appointment that is stored in the database according to the patients ID 
         private List<patientAppointmet> getAppointment()
         {
+            //creating the connection
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
                 String selectedItem = (string)AppFiltercbx.SelectedItem;
@@ -462,7 +489,7 @@ namespace CIS2201_Assignment
         }
 
 
-
+        //searching appointment 
         private void Appsearchbtn_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -561,12 +588,14 @@ namespace CIS2201_Assignment
 
          private void issuebtn_Click(object sender, EventArgs e)
         {
+            //opens Report Issue form
             ReportIssue ReportIssue = new ReportIssue();
             ReportIssue.ShowDialog();
         }
 
         private void patHomebackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -574,6 +603,7 @@ namespace CIS2201_Assignment
 
         private void addPatbackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -581,6 +611,7 @@ namespace CIS2201_Assignment
 
         private void Appbackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -588,6 +619,7 @@ namespace CIS2201_Assignment
 
         private void billBackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -595,6 +627,7 @@ namespace CIS2201_Assignment
 
         private void searchPatbackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -619,7 +652,7 @@ namespace CIS2201_Assignment
         // Derived Classes
         public class planZ : planBase
         {
-            //Insurance fully covers expense
+            //Insurance covers the patient's full expenses
             int insurance;
             int toPay;
             public override int calculate(int expense)
@@ -632,7 +665,7 @@ namespace CIS2201_Assignment
 
         public class planY : planBase
         {
-            //50 / 50
+            // insurance pays 50% of the expenses if expenses are larger than 700, if not the patient pays the full expense
             int insurance;
             int toPay;
             public override int calculate(int expense)
@@ -654,7 +687,7 @@ namespace CIS2201_Assignment
 
         public class planX : planBase
         {
-            //Patient pays everything
+            //Patient pays the full expenses
             int insurance;
             int toPay;
             public override int calculate(int expense)
@@ -665,6 +698,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //retrieving the type of insurance the patient has in order to calculate the bill
         private string getPatientsInsurance()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -697,6 +731,7 @@ namespace CIS2201_Assignment
             }
         }
         
+        //calculating the bill in accordance to the insurance plan chosen by the patient beforehand
         private void calculateBill(String plan)
         {
             int night = Convert.ToInt32(textBoxNights.Text);

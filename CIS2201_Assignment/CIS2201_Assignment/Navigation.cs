@@ -19,6 +19,7 @@ namespace CIS2201_Assignment
 
         private void btnPatients_Click(object sender, EventArgs e)
         { 
+            //opens patients form
             this.Hide();
             Form frm = new Patients();
             frm.Show();
@@ -26,6 +27,7 @@ namespace CIS2201_Assignment
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
+            //opens staff form
             this.Hide();  
             Form frm = new Staff();
             frm.Show();
@@ -33,6 +35,7 @@ namespace CIS2201_Assignment
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //goes back to login form
             this.Hide();
             Login frm = new Login();
             frm.Show();
@@ -40,6 +43,7 @@ namespace CIS2201_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //opens medication form
             this.Hide();
             Form frm = new Medication();
             frm.Show();

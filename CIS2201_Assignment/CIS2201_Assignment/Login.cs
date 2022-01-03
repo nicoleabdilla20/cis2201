@@ -18,11 +18,12 @@ namespace CIS2201_Assignment
             InitializeComponent();
         }
 
+        //checking if both the username and password were entered before logging in
         private bool checkLogin()
         {
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                MessageBox.Show("Please provide a valid UserName and Password.");
+                MessageBox.Show("Please provide a valid Username and Password!");
                 return false;
             }
             else
@@ -31,16 +32,19 @@ namespace CIS2201_Assignment
             }
         }
 
-        //Connection String
+        //checking if the username and password are valid to log into the system
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (checkLogin())
             {
+                //Connection String to connect to the database and acccess the usernames and passwords that are valid
                 string sql = "Select * from [Hospital].[login] where Username=@Username and Password=@Password";
+                //creating the connection
                 using (SqlConnection con = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
+                        //opening connection string
                         con.Open();
                         try
                         {
@@ -49,9 +53,11 @@ namespace CIS2201_Assignment
                             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                             DataSet ds = new DataSet();
                             adapt.Fill(ds);
+                            //closing connection string
                             con.Close();
                             int count = ds.Tables[0].Rows.Count;
-                            //If count is equal to 1, than show navigation form
+                            //If count is equal to 1, than log in was successfull hence show navigation form
+                            //else, show login failed error message
                             if (count == 1)
                             {
                                 MessageBox.Show("Login Successful!");
@@ -80,6 +86,7 @@ namespace CIS2201_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //closing the application
             this.Close();
         }
 

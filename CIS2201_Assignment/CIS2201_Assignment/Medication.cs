@@ -78,12 +78,13 @@ namespace CIS2201_Assignment
 
         }
 
-        private bool IsTypeValid() //not working
+        //verification methods - checking whether all the fields were filled in or not
+        private bool IsTypeValid() 
         {
             {
-                if (typeOfMed.SelectedItem == "")
+                if (this.typeOfMed.SelectedIndex == -1)
                 {
-                    MessageBox.Show("No Item is Selected");
+                    MessageBox.Show("Please make sure that you have entered the type of medication!");
                     return false;
 
                 }
@@ -93,45 +94,42 @@ namespace CIS2201_Assignment
 
                 }
             }
-        }
+        } 
 
-        /* private bool IfTypeBloodSamples() //not working
+        private bool IsNameValid()
         {
-            //if blood samples was chosen in type of medication, make sure blood type is filled in
-            if (typeOfMed.SelectedItem = "Blood Samples" )
+            if (typeOfMed.Items.Contains("Medicine") || typeOfMed.Items.Contains("Vaccine") || typeOfMed.Items.Contains("Instruments"))
             {
-                if(bloodType.SelectedItem == "") { 
-                
-                MessageBox.Show("Please make sure that you have entered the blood type!");
-                    }
-                                return false;
-
+                if (nameOfMed.Text == "")
+                {
+                    MessageBox.Show("Please make sure that you have entered the name of the medication!");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else if (typeOfMed.Items.Contains("Blood Samples"))
+            {
+                if(this.bloodType.SelectedIndex == -1) 
+                { 
+                    MessageBox.Show("Please make sure that you have entered the blood type!");
+                }
+                return false;
             }
             else
             {
-                                return true;
-
+               return true;
             }
-        } */
+        } 
 
+ 
         private bool IsStockValid()
         {
             if (stock.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the stock amount!");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool IsNameValid()
-        {
-            if (nameOfMed.Text == "")
-            {
-                MessageBox.Show("Please make sure that you have entered the name of the medication!");
                 return false;
             }
             else
@@ -154,7 +152,7 @@ namespace CIS2201_Assignment
         }
         private bool IsMaintenanceValid()
         {
-            if (maintenancetxt.Text == "")
+            if (this.maintenanceCmboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Please make sure that you have entered if maintenance is required or not!");
                 return false;
@@ -165,14 +163,16 @@ namespace CIS2201_Assignment
           
         }
 
+        //adding a new medication equipment and storing it into the database
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IsStockValid() && IsNameValid() && IsPriceValid() && IsMaintenanceValid())
+            //verification methods
+            if (IsTypeValid() && IsNameValid() && IsStockValid() && IsPriceValid() && IsMaintenanceValid())
             {
-                // Create the connection.
+                //creating the connection
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
-                    // Create a SqlCommand, and identify it as a stored procedure.
+                    //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addMedication", connection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -193,10 +193,11 @@ namespace CIS2201_Assignment
                         sqlCommand.Parameters["@price"].Value = price.Text;
 
                         sqlCommand.Parameters.Add(new SqlParameter("@requireMaintenance", SqlDbType.VarChar, 40));
-                        sqlCommand.Parameters["@requireMaintenance"].Value = maintenancetxt.Text;
+                        sqlCommand.Parameters["@requireMaintenance"].Value = maintenanceCmboBox.Text;
 
                         try
                         {
+                            //opening connection
                             connection.Open();
 
                             sqlCommand.ExecuteNonQuery();
@@ -209,6 +210,7 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
                     }
@@ -222,42 +224,16 @@ namespace CIS2201_Assignment
              }
         }
 
-        /*
-        private void searchMedID_Click(object sender, EventArgs e)
-        {
-            if (IsTypeValid())
-            {
-                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
-                {
-                    connection.Open();
-
-                    try
-                    {
-                        //required list
-                       // medicationdgv.DataSource = getMedicationList();
-                    }
-                    catch (System.Data.SqlClient.SqlException sqlException)
-                    {
-                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-
-                }
-            }
-        }
-        */
-
          private void issuebtn_Click(object sender, EventArgs e)
         {
+            //opens Report Issue form
             ReportIssue ReportIssue = new ReportIssue();
             ReportIssue.ShowDialog();
         }
 
         private void searchMedBackBtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -265,6 +241,7 @@ namespace CIS2201_Assignment
 
         private void addMedbackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
@@ -290,6 +267,7 @@ namespace CIS2201_Assignment
 
         }
 
+        //verification method - makes sure field was not left empty
         public bool IsSeachValid()
         {
             if(medSearch.Text == "")
@@ -303,6 +281,7 @@ namespace CIS2201_Assignment
             }
         }
 
+        //medication list
         private List<medications> getMedList()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
@@ -332,12 +311,14 @@ namespace CIS2201_Assignment
             }
         }
 
+        //searching a medication from the database by type of medication
         private void searchTypeofMed_Click(object sender, EventArgs e)
         {
                 if (IsSeachValid())
                 {
                     using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                     {
+                        //opening connection
                         connection.Open();
 
                         try
@@ -350,11 +331,18 @@ namespace CIS2201_Assignment
                         }
                         finally
                         {
+                            //closing connection
                             connection.Close();
                         }
 
                     }
                 }
+                 else 
+                    {
+                        string errorMessage = "Whoops......something went wrong!";
+                        MessageBox.Show(errorMessage);
+
+                     }
             
         }
 
@@ -365,9 +353,20 @@ namespace CIS2201_Assignment
 
         private void medHomebackbtn_Click(object sender, EventArgs e)
         {
+            //goes back to Navigation form
             this.Hide();
             Navigation fm = new Navigation();
             fm.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stock_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
