@@ -15,7 +15,7 @@ namespace CIS2201_Assignment
         public string OtherVisitDate { get; set; }
         public string OtherVisitDoctor { get; set; }
         public string OtherVisitSummary { get; set; }
-        public patientVisits(string id, string name, string surname, string recentvisitdate, string recentvisitdoctor, string recentvisitsummary, string othervisitdate, string othervisitdoctor, string othervisitsummary) : base(id, surname, name)
+        public patientVisits(string id, string name, string surname, string recentvisitdate, string recentvisitdoctor, string recentvisitsummary, string othervisitdate, string othervisitdoctor, string othervisitsummary) : base(id, name, surname)
         {
             RecentVisitDate = recentvisitdate;
             RecentVisitDoctor = recentvisitdoctor;

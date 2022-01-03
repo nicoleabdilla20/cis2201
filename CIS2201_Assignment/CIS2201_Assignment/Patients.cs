@@ -291,7 +291,7 @@ namespace CIS2201_Assignment
                         from item in patientsList
                         let date = item.RecentVisitDate
                         let id = item.ID
-                        orderby date descending
+                        orderby date ascending
                         select item;
 
                         List<patientVisits> lst = datenew.ToList();
@@ -303,7 +303,7 @@ namespace CIS2201_Assignment
                         from item in patientsList
                         let date = item.RecentVisitDate
                         let id = item.ID
-                        orderby date ascending
+                        orderby date descending
                         select item;
 
                         List<patientVisits> lst = datenew.ToList();
@@ -440,7 +440,7 @@ namespace CIS2201_Assignment
                         var datenew =
                         from item in appointmentList
                         let date = item.ScheduledDate
-                        orderby date descending
+                        orderby date ascending
                         select item;
 
                         List<patientAppointmet> lst = datenew.ToList();
@@ -451,7 +451,7 @@ namespace CIS2201_Assignment
                         var datenew =
                         from item in appointmentList
                         let date = item.ScheduledDate
-                        orderby date ascending
+                        orderby date descending
                         select item;
 
                         List<patientAppointmet> lst = datenew.ToList();

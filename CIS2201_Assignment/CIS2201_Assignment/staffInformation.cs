@@ -9,8 +9,6 @@ namespace CIS2201_Assignment
     class staffInformation : staffs
     {
         //Child class/derived class, inheriting from staff.cs
-        public string Name { get; set; }
-        public string Surname { get; set; }
         public string Gender { get; set; }
         public string DateofBirth { get; set; }
         public string Age { get; set; }
@@ -23,8 +21,6 @@ namespace CIS2201_Assignment
 
         public staffInformation(string id, string name, string surname, string gender, string dateofbirth, string age, string address, string email, string phonenumber, string bloodtype,  string insurance, string role) : base(id, name, surname)
         {
-            Name = name;
-            Surname = surname;
             Gender = gender;
             DateofBirth = dateofbirth;
             Age = age;
