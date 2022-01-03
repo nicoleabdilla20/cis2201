@@ -37,7 +37,7 @@ namespace CIS2201_Assignment
         private void issuebtn_Click(object sender, EventArgs e)
         {
             //connection string
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Test;Integrated Security=True;Pooling=False"; //my database conenction
+            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my database conenction
 
             if (IsStaffIDWorkValid())
             {
