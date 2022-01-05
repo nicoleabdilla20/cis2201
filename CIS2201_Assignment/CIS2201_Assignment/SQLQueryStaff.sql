@@ -65,23 +65,23 @@ SELECT * FROM [Hospital].[staffDetails];
 
 GO
 CREATE PROCEDURE [Hospital].[addStaff]  
-@StaffID VARCHAR(10), @StaffName NVARCHAR(40), @StaffSurnameName NVARCHAR(40), @StaffGender NVARCHAR(40), @StaffDateOfBirth DATE, @StaffAddress VARCHAR(100), @StaffEmail NVARCHAR(40), @StaffPhoneNumber INT, @StaffBloodType VARCHAR(10), @StaffInsurance CHAR(1), @StaffRole NVARCHAR(10) 
+@StaffID VARCHAR(10), @StaffName NVARCHAR(40), @StaffSurnameName NVARCHAR(40), @StaffAge INT, @StaffGender NVARCHAR(40), @StaffDateOfBirth DATE, @StaffAddress VARCHAR(100), @StaffEmail NVARCHAR(40), @StaffPhoneNumber INT, @StaffBloodType VARCHAR(10), @StaffInsurance CHAR(1), @StaffRole NVARCHAR(10) 
 AS  
 BEGIN
 BEGIN TRANSACTION  
-INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGender,  StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)   
-     VALUES (@StaffID, @StaffName, @StaffSurnameName, @StaffGender, @StaffDateOfBirth, @StaffAddress, @StaffEmail, @StaffPhoneNumber, @StaffBloodType, @StaffInsurance, @StaffRole);
+INSERT INTO [Hospital].[staff] (StaffID, StaffName, StaffSurnameName, StaffGender,  StaffAge, StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)   
+     VALUES (@StaffID, @StaffName, @StaffSurnameName, @StaffGender, @StaffAge, @StaffDateOfBirth, @StaffAddress, @StaffEmail, @StaffPhoneNumber, @StaffBloodType, @StaffInsurance, @StaffRole);
 COMMIT TRANSACTION
 END
 
 GO
 CREATE PROCEDURE [Hospital].[addStaffDetails]  
-@StaffID VARCHAR(10), @StaffName  NVARCHAR (40), @StaffSurname  NVARCHAR (40),@StartOfContract  DATE, @EndOfContract DATE, @TypeOfContract VARCHAR(40), @NumberOfHours INT, @Bonus VARCHAR(10)
+@StaffID VARCHAR(10), @StaffName NVARCHAR(40), @StaffSurname NVARCHAR(40), @StartOfContract  DATE, @EndOfContract DATE, @TypeOfContract VARCHAR(40), @NumberOfHours INT, @Bonus VARCHAR(10)
 AS  
 BEGIN
 BEGIN TRANSACTION  
-INSERT INTO [Hospital].[staffDetails] (StaffID,StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)   
-     VALUES (@StaffID, @StaffName, @StaffSurname,@StartOfContract,@EndOfContract, @TypeOfContract,@NumberOfHours, @Bonus);
+INSERT INTO [Hospital].[staffDetails] (StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)   
+     VALUES (@StaffID, @StaffName, @StaffSurname, @StartOfContract,@EndOfContract, @TypeOfContract,@NumberOfHours, @Bonus);
 COMMIT TRANSACTION
 END
 

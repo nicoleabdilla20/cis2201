@@ -286,64 +286,76 @@ namespace CIS2201_Assignment
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //Establishinhg the database connection.
                 connection.Open();
+                //SQL string query that will retrieve data from teh database.
                 String sql = "SELECT * FROM [Hospital].[Medication] WHERE NameOfMed = @NameOfMed";
+                //Creating a new SQL command made up of the connection and the sql query that were both created above.
                 using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
-
+                    //Adding the ID entered from the user through the WinForm as a new sql parameter.
                     comm.Parameters.Add(new SqlParameter("@NameOfMed", SqlDbType.VarChar, 10));
                     comm.Parameters["@NameOfMed"].Value = medSearch.Text;
+                    //Creating a new SQL data reader object.
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
+                    //Creating a new list that will be returned.
                     List<medications> medList = new List<medications>();
 
 
                     while (read.Read())
                     {
-
+                        //Creating a new object of the class 'medications' and passing the data read from the database through the SqlDataReader object that was created above, as arguments to the class' constructor.
                         medications p = new medications(read["TypeOfMed"].ToString(), read["NameOfMed"].ToString(), read["bloodType"].ToString(), read["stockAmount"].ToString(), read["price"].ToString(), read["requireMaintenance"].ToString());
+                        //Adding the variables created in the class 'medication' to the list.
                         medList.Add(p);
                     }
+                    //Returning the list.
                     return medList;
                     
                 }
             }
         }
-
+        
         //searching a medication from the database by type of medication
         private void searchTypeofMed_Click(object sender, EventArgs e)
         {
-                if (IsSeachValid())
+            if (IsSeachValid())
+            {
+                //Establishinhg the database connection.
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
-                    using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                    //Opening the above created connection
+                    connection.Open();
+
+                    //Using a try-catch to help point out any exception errors that might come up.
+                    try
                     {
-                        //opening connection
-                        connection.Open();
-
-                        try
-                        {
-                            meddgv.DataSource = getMedList();
-                        }
-                        catch (System.Data.SqlClient.SqlException sqlException)
-                        {
-                            System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                        }
-                        finally
-                        {
-                            //closing connection
-                            connection.Close();
-                        }
-
+                        //Determining the 'getMedList()' method as the data grid view output.
+                        meddgv.DataSource = getMedList();
                     }
-                }
-                 else 
+                    catch (System.Data.SqlClient.SqlException sqlException)
                     {
-                        string errorMessage = "Whoops......something went wrong!";
-                        MessageBox.Show(errorMessage);
+                        //Catch the exception if necessaary. 
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        //Since the execution is finsihed, the connection can be closed.
+                        connection.Close();
+                    }
 
-                     }
-            
+                }
+            }
+            else
+            {
+                //Message that will be displayed if validation method is false.
+                string errorMessage = "Whoops......something went wrong!";
+                MessageBox.Show(errorMessage);
+
+            }
+
         }
 
         private void label14_Click(object sender, EventArgs e)

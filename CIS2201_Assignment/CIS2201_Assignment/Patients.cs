@@ -254,62 +254,81 @@ namespace CIS2201_Assignment
                      }
         }
 
+        //Method that returns a list made up the requested information from the database.
         private List<patientInformation> getPatientsList()
         {
+            //Establishinhg the database connection.
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //Opening connection that was established above.
                 connection.Open();
+                //SQL string query that will retrieve data from teh database.
                 String sql = "SELECT * FROM [Hospital].[patients] WHERE PatientsID = @PatientsID";
+                //Creating a new SQL command made up of the connection and the sql query that were both created above.
                 using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
-
+                    //Adding the ID entered from the user through the WinForm as a new sql parameter.
                     comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
                     comm.Parameters["@PatientsID"].Value = psearchID.Text;
+                    //Creating a new SQL data reader object.
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
+                    //Creating a new list that will be returned.
                     List<patientInformation> patientsList = new List<patientInformation>();
 
                     while (read.Read())
                     {
+                        //Creating a new object of the class 'patientInformation' and passing the data read from the database through the SqlDataReader object that was created above, as arguments to the class' constructor.
                         patientInformation pa = new patientInformation(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurnameName"].ToString(), read["PatientsGender"].ToString(), read["PatientsDateOfBirth"].ToString(), read["PatientsAge"].ToString(), read["PatientsAddress"].ToString(), read["PatientsTelephone"].ToString(), read["PatientsBloodType"].ToString(), read["PatientsAllergies"].ToString(), read["PatientsInsurance"].ToString());
+                        //Adding the variables created in the class 'patientInformation' to the list.
                         patientsList.Add(pa);
                     }
+                    //Returning the list.
                     return patientsList;
                 }
             }
         }
 
 
-        
 
+        //Method that returns a list made up the requested information from the database.
          private List<patientVisits> getPatientsVisitList()
          {
+            //Establishinhg the database connection.
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //Creaying an object of the filterBox in order to be interacted with later on.
                 String selectedItem = (string)Filtercbx.SelectedItem;
+                //Opening the above created connection
                 connection.Open();
+                //SQL string query that will retrieve data from teh database.
                 String sql = "SELECT * FROM [Hospital].[patientsVisits] WHERE PatientsID = @PatientsID";
+                //Creating a new SQL command made up of the connection and the sql query that were both created above.
                 using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
-
+                    //Adding the ID entered from the user through the WinForm as a new sql parameter.
                     comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
                     comm.Parameters["@PatientsID"].Value = pvisitID.Text;
+                    //Creating a new SQL data reader object.
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
+                    //Creating a new list that will be returned.
                     List<patientVisits> patientsList = new List<patientVisits>();
-
 
                     while (read.Read())
                     {
-
+                        //Creating a new object of the class 'patientVisits' and passing the data read from the database through the SqlDataReader object that was created above, as arguments to the class' constructor.
                         patientVisits p = new patientVisits(read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["RecentVisitDate"].ToString(), read["RecentVisitDoctor"].ToString(), read["RecentVisitSummary"].ToString(), read["OtherVisitDate"].ToString(), read["OtherVisitDoctor"].ToString(), read["OtherVisitSummary"].ToString());
+                        //Adding the variables created in the class 'patientVisits' to the list.
                         patientsList.Add(p);
                     }
 
+                    //Determining the choice of the filterBox by the user through the object that was created above.
                     if (selectedItem == "Date: Newest First")
                     {
+                        //LINQ commands that re-arrange the data returned according to the choice of the user.
                         var datenew =
                         from item in patientsList
                         let date = item.RecentVisitDate
@@ -317,11 +336,14 @@ namespace CIS2201_Assignment
                         orderby date ascending
                         select item;
 
+                        //Creating a new list 'lst' which is made up of the data from the above LINQ commands turned to a list.
                         List<patientVisits> lst = datenew.ToList();
+                        //Returning the list.
                         return lst;
                     }
                     else
                     {
+                        //LINQ commands that re-arrange the data returned according to the choice of the user.
                         var datenew =
                         from item in patientsList
                         let date = item.RecentVisitDate
@@ -329,32 +351,41 @@ namespace CIS2201_Assignment
                         orderby date descending
                         select item;
 
+                        //Creating a new list 'lst' which is made up of the data from the above LINQ commands turned to a list.
                         List<patientVisits> lst = datenew.ToList();
+                        //Returning the list.
                         return lst;
                     }
                 }
             }
         } 
 
-
+        //Method that will execute when the user hits the search patient button.
         private void searchPatient_Click(object sender, EventArgs e)
         {
+            //Validation
             if (IsPatientInfoIDValid())
             {
+                //Establishinhg the database connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
+                    //Opening the above created connection
                     connection.Open();
 
+                    //Using a try-catch to help point out any exception errors that might come up.
                     try
                     {
+                        //Determining the 'getPatientsList()' method as the data grid view output.
                         patientdgv.DataSource = getPatientsList();
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
                     {
+                        //Catch the exception if necessaary. 
                         System.Windows.Forms.MessageBox.Show(sqlException.Message);
                     }
                     finally
                     {
+                        //Since the execution is finsihed, the connection can be closed.
                         connection.Close();
                     }
 
@@ -362,24 +393,32 @@ namespace CIS2201_Assignment
             }
         }
 
+        //Method that will execute when the user hits the search patient's visit button.
         private void visitsearch_Click(object sender, EventArgs e)
         {
+            //Validation
             if (IsPatientvisitIDValid())
             {
+                //Establishinhg the database connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
+                    //Opening the above created connection
                     connection.Open();
 
+                    //Using a try-catch to help point out any exception errors that might come up.
                     try
                     {
+                        //Determining the 'getPatientsvisitlist()' method as the data grid view output.
                         visitdgv.DataSource = getPatientsVisitList();
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
                     {
+                        //Catch the exception if necessaary. 
                         System.Windows.Forms.MessageBox.Show(sqlException.Message);
                     }
                     finally
                     {
+                        //Since the execution is finsihed, the connection can be closed.
                         connection.Close();
                     }
                 }
@@ -441,47 +480,61 @@ namespace CIS2201_Assignment
             //creating the connection
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //Creaying an object of the filterBox in order to be interacted with later on.
                 String selectedItem = (string)AppFiltercbx.SelectedItem;
+                //Opening the above created connection.
                 connection.Open();
+                //SQL string query that will retrieve data from teh database.
                 String sql = "SELECT * FROM [Hospital].[Appointments] WHERE PatientsID = @PatientsID";
+                //Creating a new SQL command made up of the connection and the sql query that were both created above.
                 using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
-
+                    //Adding the ID entered from the user through the WinForm as a new sql parameter.
                     comm.Parameters.Add(new SqlParameter("@PatientsID", SqlDbType.VarChar, 10));
                     comm.Parameters["@PatientsID"].Value = AppsearchID.Text;
+                    //Creating a new SQL data reader object.
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
+                    //Creating a new list that will be returned.
                     List<patientAppointmet> appointmentList = new List<patientAppointmet>();
 
 
                     while (read.Read())
                     {
-
+                        //Creating a new object of the class 'patientAppointment' and passing the data read from the database through the SqlDataReader object that was created above, as arguments to the class' constructor.
                         patientAppointmet p = new patientAppointmet(read["AppointmentID"].ToString(), read["PatientsID"].ToString(), read["PatientsName"].ToString(), read["PatientsSurname"].ToString(), read["Doctor"].ToString(), read["CreationDate"].ToString(), read["ScheduledDate"].ToString());
+                        //Adding the variables created in the class 'patientVisits' to the list.
                         appointmentList.Add(p);
                     }
 
+                    //Determining the choice of the filterBox by the user through the object that was created above.
                     if (selectedItem == "Sort by Date: Newest First")
                     {
+                        //LINQ commands that re-arrange the data returned according to the choice of the user.
                         var datenew =
                         from item in appointmentList
                         let date = item.ScheduledDate
                         orderby date ascending
                         select item;
 
+                        //Creating a new list 'lst' which is made up of the data from the above LINQ commands turned to a list.
                         List<patientAppointmet> lst = datenew.ToList();
+                        //Returning the list.
                         return lst;
                     }
                     else
                     {
+                        //LINQ commands that re-arrange the data returned according to the choice of the user.
                         var datenew =
                         from item in appointmentList
                         let date = item.ScheduledDate
                         orderby date descending
                         select item;
 
+                        //Creating a new list 'lst' which is made up of the data from the above LINQ commands turned to a list.
                         List<patientAppointmet> lst = datenew.ToList();
+                        //Returning the list.
                         return lst;
                     }
                 }
@@ -489,26 +542,34 @@ namespace CIS2201_Assignment
         }
 
 
-        //searching appointment 
+        //Method that will execute when the user hits the search patient's appointment button.
         private void Appsearchbtn_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
-            {
-                connection.Open();
+            
+                //Establishinhg the database connection.
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    //Opening the above created connection
+                    connection.Open();
 
-                try
-                {
-                    Appsearchdgv.DataSource = getAppointment();
+                    //Using a try-catch to help point out any exception errors that might come up.
+                    try
+                    {
+                        //Determining the 'getAppointment()' method as the data grid view output.
+                       Appsearchdgv.DataSource = getAppointment();
+                    }
+                    catch (System.Data.SqlClient.SqlException sqlException)
+                    {
+                        //Catch the exception if necessaary. 
+                        System.Windows.Forms.MessageBox.Show(sqlException.Message);
+                    }
+                    finally
+                    {
+                        //Since the execution is finsihed, the connection can be closed.
+                        connection.Close();
+                    }
                 }
-                catch (System.Data.SqlClient.SqlException sqlException)
-                {
-                    System.Windows.Forms.MessageBox.Show(sqlException.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
+            
         }
 
         private void label32_Click(object sender, EventArgs e)

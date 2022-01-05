@@ -44,4 +44,4 @@ GO
 
 SELECT * FROM [Hospital].[Medication];
 
-
+DROP TABLE [Hospital].[Medication];

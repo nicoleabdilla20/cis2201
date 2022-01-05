@@ -37,7 +37,7 @@ namespace CIS2201_Assignment
 
         private bool IsStaffIDValid()
         {
-            if (inputStaffID.Text == "")
+            if (IDtxt.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the Staff's ID!");
                 return false;
@@ -342,27 +342,35 @@ namespace CIS2201_Assignment
         //searching a staff member with staff ID from database
         private List<staffInformation> getStaffList()
         {
-
+            //Establishinhg the database connection.
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //Opening connection that was established above.
                 connection.Open();
+                //SQL string query that will retrieve data from teh database.
                 String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
+                //Creating a new SQL command made up of the connection and the sql query that were both created above.
                 using (SqlCommand comm = new SqlCommand(sql, connection))
-                { 
+                {
+                    //Adding the ID entered from the user through the WinForm as a new sql parameter.
                     comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
                     comm.Parameters["@StaffID"].Value = staffID.Text;
+                    //Creating a new SQL data reader object.
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
+                    //Creating a new list that will be returned.
                     List<staffInformation> staffList = new List<staffInformation>();
 
 
                     while (read.Read())
                     {
-
+                        //Creating a new object of the class 'staffInformation' and passing the data read from the database through the SqlDataReader object that was created above, as arguments to the class' constructor.
                         staffInformation p = new staffInformation(read["StaffID"].ToString(), read["StaffName"].ToString(), read["StaffSurnameName"].ToString(), read["StaffGender"].ToString(), read["StaffDateOfBirth"].ToString(), read["StaffAge"].ToString(), read["StaffAddress"].ToString(), read["StaffEmail"].ToString(), read["StaffPhoneNumber"].ToString(), read["StaffBloodType"].ToString(), read["StaffInsurance"].ToString(), read["StaffRole"].ToString());
+                        //Adding the variables created in the class 'patientInformation' to the list.
                         staffList.Add(p);
                     }
+                    //Returning the list.
                     return staffList;
                 }
             }
@@ -371,26 +379,35 @@ namespace CIS2201_Assignment
          //searching a staff member's detaiols with staff ID from database
         private List<staffD> getStaffDetailList()
         {
+            //Establishinhg the database connection.
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
+                //Opening connection that was established above.
                 connection.Open();
+                //SQL string query that will retrieve data from teh database.
                 String sql = "SELECT * FROM [Hospital].[staffDetails] WHERE StaffID = @StaffID";
+                //Creating a new SQL command made up of the connection and the sql query that were both created above.
                 using (SqlCommand comm = new SqlCommand(sql, connection))
                 {
+                    //Adding the ID entered from the user through the WinForm as a new sql parameter.
                     comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
                     comm.Parameters["@StaffID"].Value = staffDetailstxt.Text;
+                    //Creating a new SQL data reader object.
                     SqlDataReader read;
                     read = comm.ExecuteReader();
 
+                    //Creating a new list that will be returned.
                     List<staffD> staffDetailList = new List<staffD>();
 
 
                     while (read.Read())
                     {
-
+                        //Creating a new object of the class 'staffD' and passing the data read from the database through the SqlDataReader object that was created above, as arguments to the class' constructor.
                         staffD p = new staffD(read["StaffID"].ToString(), read["StaffName"].ToString(), read["StaffSurname"].ToString(), read["StartOfContract"].ToString(), read["EndOfContract"].ToString(), read["TypeOfContract"].ToString(), read["NumberOfHours"].ToString(), read["Bonus"].ToString());
+                        //Adding the variables created in the class 'patientInformation' to the list.
                         staffDetailList.Add(p);
                     }
+                    //Returning the list.
                     return staffDetailList;
                 }
             }
@@ -399,67 +416,80 @@ namespace CIS2201_Assignment
         //getting staff member list
         private void searchStaffID_Click(object sender, EventArgs e)
         {
+            //Validation
             if (IsStaffIdValid())
             {
+                //Establishinhg the database connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
+                    //Opening the above created connection
                     connection.Open();
 
+                    //Using a try-catch to help point out any exception errors that might come up.
                     try
                     {
+                        //Determining the 'getStaffList()' method as the data grid view output.
                         staffdgv.DataSource = getStaffList();
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
                     {
+                        //Catch the exception if necessaary. 
                         System.Windows.Forms.MessageBox.Show(sqlException.Message);
                     }
                     finally
                     {
+                        //Since the execution is finsihed, the connection can be closed.
                         connection.Close();
                     }
 
                 }
             }
-            
-             else 
-                     {
-                        string errorMessage = "Whoops......something went wrong!";
-                        MessageBox.Show(errorMessage);
+            else 
+            {
+                //Message that will be displayed if validation method is false.
+                string errorMessage = "Whoops......something went wrong!";
+                MessageBox.Show(errorMessage);
 
-                     }
+            }
         }
 
         //getting staff member's details list
         private void searchRole_Click_1(object sender, EventArgs e)
         {
+            //Validation
             if (IsStaffIdDetailValid())
             {
+                //Establishinhg the database connection.
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
+                    //Opening the above created connection
                     connection.Open();
 
+                    //Using a try-catch to help point out any exception errors that might come up.
                     try
                     {
+                        //Determining the 'getStaffDetaillist()' method as the data grid view output.
                         detailsdgv.DataSource = getStaffDetailList();
                     }
                     catch (System.Data.SqlClient.SqlException sqlException)
                     {
+                        //Catch the exception if necessaary. 
                         System.Windows.Forms.MessageBox.Show(sqlException.Message);
                     }
                     finally
                     {
+                        //Since the execution is finsihed, the connection can be closed.
                         connection.Close();
                     }
 
                 }
             }
-            
-             else 
-                     {
-                        string errorMessage = "Whoops......something went wrong!";
-                        MessageBox.Show(errorMessage);
-
-                     }
+            else 
+            {
+                //Message that will be displayed if validation method is false.
+                string errorMessage = "Whoops......something went wrong!";
+                MessageBox.Show(errorMessage);
+            }
         }
 
         //=====================================================CALCULATE STAFF PAY================================================
