@@ -62,6 +62,7 @@
     <Compile Include="patientAppointmet.cs" />
     <Compile Include="patientInformation.cs" />
     <Compile Include="patientVisits.cs" />
+    <Compile Include="pay.cs" />
     <Compile Include="ReportIssue.cs">
       <SubType>Form</SubType>
     </Compile>

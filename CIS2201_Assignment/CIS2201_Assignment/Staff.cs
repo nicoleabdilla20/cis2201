@@ -37,7 +37,7 @@ namespace CIS2201_Assignment
 
         private bool IsStaffIDValid()
         {
-            if (IDtxt.Text == "")
+            if (inputStaffID.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the Staff's ID!");
                 return false;
@@ -492,66 +492,6 @@ namespace CIS2201_Assignment
             }
         }
 
-        //=====================================================CALCULATE STAFF PAY================================================
-        public class payroll
-        {
-            public virtual void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
-            {
-            }
-        }
-
-        //doctor pay rate calculation 
-        public class payDoctor : payroll
-        {
-           
-            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
-            {
-                int rate = 30;
-                pay = (rate * hours)+bonus;
-                tax = 0.25 * pay;
-                payfinal = 0.75 * pay;
-            }
-        }
-
-        //therapist pay rate calculation 
-        public class payTherapist : payroll
-        {
-
-            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
-            {
-                int rate = 25;
-                pay = (rate * hours) + bonus;
-                tax = 0.25 * pay;
-                payfinal = 0.75 * pay;
-            }
-        }
-
-        //nurse pay rate calculation 
-        public class payNurse : payroll
-        {
-
-            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
-            {
-                int rate = 15;
-                pay = (rate * hours) + bonus;
-                tax = 0.25 * pay;
-                payfinal = 0.75 * pay;
-            }
-        }
-
-        //physician pay rate calculation 
-        public class payPhysicians : payroll
-        {
-
-            public override void calculatePay(int hours, int bonus, ref double pay, ref double tax, ref double payfinal)
-            {
-                int rate = 20;
-                pay = (rate * hours) + bonus;
-                tax = 0.25 * pay;
-                payfinal = 0.75 * pay;
-            }
-        }
-
         //retrieving staff member's role and ID to calculate his/her pay roll
         private void getStaffBill()
         {            
@@ -628,7 +568,7 @@ namespace CIS2201_Assignment
             if (role.Equals("Doctor"))
             {
                 MessageBox.Show("Doctor Salary");
-                payroll payroll = new payDoctor();
+                pay.payroll payroll = new pay.payDoctor();
                 payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
 
                 staffHrs.Text = hours.ToString();
@@ -640,7 +580,7 @@ namespace CIS2201_Assignment
             if (role.Equals("Physicians"))
             {
                 MessageBox.Show("Physicians Salary");
-                payroll payroll = new payPhysicians();
+                pay.payroll payroll = new pay.payPhysicians();
                 payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
 
                 staffHrs.Text = hours.ToString();
@@ -652,7 +592,7 @@ namespace CIS2201_Assignment
             if (role.Equals("Therapist"))
             {
                 MessageBox.Show("Therapist Salary");
-                payroll payroll = new payTherapist();
+                pay.payroll payroll = new pay.payTherapist();
                 payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
 
                 staffHrs.Text = hours.ToString();
@@ -664,7 +604,7 @@ namespace CIS2201_Assignment
             if (role.Equals("Nurse"))
             {
                 MessageBox.Show("Nurse Salary");
-                payroll payroll = new payNurse();
+                pay.payroll payroll = new pay.payNurse();
                 payroll.calculatePay(hours, bonus, ref pay, ref tax, ref payfinal);
 
                 staffHrs.Text = hours.ToString();

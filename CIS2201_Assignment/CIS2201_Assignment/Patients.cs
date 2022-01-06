@@ -702,62 +702,6 @@ namespace CIS2201_Assignment
         //=================================================================Calculate Patient Bill=================================================================
         int expenseTotal = 100;
         int finalAnswer;
-        public class planBase
-        {
-            public virtual int calculate(int expense)
-            {
-                return expense;
-            }
-        }
-
-        // Derived Classes
-        public class planZ : planBase
-        {
-            //Insurance covers the patient's full expenses
-            int insurance;
-            int toPay;
-            public override int calculate(int expense)
-            {
-                insurance = expense;
-                toPay = 0;
-                return toPay;
-            }
-        }
-
-        public class planY : planBase
-        {
-            // insurance pays 50% of the expenses if expenses are larger than 700, if not the patient pays the full expense
-            int insurance;
-            int toPay;
-            public override int calculate(int expense)
-            {
-                if (expense >= 700)
-                {
-                    insurance = expense / 2;
-                    toPay = expense / 2;
-                    return toPay;
-                }
-                else
-                {
-                    insurance = 0;
-                    toPay = expense;
-                    return toPay;
-                }
-            }
-        }
-
-        public class planX : planBase
-        {
-            //Patient pays the full expenses
-            int insurance;
-            int toPay;
-            public override int calculate(int expense)
-            {
-                insurance = 0;
-                toPay = expense;
-                return toPay;
-            }
-        }
 
         //retrieving the type of insurance the patient has in order to calculate the bill
         private string getPatientsInsurance()
@@ -783,6 +727,7 @@ namespace CIS2201_Assignment
 
                     }
                     String patientPlan = planInformation[0].ToString();
+                    
                     MessageBox.Show(patientPlan);
 
                     calculateBill(patientPlan);
@@ -800,7 +745,7 @@ namespace CIS2201_Assignment
             {
                 MessageBox.Show("Your insurance plan is X: you agreed to pay 100% of the bill out of pocket.");
                 expenseTotal = expenseTotal * night;
-                planX x = new planX();
+                pay.planX x = new pay.planX();
                 finalAnswer = x.calculate(expenseTotal);
                 MessageBox.Show("Final Answer: "+finalAnswer);
             }
@@ -808,7 +753,7 @@ namespace CIS2201_Assignment
             {
                 MessageBox.Show("Your insurance plan is Y: you agreed to pay counterpart funding (50%) if the bill is more than 700. If it's less than 700, you agreed to pay 100% of the bill out of pocket.");
                 expenseTotal = expenseTotal * night;
-                planY y = new planY();
+                pay.planY y = new pay.planY();
                 finalAnswer = y.calculate(expenseTotal);
                 MessageBox.Show("Final Answer: " + finalAnswer);
             }
@@ -816,7 +761,7 @@ namespace CIS2201_Assignment
             {
                 MessageBox.Show("Your insurance plan is Z: you agreed to pay no counterpart for service uptake.");
                 expenseTotal = expenseTotal * night;
-                planZ z = new planZ();
+                pay.planZ z = new pay.planZ();
                 finalAnswer = z.calculate(expenseTotal);
                 MessageBox.Show("Final Answer: " + finalAnswer);
             }
