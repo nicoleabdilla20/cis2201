@@ -49,73 +49,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="firstScale.cs" />
-    <Compile Include="IStaffPayroll.cs" />
-    <Compile Include="Medication.cs">
+    <Compile Include="WinForms\Medication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Medication.Designer.cs">
+    <Compile Include="WinForms\Medication.Designer.cs">
       <DependentUpon>Medication.cs</DependentUpon>
     </Compile>
-    <Compile Include="medications.cs" />
-    <Compile Include="patient.cs" />
-    <Compile Include="patientAppointmet.cs" />
-    <Compile Include="patientInformation.cs" />
-    <Compile Include="patientVisits.cs" />
-    <Compile Include="pay.cs" />
-    <Compile Include="ReportIssue.cs">
+    <Compile Include="Medication classes\medications.cs" />
+    <Compile Include="Patients classes\patient.cs" />
+    <Compile Include="Patients classes\patientAppointmet.cs" />
+    <Compile Include="Patients classes\patientInformation.cs" />
+    <Compile Include="Patients classes\patientVisits.cs" />
+    <Compile Include="Staff payroll\payDoctor.cs" />
+    <Compile Include="Staff payroll\payNurse.cs" />
+    <Compile Include="Staff payroll\payPhysicians.cs" />
+    <Compile Include="Staff payroll\payroll.cs" />
+    <Compile Include="Staff payroll\payTherapist.cs" />
+    <Compile Include="Patient%27s bill\planBase.cs" />
+    <Compile Include="Patient%27s bill\planX.cs" />
+    <Compile Include="Patient%27s bill\planY.cs" />
+    <Compile Include="Patient%27s bill\planZ.cs" />
+    <Compile Include="WinForms\ReportIssue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportIssue.Designer.cs">
+    <Compile Include="WinForms\ReportIssue.Designer.cs">
       <DependentUpon>ReportIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="WinForms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="WinForms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Patients.cs">
+    <Compile Include="WinForms\Patients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patients.Designer.cs">
+    <Compile Include="WinForms\Patients.Designer.cs">
       <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="secondScale.cs" />
-    <Compile Include="Staff.cs">
+    <Compile Include="WinForms\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Staff.Designer.cs">
+    <Compile Include="WinForms\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Navigation.cs">
+    <Compile Include="WinForms\Navigation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Navigation.Designer.cs">
+    <Compile Include="WinForms\Navigation.Designer.cs">
       <DependentUpon>Navigation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="staffD.cs" />
-    <Compile Include="staffInformation.cs" />
-    <Compile Include="staffs.cs" />
-    <Compile Include="thirdScale.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <Compile Include="Staff classes\staffD.cs" />
+    <Compile Include="Staff classes\staffInformation.cs" />
+    <Compile Include="Staff classes\staffs.cs" />
+    <EmbeddedResource Include="WinForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Medication.resx">
+    <EmbeddedResource Include="WinForms\Medication.resx">
       <DependentUpon>Medication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patients.resx">
+    <EmbeddedResource Include="WinForms\Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportIssue.resx">
+    <EmbeddedResource Include="WinForms\ReportIssue.resx">
       <DependentUpon>ReportIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff.resx">
+    <EmbeddedResource Include="WinForms\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Navigation.resx">
+    <EmbeddedResource Include="WinForms\Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,6 +158,7 @@
   <ItemGroup>
     <None Include="Resources\hospital.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug.locked" del "$C:\Users\phili\OneDrive\Documents\GitHub\cis2201\CIS2201_Assignment\CIS2201_Assignment\obj\Debug.locked"

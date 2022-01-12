@@ -1,8 +1,0 @@
-﻿CREATE PROCEDURE [dbo].[searchMedication]
-	@TypeOfMed NVARCHAR(40)
-AS
-BEGIN
-BEGIN TRANSACTION  
-SELECT * FROM [Hospital].[Medication] WHERE TypeOfMed = @TypeOfMed;
-COMMIT TRANSACTION
-END

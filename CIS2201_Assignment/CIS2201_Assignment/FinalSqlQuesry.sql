@@ -138,7 +138,7 @@ VALUES('Blood Samples', NULL ,'B', '50', '6',  'yes' );
 GO
 INSERT INTO [Hospital].[issue](StaffID, StaffDate, Details)
 VALUES( '12431', '27.OCT.2021', 'Staff Tab not opening');
-INSERT INTO [Hospital].[issues](StaffID, StaffDate, Details)
+INSERT INTO [Hospital].[issue](StaffID, StaffDate, Details)
 VALUES('31435',  '14.DEC.2021', 'Staff not working');
 GO
 INSERT INTO [Hospital].[login](Username, Password)
