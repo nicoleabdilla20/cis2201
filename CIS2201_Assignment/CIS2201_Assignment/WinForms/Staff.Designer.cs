@@ -545,14 +545,10 @@ namespace CIS2201_Assignment
             this.roleopts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.roleopts.FormattingEnabled = true;
             this.roleopts.Items.AddRange(new object[] {
-            "doctor",
-            "nurse",
-            "therapist",
-            "physician",
-            "specialist",
-            "pharmacist",
-            "social worker",
-            "interpreter"});
+            "Doctor",
+            "Nurse",
+            "Therapist",
+            "Physician"});
             this.roleopts.Location = new System.Drawing.Point(119, 281);
             this.roleopts.Name = "roleopts";
             this.roleopts.Size = new System.Drawing.Size(121, 24);

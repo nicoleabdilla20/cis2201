@@ -37,7 +37,7 @@ namespace CIS2201_Assignment
 
         private bool IsStaffIDValid()
         {
-            if (inputStaffID.Text == "")
+            if (IDtxt.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the Staff's ID!");
                 return false;
@@ -73,14 +73,11 @@ namespace CIS2201_Assignment
         //adding a new staff member and storing it into the database
         private void submit_Click(object sender, EventArgs e)
         {
-            //connection string
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my databse conenction
-
             //verification methods
             if (IsStaffValid() && IsStaffIDValid() && isAddressValid())
             {
                 //creating the connection
-                using (SqlConnection connection = new SqlConnection(cs))
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                    //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaff", connection))
@@ -184,12 +181,10 @@ namespace CIS2201_Assignment
         //adding a new staff member's details and storing it into the database
         private void detailsubmit_Click(object sender, EventArgs e)
         {
-            //connection string
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my database conenction
-
             if (IsStaffIDWorkValid() && IsStaffNoOfHrsValid())
             {
-                using (SqlConnection connection = new SqlConnection(cs))
+                //creating the connection
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addStaffDetails", connection))
@@ -617,8 +612,8 @@ namespace CIS2201_Assignment
         //button to clculate payroll and display the amount
         private void calcStaffPay_Click(object sender, EventArgs e)
         {
-            if (IsStaffIDValid())
-            {
+            //if (IsStaffIDValid())
+            //{
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     connection.Open();
@@ -637,7 +632,7 @@ namespace CIS2201_Assignment
                     }
 
                 }
-            }
+           // }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

@@ -36,12 +36,10 @@ namespace CIS2201_Assignment
         //adding a new issue that was reported and storing it into the database
         private void issuebtn_Click(object sender, EventArgs e)
         {
-            //connection string
-            string cs = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Hospital;Integrated Security=True;Pooling=False"; //my database conenction
-
             if (IsStaffIDWorkValid())
             {
-                using (SqlConnection connection = new SqlConnection(cs))
+                //creating the connection
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     //creating a SqlCommand, and identifying it as a stored procedure
                     using (SqlCommand sqlCommand = new SqlCommand("Hospital.addIssue", connection))
