@@ -63,7 +63,7 @@ CREATE TABLE [Hospital].[staff] (
 GO
 CREATE TABLE [Hospital].[staffDetails] (  
 
-    [StaffID]               VARCHAR(40) PRIMARY KEY NOT NULL,  
+    [StaffID]               VARCHAR(10) PRIMARY KEY NOT NULL,  
     [StaffName]             NVARCHAR (40) NOT NULL,  
     [StaffSurname]          NVARCHAR (40) NOT NULL,
     [StartOfContract]       DATE NOT NULL,
@@ -160,7 +160,11 @@ ADD CONSTRAINT patient_has_many_appointments
 FOREIGN KEY (PatientsID)
 REFERENCES [Hospital].[patients](PatientsID)
 GO
-
+ALTER TABLE [Hospital].[staffDetails] 
+ADD CONSTRAINT staff_has_many_details
+FOREIGN KEY (StaffID)
+REFERENCES [Hospital].[staff](StaffID)
+GO
 /*Creating the stored procedures that will be used to handle data from the database*/
 CREATE PROCEDURE [Hospital].[addPatient]  
 @PatientsID VARCHAR(10), @PatientsName NVARCHAR(40), @PatientsSurnameName NVARCHAR(40), @PatientsGender NVARCHAR(40), @PatientsAge INT, @PatientsDateOfBirth DATE, @PatientsAddress VARCHAR(100), @PatientsTelephone INT, @PatientsBloodType VARCHAR(10), @PatientsAllergies VARCHAR(10), @PatientsInsurance CHAR(1)

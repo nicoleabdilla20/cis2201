@@ -493,7 +493,6 @@ namespace CIS2201_Assignment
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
             {
                 //Using table Hospital.staff
-
                 List<string> roleInformation = new List<string>();
                 String roleStaff;
                 connection.Open();
