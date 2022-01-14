@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\CIS2201_Assignment",
-    "\\CIS2201_Assignment\\CIS2201_Assignment"
+    "\\CIS2201_Assignment\\CIS2201_Assignment",
+    "\\CIS2201_Assignment\\packages"
   ],
-  "SelectedNode": "\\CIS2201_Assignment\\CIS2201_Assignment\\WinForms",
+  "SelectedNode": "\\CIS2201_Assignment\\CIS2201_Assignment\\FinalSqlQuesry.sql",
   "PreviewInSolutionExplorer": false
 }

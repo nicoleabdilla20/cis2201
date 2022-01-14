@@ -1,4 +1,5 @@
-﻿/*Creating the local scheme 'Hospital'*/
+﻿
+/*Creating the local scheme 'Hospital'*/
 CREATE SCHEMA [Hospital]  
     AUTHORIZATION [dbo];  
 GO  
@@ -129,6 +130,17 @@ INSERT INTO [Hospital].[staff](StaffID, StaffName, StaffSurnameName, StaffGender
 VALUES('15343M', 'George', 'Williams', 'Male', 29,'04.JAN.1992', 'Triq idmejda, Hal Balzan', 'george_williams@gmail.com', 99118831,'B', 'Z', 'Therapist');
 INSERT INTO [Hospital].[staff](StaffID, StaffName, StaffSurnameName, StaffGender, StaffAge, StaffDateOfBirth, StaffAddress, StaffEmail, StaffPhoneNumber, StaffBloodType, StaffInsurance, StaffRole)
 VALUES('4685G','David', 'Brown', 'Male', 30,'04.JAN.1993', '113, Triq is-Saghtar, St Paul Bay', 'brownDavid@gmail.com', 79798612, 'O', 'Y', 'Physicians');
+GO
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '12431G', 'Ronald', 'Abela', '27.OCT.1981', '01.SEP.2023', 'Definite', 20, '200');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '4685G','David', 'Brown', '27.OCT.2010', '01.SEP.2025', 'Indefinite', 40, '500');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '15343M', 'George', 'Williams', '27.OCT.2009', '01.SEP.2030', 'Definite', 25, '155');
+INSERT INTO [Hospital].[staffDetails](StaffID, StaffName, StaffSurname, StartOfContract, EndOfContract, TypeOfContract, NumberOfHours, Bonus)
+VALUES( '31435H','Elizabeth', 'Smith', '27.OCT.2000', '01.SEP.2051', 'Indefinite', 30, '150');
+SELECT * FROM [Hospital].[staffDetails];
+GO
 SELECT * FROM [Hospital].[patientsVisits];
 GO
 INSERT INTO [Hospital].[Medication] (TypeOfMed, NameOfMed, bloodType, stockAmount, price, requireMaintenance)
