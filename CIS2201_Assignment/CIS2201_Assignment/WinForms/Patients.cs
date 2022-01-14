@@ -726,12 +726,23 @@ namespace CIS2201_Assignment
                         planInformation.Add(pl.ToString());
 
                     }
-                    String patientPlan = planInformation[0].ToString();
-                    
-                    MessageBox.Show(patientPlan);
+                    //ID not found error
+                    String patientPlan = "test";
+                    try
+                    {
+                        patientPlan = planInformation[0].ToString();
+                        calculateBill(patientPlan);
+                        //return patientPlan;
+                    }
+                    catch (ArgumentOutOfRangeException ex)
+                    {
+                        MessageBox.Show("ID not found!");
+                        
+                    }
 
-                    calculateBill(patientPlan);
                     return patientPlan;
+
+
 
                 }
             }
@@ -740,35 +751,41 @@ namespace CIS2201_Assignment
         //calculating the bill in accordance to the insurance plan chosen by the patient beforehand
         private void calculateBill(String plan)
         {
-            int night = Convert.ToInt32(textBoxNights.Text);
-            if (plan.Equals("X"))
-            {
-                MessageBox.Show("Your insurance plan is X: you agreed to pay 100% of the bill out of pocket.");
-                expenseTotal = expenseTotal * night;
-                planX x = new planX();
-                finalAnswer = x.calculate(expenseTotal);
-                MessageBox.Show("Final Answer: "+finalAnswer);
-            }
-            else if (plan.Equals("Y"))
-            {
-                MessageBox.Show("Your insurance plan is Y: you agreed to pay counterpart funding (50%) if the bill is more than 700. If it's less than 700, you agreed to pay 100% of the bill out of pocket.");
-                expenseTotal = expenseTotal * night;
-                planY y = new planY();
-                finalAnswer = y.calculate(expenseTotal);
-                MessageBox.Show("Final Answer: " + finalAnswer);
-            }
-            else
-            {
-                MessageBox.Show("Your insurance plan is Z: you agreed to pay no counterpart for service uptake.");
-                expenseTotal = expenseTotal * night;
-                planZ z = new planZ();
-                finalAnswer = z.calculate(expenseTotal);
-                MessageBox.Show("Final Answer: " + finalAnswer);
-            }
+            try {
+                int night = Convert.ToInt32(textBoxNights.Text);
 
-            textBoxExpenseTotal.Text = expenseTotal.ToString();
-            textBoxPay.Text = finalAnswer.ToString();
-            expenseTotal = 100;
+                if (plan.Equals("X"))
+                {
+                    MessageBox.Show("Your insurance plan is X: you agreed to pay 100% of the bill out of pocket.");
+                    expenseTotal = expenseTotal * night;
+                    planX x = new planX();
+                    finalAnswer = x.calculate(expenseTotal);
+                    MessageBox.Show("Final Answer: " + finalAnswer);
+                }
+                else if (plan.Equals("Y"))
+                {
+                    MessageBox.Show("Your insurance plan is Y: you agreed to pay counterpart funding (50%) if the bill is more than 700. If it's less than 700, you agreed to pay 100% of the bill out of pocket.");
+                    expenseTotal = expenseTotal * night;
+                    planY y = new planY();
+                    finalAnswer = y.calculate(expenseTotal);
+                    MessageBox.Show("Final Answer: " + finalAnswer);
+                }
+                else
+                {
+                    MessageBox.Show("Your insurance plan is Z: you agreed to pay no counterpart for service uptake.");
+                    expenseTotal = expenseTotal * night;
+                    planZ z = new planZ();
+                    finalAnswer = z.calculate(expenseTotal);
+                    MessageBox.Show("Final Answer: " + finalAnswer);
+                }
+
+                textBoxExpenseTotal.Text = expenseTotal.ToString();
+                textBoxPay.Text = finalAnswer.ToString();
+                expenseTotal = 100;
+            }
+            catch (FormatException ex) {
+                MessageBox.Show("Please enter number of nights!");
+            }
         }
 
         //calculate bill button

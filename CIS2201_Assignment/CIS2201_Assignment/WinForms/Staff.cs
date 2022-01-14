@@ -37,14 +37,48 @@ namespace CIS2201_Assignment
 
         private bool IsStaffIDValid()
         {
-            if (IDtxt.Text == "")
+            if (inputStaffID.Text == "")
             {
                 MessageBox.Show("Please make sure that you have entered the Staff's ID!");
                 return false;
             }
             else
             {
-                return true;
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
+                {
+                    //Using table Hospital.staff
+                    List<string> roleInformation = new List<string>();
+                    String roleStaff;
+                    connection.Open();
+                    //using Hospital.staff table
+                    String sql = "SELECT * FROM [Hospital].[staff] WHERE StaffID = @StaffID";
+                    using (SqlCommand comm = new SqlCommand(sql, connection))
+                    {
+
+                        comm.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.VarChar, 10));
+                        comm.Parameters["@StaffID"].Value = inputStaffID.Text;
+                        SqlDataReader read;
+                        read = comm.ExecuteReader();
+
+                        while (read.Read())
+                        {
+                            String role = read["StaffRole"].ToString();
+                            roleInformation.Add(role.ToString());
+
+                        }
+                        read.Close();
+                        try
+                        {
+                            roleStaff = roleInformation[0].ToString();
+                        }
+                        catch (ArgumentOutOfRangeException ex)
+                        {
+                            MessageBox.Show("Staff ID not found!");
+                            return false;
+                        }
+                    }
+                    return true;
+                }
             }
         }
 
@@ -611,8 +645,8 @@ namespace CIS2201_Assignment
         //button to clculate payroll and display the amount
         private void calcStaffPay_Click(object sender, EventArgs e)
         {
-            //if (IsStaffIDValid())
-            //{
+            if (IsStaffIDValid())
+            {
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.connString))
                 {
                     connection.Open();
@@ -631,7 +665,7 @@ namespace CIS2201_Assignment
                     }
 
                 }
-           // }
+           }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
