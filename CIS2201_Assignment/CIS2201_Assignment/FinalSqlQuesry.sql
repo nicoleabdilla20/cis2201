@@ -24,7 +24,8 @@ CREATE TABLE [Hospital].[patients] (
 GO
 CREATE TABLE [Hospital].[patientsVisits] ( 
 
-    [PatientsID]            VARCHAR(10) PRIMARY KEY NOT NULL,  
+    [VisitID]               INT IDENTITY PRIMARY KEY NOT NULL,
+    [PatientsID]            VARCHAR(10) NOT NULL,  
     [PatientsName]          VARCHAR(10) NOT NULL,
     [PatientsSurname]       VARCHAR(10) NOT NULL,
     [RecentVisitDate]       DATE NOT NULL,
@@ -37,8 +38,8 @@ CREATE TABLE [Hospital].[patientsVisits] (
 GO
 CREATE TABLE [Hospital].[Appointments](
 
-	[AppointmentID] INT IDENTITY NOT NULL,
-	[PatientsID] VARCHAR(10) PRIMARY KEY NOT NULL,
+	[AppointmentID] INT IDENTITY PRIMARY KEY NOT NULL,
+	[PatientsID] VARCHAR(10) NOT NULL,
 	[PatientsName] VARCHAR(40) NOT NULL,
 	[PatientsSurname] VARCHAR(40) NOT NULL,
 	[Doctor] VARCHAR(40) NOT NULL,
@@ -64,7 +65,8 @@ CREATE TABLE [Hospital].[staff] (
 GO
 CREATE TABLE [Hospital].[staffDetails] (  
 
-    [StaffID]               VARCHAR(10) PRIMARY KEY NOT NULL,  
+    [DetailsID]             INT IDENTITY PRIMARY KEY NOT NULL,
+    [StaffID]               VARCHAR(10) NOT NULL,  
     [StaffName]             NVARCHAR (40) NOT NULL,  
     [StaffSurname]          NVARCHAR (40) NOT NULL,
     [StartOfContract]       DATE NOT NULL,
